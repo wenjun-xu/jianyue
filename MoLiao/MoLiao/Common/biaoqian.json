@@ -1,0 +1,33 @@
+{
+    
+    
+    "data" : [
+        {
+            "Picture":"img_one",
+            "Title" : "文艺范"
+        },
+        {
+            "Picture":"img_two",
+            "Title" : "爆表颜值"
+        },
+        {
+            "Picture":"img_three",
+            "Title" : "海归&名校"
+        },
+        {
+            "Picture":"img_nine",
+            "Title" : "健身美女"
+        },
+        {
+            "Picture":"img_five",
+            "Title" : "艺术家"
+        },
+        {
+            "Picture":"img_six",
+            "Title" : "模特"
+        }
+    ],
+    "status" : true,
+    "message" : "获取最新上线菜单成功"
+}
+

@@ -1,0 +1,27 @@
+//
+//  MoLiao.pch
+//  MoLiao
+//
+//  Created by 徐庆标 on 2019/1/17.
+//  Copyright © 2019 徐庆标. All rights reserved.
+//
+
+#ifndef MoLiao_pch
+#define MoLiao_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* MoLiao_pch */
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import "EaseUI.h"
+
+
+
+
+
+
+
+#endif

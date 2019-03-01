@@ -1,0 +1,42 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'MoLiao' do
+    use_frameworks!
+
+    pod 'Alamofire'
+    pod 'Hue'                
+    pod 'TZImagePickerController'        , '1.9.8'        #20180904注释 图片选择器
+#    pod 'SKPhotoBrowser'            , '4.1.1'             #20180904注释 图片浏览器
+    pod 'SwiftyJSON'            , '4.0.0'                 #20180904注释 json解析
+    pod 'BetterSegmentedControl', '~> 1.0'
+    pod 'TwicketSegmentedControl'
+    pod 'BRPickerView'
+    pod 'Masonry'
+#    pod 'SDCycleScrollView'                     #20180904注释 轮播图
+#    pod 'Kingfisher'                           #20180904注释 网络图片请求框架
+    pod 'SnapKit', '~> 4.0.0'
+    pod 'Hyphenate'
+#    pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git'
+    pod 'JCyclePictureView'
+    pod 'SDWebImage'
+    pod 'SKPhotoBrowser'
+    pod 'AwesomeCache'
+    pod "MLLabel"
+    pod "MMWebView"
+    pod "UUButton"
+#    pod 'ZKSegment'
+#    pod 'LinkedScroll'
+
+
+  target 'MoLiaoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MoLiaoUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

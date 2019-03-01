@@ -1,0 +1,73 @@
+
+{
+    
+    "data" : [
+        {
+            "text":"爱情是爱与爱的沟通，情与情的呼应，它无须形影相随，却要求心心相印",
+            "location":"北京.东城",
+            "userName":"楚秋燕",
+            "userThumbPath":"0000",
+            "praiseNameList":"楚秋燕，王格格",
+            "singleWidth":500,
+            "singleHeight" : 315,
+            "fileCount":1,
+            "isFullText":true,
+            "isPraise":false,
+            "time":"1487649503",
+            "rowHeight":200,
+            "commentList" : [
+                {
+                    "text":"说的好",
+                    "toUserName":null,
+                    "userName":"王充",
+                    "time":"1487649503"
+                },
+                {
+                    "text":"呵呵呵呵呵呵呵情是爱与爱的沟通，情与情的情是爱与爱的沟通，情与情的呵呵给你点个赞",
+                    "toUserName":"楚秋燕",
+                    "userName":"小徐",
+                    "time":"1487649503"
+                }
+            ]
+        },
+        {
+            "text":"爱情这东西，伤不起。于是，宁可选择去暧昧不清，也不要明明白白的爱情，喜欢追求一种不爱的爱情。所谓不爱的爱情，并非是指双方都没有爱，只是因为某种因素，而没办法去相爱。我想最难过的事情不是你遇不见，而是遇见了，得到，却又匆忙的失去，然后心上便因此纠结成了一道疤。它一直跟随着你，它让你什么时候疼，就什么时候疼，那是一直好不了的伤。",
+            "location":"山西.运城",
+            "userName":"么么哒",
+            "userThumbPath":"1111",
+            "praiseNameList":"王冲，徐庆标，张伟",
+            "singleWidth":500,
+            "singleHeight" : 315,
+            "fileCount":6,
+            "isFullText":false,
+            "isPraise":false,
+            "time":"1487649503",
+            "rowHeight":200,
+            "commentList" : [
+                {
+                    "text":"说的好",
+                    "toUserName":null,
+                    "userName":"王充",
+                    "time":"1487649503"
+                }
+            ]
+        },
+        {
+            "text":"它让你什么时候疼，就什么时候疼，那是一直好不了的伤。",
+            "location":"山东.济南",
+            "userName":"冰红茶",
+            "userThumbPath":"2222",
+            "praiseNameList":"徐庆标，张伟",
+            "singleWidth":500,
+            "singleHeight" : 315,
+            "fileCount":9,
+            "isFullText":false,
+            "isPraise":false,
+            "time":"1487649503",
+            "rowHeight":200,
+            "commentList" : []
+        }
+    ],
+    "status" : true,
+    "message" : "获取最新上线菜单成功"
+}

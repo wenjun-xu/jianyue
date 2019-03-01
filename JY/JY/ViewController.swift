@@ -13,12 +13,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "测试"
-        add()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    func add() {
-    }
+        let abc = add()
+        print(abc)
 
+    }
+}
 
+extension ViewController {
+    func add() -> Int{
+        
+        let a = 2
+        
+        let b = 3
+        
+        return a + b
+    }
 }
 

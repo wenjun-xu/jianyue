@@ -2869,7 +2869,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				GCC_PREFIX_HEADER = /Users/htzh/Desktop/JianYue/MoLiao/MoLiao/Common/MoLiao.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MoLiao/Common/MoLiao.pch";
 				INFOPLIST_FILE = MoLiao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2902,7 +2902,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				GCC_PREFIX_HEADER = /Users/htzh/Desktop/JianYue/MoLiao/MoLiao/Common/MoLiao.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MoLiao/Common/MoLiao.pch";
 				INFOPLIST_FILE = MoLiao/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (

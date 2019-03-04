@@ -16,7 +16,7 @@ class MeLookController: BaseTabViewController {
         tableView.register(LookMeCell.self, forCellReuseIdentifier: "LookMeCell")
         let strDataPath = Bundle.main.path(forResource: "dynamic", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
-        let json = DataJson().data2JSON(data: data as! Data)
+        let json = DataJson().data2JSON(data: data! as Data)
         buildWJDynamicModelByJson(json["data"])
     }
     

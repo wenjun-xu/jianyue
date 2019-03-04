@@ -31,7 +31,7 @@ class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPaged
         let strDataPath = Bundle.main.path(forResource: "home", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
         
-        let json = DataJson().data2JSON(data: data as! Data)
+        let json = DataJson().data2JSON(data: data! as Data)
         buildModelCommonByJson(json["data"])
         
         tableView.height = kScreenHeight - kTabbarHeight - kStatusBarH - kNavH

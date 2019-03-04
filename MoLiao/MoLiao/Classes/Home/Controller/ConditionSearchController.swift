@@ -98,7 +98,7 @@ class ConditionSearchController: BaseTabViewController {
             
         }else if indexPath.row == 2 {
             BRStringPickerView.showStringPicker(withTitle: "年收入", dataSource: shouruSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
                 cell.rightLabel.textColor = UIColor(red: 218/255.0, green: 172/255.0, blue: 102/255.0, alpha: 1)
             }
         }else if indexPath.row == 3 {
@@ -113,7 +113,7 @@ class ConditionSearchController: BaseTabViewController {
             }
         }else if indexPath.row == 4 {
             BRStringPickerView.showStringPicker(withTitle: "星座", dataSource: xingzuoSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
                 cell.rightLabel.textColor = UIColor(red: 218/255.0, green: 172/255.0, blue: 102/255.0, alpha: 1)
             }
         }else if indexPath.row == 5 {
@@ -129,22 +129,22 @@ class ConditionSearchController: BaseTabViewController {
         }
         else if indexPath.row == 6 {
             BRStringPickerView.showStringPicker(withTitle: "学历", dataSource: xueliSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
                 cell.rightLabel.textColor = UIColor(red: 218/255.0, green: 172/255.0, blue: 102/255.0, alpha: 1)
             }
         }else if indexPath.row == 7 {
             BRStringPickerView.showStringPicker(withTitle: "职业", dataSource: zhiyeSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
                 cell.rightLabel.textColor = UIColor(red: 218/255.0, green: 172/255.0, blue: 102/255.0, alpha: 1)
             }
         }else if indexPath.row == 8 {
             BRStringPickerView.showStringPicker(withTitle: "住房情况", dataSource: zhufangSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = (xueliStr as! String)
                 cell.rightLabel.textColor = UIColor(red: 218/255.0, green: 172/255.0, blue: 102/255.0, alpha: 1)
             }
         }else if indexPath.row == 9 {
             BRStringPickerView.showStringPicker(withTitle: "婚姻状况", dataSource: hunyinSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = (xueliStr as! String)
                 cell.rightLabel.textColor = UIColor(red: 218/255.0, green: 172/255.0, blue: 102/255.0, alpha: 1)
             }
         }

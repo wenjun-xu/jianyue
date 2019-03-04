@@ -121,8 +121,8 @@ class WJPickerView: UIView,UIPickerViewDelegate,UIPickerViewDataSource {
         for i in 0...plistAray!.count {
             let model = PickerModel.init()
             let dict:NSDictionary = plistAray![i] as! NSDictionary
-            model.province = dict.allKeys[0] as! String
-            model.cities = dict.object(forKey: model.province) as! NSArray
+            model.province = dict.allKeys[0] as? String
+            model.cities = dict.object(forKey: model.province) as? NSArray
             self.array.add(model)
         }
     }
@@ -132,7 +132,7 @@ class WJPickerView: UIView,UIPickerViewDelegate,UIPickerViewDataSource {
         self.array.removeAllObjects()
         for i in 0..<rang.count - 1{
             let model = PickerModel.init()
-            model.province = rang[i] as! String
+            model.province = rang[i] as? String
             let cityAry = NSMutableArray.init()
             for m in i + 1 ..< rang.count {
                 cityAry.add(rang[m])
@@ -249,7 +249,7 @@ class WJPickerView: UIView,UIPickerViewDelegate,UIPickerViewDataSource {
                 return model.province
             }else {
                 let model:PickerModel = self.array[self.selectIndex] as! PickerModel
-                return model.cities?[row] as! String
+                return model.cities?[row] as? String
             }
         }
         let arr:NSArray = self.array.object(at: component) as! NSArray

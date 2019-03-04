@@ -18,7 +18,7 @@ class MoreSelectController: BaseTabViewController {
         tableView.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
         let strDataPath = Bundle.main.path(forResource: "home", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
-        let json = DataJson().data2JSON(data: data as! Data)
+        let json = DataJson().data2JSON(data: data! as Data)
         buildModelCommonByJson(json["data"])
         
     }

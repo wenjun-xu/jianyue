@@ -120,7 +120,7 @@ class OtherDynamicController: BaseViewController , UITableViewDelegate, UITableV
     func loadViewData() {
         let strDataPath = Bundle.main.path(forResource: "otherDynamic", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
-        let json = DataJson().data2JSON(data: data as! Data)
+        let json = DataJson().data2JSON(data: data! as Data)
         buildModelCommonByJson(json["data"])
     }
     

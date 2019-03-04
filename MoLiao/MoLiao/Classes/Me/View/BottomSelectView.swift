@@ -51,7 +51,7 @@ open class BottomSelectView: UIView {
         self.selectCallBack = selectCallBack
         self.cancelCallBack = cancelCallBack
         
-        let count = CGFloat(options.count)
+        _ = CGFloat(options.count)
         tableViewH = CellH
         contentViewH = CancelButtonPadding + CGFloat(tableViewH) + (title == nil ? DefaultHeight : DefaultHeight)
         setupView()
@@ -102,7 +102,7 @@ private extension BottomSelectView {
         //        }
         
         // 设置选项列表
-        let tableViewY = titleLabel == nil ? 0 : DefaultHeight
+        _ = titleLabel == nil ? 0 : DefaultHeight
         let optionTableViewF = CGRect(x: 0, y: 0, width: frame.width, height: CGFloat(tableViewH))
         optionTableView = UITableView(frame: optionTableViewF, style: .plain)
         optionTableView.register(BottomSelectCell.self, forCellReuseIdentifier: "BottomSelectCell")

@@ -14,18 +14,58 @@ class UserNameController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "登录"
+        
+        // 导航栏
+        setNavigation()
         
         view.backgroundColor = UIColor.white
         
-        let loginView = UserNameLoginView(frame: CGRect(x: 0, y: 64, width: kScreenWidth, height: kScreenHeight - 64))
+        let loginView = UserNameLoginView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - 64))
         loginView.delegate = self
         view.addSubview(loginView)
     }
 }
 
+// MARK: - 导航栏
+extension UserNameController {
+    private func setNavigation() {
+       self.navigationItem.leftBarButtonItem = setupLeftBarItem()
+        
+       self.navigationItem.rightBarButtonItem = setupRightIconBarItem(rightTitle: "登录遇到困难？")
+    }
+    
+    /// 导航栏 左侧按钮
+    override func setupLeftBarItemClick() {
+//        _ = self.navigationController?.popViewController(animated: true)
+        
+        print("点击了 导航栏 左侧按钮")
+    }
+    
+    /// 导航栏 右侧按钮
+    override func setupRightBarItemClick() {
+        
+        print("点击了 导航栏 右侧按钮")
+    }
+}
+
 // MARK: - UserNameLoginViewDelegate
 extension UserNameController: UserNameLoginViewDelegate {
+    func loginPhotoClick(LoginView: UserNameLoginView) {
+        print("点击了 手机号验证码登录 ")
+    }
+    
+    func loginAreaClick(LoginView: UserNameLoginView) {
+        print("点击了 选择区号 ")
+    }
+    
+    func loginWeiXinClick(LoginView: UserNameLoginView) {
+        print("点击了 微信登录 ")
+    }
+    
+    func loginQQClick(LoginView: UserNameLoginView) {
+        print("点击了 qq登录 ")
+    }
+    
     func loginButtonClick(LoginView: UserNameLoginView, userName: String, password: String) {
         // 执行登录的请求
         

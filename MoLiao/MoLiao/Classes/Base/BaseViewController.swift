@@ -29,3 +29,44 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
             ]}()
     }
 }
+
+extension BaseViewController {
+    
+    /// 导航栏左侧按钮 - 图片形式
+    public func setupLeftBarItem(leftImage: String = "nav_back") -> UIBarButtonItem {
+        let leftBarItem = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        leftBarItem.setImage(UIImage(named:leftImage), for: .normal)
+        //leftBarItem.
+        leftBarItem.addTarget(self, action: #selector(setupLeftBarItemClick), for: .touchUpInside)
+        return UIBarButtonItem(customView: leftBarItem)
+    }
+    
+    /// 导航栏右侧按钮 - 图片形式
+    public func setupRightIconBarItem(rightImage: String) -> UIBarButtonItem{
+        let rightItem = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        rightItem.setImage(UIImage(named:rightImage), for: .normal)
+        rightItem.addTarget(self, action: #selector(setupRightBarItemClick), for: .touchUpInside)
+        return UIBarButtonItem(customView: rightItem)
+    }
+    
+    /// 导航栏右侧按钮 - 文字形式
+    public func setupRightIconBarItem(rightTitle: String) -> UIBarButtonItem{
+        let rightItem = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 20))
+//        rightItem.setImage(UIImage(named:rightImage), for: .normal)
+        rightItem.setTitle(rightTitle, for: .normal)
+        rightItem.setTitleColor(kWangjiColor, for: .normal)
+        rightItem.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        rightItem.addTarget(self, action: #selector(setupRightBarItemClick), for: .touchUpInside)
+        return UIBarButtonItem(customView: rightItem)
+    }
+    
+    /// 导航栏左侧按钮的点击事件
+    @objc public func setupLeftBarItemClick() {
+        
+    }
+    
+    /// 导航栏右侧按钮的点击事件
+    @objc public func setupRightBarItemClick() {
+        
+    }
+}

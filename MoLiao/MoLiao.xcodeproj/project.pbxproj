@@ -1272,10 +1272,10 @@
 		827BF860222CC2250093EB65 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				827BF869222CC2250093EB65 /* UserNameLoginView.swift */,
 				827BF861222CC2250093EB65 /* BHJPickerView */,
 				827BF867222CC2250093EB65 /* DYScrollRulerView.h */,
 				827BF868222CC2250093EB65 /* DYScrollRulerView.m */,
-				827BF869222CC2250093EB65 /* UserNameLoginView.swift */,
 				827BF86A222CC2250093EB65 /* TDScrollRulerView.swift */,
 			);
 			path = View;

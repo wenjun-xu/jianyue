@@ -9,7 +9,16 @@
 import UIKit
 
 protocol UserNameLoginViewDelegate: NSObjectProtocol {
+    /// 点击了登录按钮
     func loginButtonClick(LoginView: UserNameLoginView, userName: String, password: String)
+    /// 点击了 “ 手机号验证码登录”
+    func loginPhotoClick(LoginView: UserNameLoginView)
+    /// 点击了 "选择区号"
+    func loginAreaClick(LoginView: UserNameLoginView)
+    /// 点击了 "微信登录"
+    func loginWeiXinClick(LoginView: UserNameLoginView)
+    /// 点击了 "QQ登录"
+    func loginQQClick(LoginView: UserNameLoginView)
 }
 
 class UserNameLoginView: UIView {
@@ -54,6 +63,33 @@ class UserNameLoginView: UIView {
     }
 }
 
+// MARK: - 快速登录View
+extension UserNameLoginView {
+    /// 手机号验证码登录
+    @objc private func setPhoneClick() {
+        delegate?.loginPhotoClick(LoginView: self)
+    }
+    
+    /// 选择区号
+    @objc private func setAreaCodeClick() {
+        delegate?.loginAreaClick(LoginView: self)
+    }
+}
+
+// MARK: - 登录按钮的点击事件
+extension UserNameLoginView {
+    /// 微信登录
+    @objc private func setWeiXinLoginClick() {
+        delegate?.loginWeiXinClick(LoginView: self)
+    }
+    
+    /// QQ 登录
+    @objc private func setQQLoginClick() {
+        delegate?.loginQQClick(LoginView: self)
+    }
+}
+
+
 // MARK: - 头像 View
 extension UserNameLoginView {
     /// 头像 View 80 * 80
@@ -63,8 +99,7 @@ extension UserNameLoginView {
         let aPH: CGFloat = frameLoginView.FPhoto.frame
 
         aPhoto.frame = CGRect(x: loginXSpace, y: aPY, width: aPW, height: aPH)
-        aPhoto.backgroundColor = UIColor.gray
-        
+        aPhoto.image = UIImage(named: "IPhoto")
         addSubview(aPhoto)
     }
 }
@@ -149,21 +184,29 @@ extension UserNameLoginView {
         loginBtn.setTitleColor(UIColor.white, for: .normal)
         bgView.addSubview(loginBtn)
 
-        let zhuceBtn = UIButton.init(type: .custom)
-        zhuceBtn.frame = CGRect(x: 0, y: loginBtn.bottomY + 13, width: 80, height: 16)
-        zhuceBtn.setTitle("注册账号", for: .normal)
-        zhuceBtn.setTitleColor(kWangjiColor, for: .normal)
-        bgView.addSubview(zhuceBtn)
+        
+        let iPhoneIdentifyCode = UIButton.init(type: .custom)
+        iPhoneIdentifyCode.frame = CGRect(x: 0, y: loginBtn.bottomY + 13, width:120, height: 16)
+        iPhoneIdentifyCode.setTitle("手机号验证码登录", for: .normal)
+        iPhoneIdentifyCode.setTitleColor(kWangjiColor, for: .normal)
+        iPhoneIdentifyCode.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        iPhoneIdentifyCode.addTarget(self, action: #selector(setPhoneClick), for: .touchUpInside)
+        bgView.addSubview(iPhoneIdentifyCode)
 
-        let wangjiBtn = UIButton.init(type: .custom)
-        wangjiBtn.frame = CGRect(x: bgView.width - 90, y: loginBtn.bottomY + 15, width: 90, height: 16)
-        wangjiBtn.setTitle("忘记密码?", for: .normal)
-        wangjiBtn.setTitleColor(kWangjiColor, for: .normal)
-        bgView.addSubview(wangjiBtn)
+        
+        let areaCodeBtn = UIButton.init(type: .custom)
+        areaCodeBtn.frame = CGRect(x: bgView.width - 90, y: loginBtn.bottomY + 15, width: 90, height: 16)
+        areaCodeBtn.setTitle("选择区号", for: .normal)
+        areaCodeBtn.setTitleColor(kWangjiColor, for: .normal)
+        areaCodeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        areaCodeBtn.addTarget(self, action: #selector(setAreaCodeClick), for: .touchUpInside)
+
+        bgView.addSubview(areaCodeBtn)
         
         return bgView
     }
 }
+
 
 // MARK: - 快速登录View
 extension UserNameLoginView {
@@ -193,17 +236,23 @@ extension UserNameLoginView {
         let awxX: CGFloat = kScreenWidth * 0.5 - awxW - 15
         let awxY: CGFloat = (bgView.height - awxW - aLabel.height) * 0.5
 
-        let weixinImage = UIImageView(frame: CGRect(x: awxX, y: awxY, width: awxW, height: awxW))
-        weixinImage.backgroundColor = UIColor.green
+        let weixinImage = UIButton.init(type: .custom)
+        weixinImage.frame = CGRect(x: awxX, y: awxY, width: awxW, height: awxW)
+        weixinImage.setImage(UIImage(named: "weixin"), for: .normal)
+        weixinImage.addTarget(self, action: #selector(setWeiXinLoginClick), for: .touchUpInside)
+        
         bgView.addSubview(weixinImage)
 
         // QQ图标
-
-        let qqImage = UIImageView(frame: CGRect(x: kScreenWidth * 0.5 + 15, y: awxY, width: awxW, height: awxW))
-        qqImage.backgroundColor = UIColor.blue
+        let qqImage = UIButton.init(type: .custom)
+        qqImage.frame = CGRect(x: kScreenWidth * 0.5 + 15, y: awxY, width: awxW, height: awxW)
+        qqImage.setImage(UIImage(named: "QQ"), for: .normal)
+        qqImage.addTarget(self, action: #selector(setQQLoginClick), for: .touchUpInside)
         bgView.addSubview(qqImage)
     }
 }
+
+
 
 // MARK: - 登录按钮的点击事件
 extension UserNameLoginView {

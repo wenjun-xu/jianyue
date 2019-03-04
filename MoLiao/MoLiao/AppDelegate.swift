@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.backgroundColor = kBgColor
         
+        
+        // 登录界面
+        self.window?.rootViewController = BaseNavgationController(rootViewController: UserNameController())
+        window?.makeKeyAndVisible()
+        
         /*
         //AppKey:注册的AppKey，详细见下面注释。
         //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
@@ -58,10 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
 //        let nvc = BaseNavgationController.init(rootViewController: vc)
 //        self.window?.rootViewController = BaseTabBarController()
         
-        // 登录界面
-        self.window?.rootViewController = BaseNavgationController(rootViewController: LoginViewController())
-
-        window?.makeKeyAndVisible()
+        
         
 
         //        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;

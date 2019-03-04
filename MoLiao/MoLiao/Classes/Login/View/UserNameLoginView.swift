@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  UserNameLoginView.swift
 //  MoLiao
 //
 //  Created by 华通众和 on 2019/2/28.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol LoginViewDelegate: NSObjectProtocol {
-    func loginButtonClick(LoginView: LoginView, userName: String, password: String)
+protocol UserNameLoginViewDelegate: NSObjectProtocol {
+    func loginButtonClick(LoginView: UserNameLoginView, userName: String, password: String)
 }
 
-class LoginView: UIView {
+class UserNameLoginView: UIView {
 
     // 头像
     private let aPhoto = UIImageView()
@@ -22,7 +22,7 @@ class LoginView: UIView {
     /// 密码
     let aTFPassword =  UITextField()
     
-    weak var delegate: LoginViewDelegate?
+    weak var delegate: UserNameLoginViewDelegate?
     
     //////// frame值 ////////
     /// x的值
@@ -55,7 +55,7 @@ class LoginView: UIView {
 }
 
 // MARK: - 头像 View
-extension LoginView {
+extension UserNameLoginView {
     /// 头像 View 80 * 80
     private func setUpUIViewWithPhoto() {
         let aPY: CGFloat = 0
@@ -70,7 +70,7 @@ extension LoginView {
 }
 
 // MARK: - 用户名和密码 View
-extension LoginView {
+extension UserNameLoginView {
     
     /// 用户名和密码 View
     private func setUIViewWithLoginView() -> UIView {
@@ -130,7 +130,7 @@ extension LoginView {
 }
 
 // MARK: - 登录View
-extension LoginView {
+extension UserNameLoginView {
     private func setupUIViewWithLoginBtn(frame: CGRect) -> UIView{
         let bgView = UIView(frame: frame)
         
@@ -166,7 +166,7 @@ extension LoginView {
 }
 
 // MARK: - 快速登录View
-extension LoginView {
+extension UserNameLoginView {
     private func setupUIViewWithFastLogin(frame: CGRect) {
         let bgView = UIView(frame: frame)
         addSubview(bgView)
@@ -206,7 +206,7 @@ extension LoginView {
 }
 
 // MARK: - 登录按钮的点击事件
-extension LoginView {
+extension UserNameLoginView {
     @objc private func loginClick() {
         
         if (aTFPassword.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty) || (aTFPhone.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty) {
@@ -219,7 +219,7 @@ extension LoginView {
 }
 
 // MARK: - UITextFieldDelegate
-extension LoginView: UITextFieldDelegate {
+extension UserNameLoginView: UITextFieldDelegate {
     // MARK:- 5 点击手势
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        self.view.endEditing(true)

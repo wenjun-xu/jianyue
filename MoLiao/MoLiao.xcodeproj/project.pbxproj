@@ -136,7 +136,7 @@
 		827BFA3A222CC2260093EB65 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF865222CC2250093EB65 /* Configuration.swift */; };
 		827BFA3B222CC2260093EB65 /* NSDate+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF866222CC2250093EB65 /* NSDate+Date.swift */; };
 		827BFA3C222CC2260093EB65 /* DYScrollRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 827BF868222CC2250093EB65 /* DYScrollRulerView.m */; };
-		827BFA3D222CC2260093EB65 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF869222CC2250093EB65 /* LoginView.swift */; };
+		827BFA3D222CC2260093EB65 /* UserNameLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF869222CC2250093EB65 /* UserNameLoginView.swift */; };
 		827BFA3E222CC2260093EB65 /* TDScrollRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF86A222CC2250093EB65 /* TDScrollRulerView.swift */; };
 		827BFA3F222CC2260093EB65 /* BottomSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF86D222CC2250093EB65 /* BottomSelectCell.swift */; };
 		827BFA40222CC2260093EB65 /* LookMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF86E222CC2250093EB65 /* LookMeCell.swift */; };
@@ -285,6 +285,7 @@
 		827BFACF222CC2260093EB65 /* EaseConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 827BF9B9222CC2260093EB65 /* EaseConversationCell.m */; };
 		827BFAD0222CC2260093EB65 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 827BF9BB222CC2260093EB65 /* EaseUIResource.bundle */; };
 		827BFAD1222CC2260093EB65 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF9BD222CC2260093EB65 /* MessageModel.swift */; };
+		827BFAD3222CC8BC0093EB65 /* UserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BFAD2222CC8BC0093EB65 /* UserNameController.swift */; };
 		CC09845A21D393120074E7FE /* WJConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC09845921D393120074E7FE /* WJConfigure.swift */; };
 		CC11DCED21E1093A002424C3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = CC11DCEC21E1093A002424C3 /* message.json */; };
 		CC1EAAD721E1E3DA000BACE5 /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC1EAAD221E1E3DA000BACE5 /* GuideImage.bundle */; };
@@ -522,7 +523,7 @@
 		827BF866222CC2250093EB65 /* NSDate+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Date.swift"; sourceTree = "<group>"; };
 		827BF867222CC2250093EB65 /* DYScrollRulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYScrollRulerView.h; sourceTree = "<group>"; };
 		827BF868222CC2250093EB65 /* DYScrollRulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYScrollRulerView.m; sourceTree = "<group>"; };
-		827BF869222CC2250093EB65 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		827BF869222CC2250093EB65 /* UserNameLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNameLoginView.swift; sourceTree = "<group>"; };
 		827BF86A222CC2250093EB65 /* TDScrollRulerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDScrollRulerView.swift; sourceTree = "<group>"; };
 		827BF86D222CC2250093EB65 /* BottomSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSelectCell.swift; sourceTree = "<group>"; };
 		827BF86E222CC2250093EB65 /* LookMeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookMeCell.swift; sourceTree = "<group>"; };
@@ -811,6 +812,7 @@
 		827BF9B9222CC2260093EB65 /* EaseConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseConversationCell.m; sourceTree = "<group>"; };
 		827BF9BB222CC2260093EB65 /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
 		827BF9BD222CC2260093EB65 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		827BFAD2222CC8BC0093EB65 /* UserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameController.swift; sourceTree = "<group>"; };
 		B811B5F5CD0F3DD3D8F486EF /* Pods-MoLiao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiao.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiao/Pods-MoLiao.release.xcconfig"; sourceTree = "<group>"; };
 		CC09845921D393120074E7FE /* WJConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJConfigure.swift; sourceTree = "<group>"; };
 		CC11DCEC21E1093A002424C3 /* message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
@@ -1250,10 +1252,11 @@
 		827BF853222CC2250093EB65 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				827BF857222CC2250093EB65 /* LoginViewController.swift */,
+				827BFAD2222CC8BC0093EB65 /* UserNameController.swift */,
 				827BF854222CC2250093EB65 /* AccountViewController.swift */,
 				827BF855222CC2250093EB65 /* CodeViewController.swift */,
 				827BF856222CC2250093EB65 /* HomePageController.swift */,
-				827BF857222CC2250093EB65 /* LoginViewController.swift */,
 				827BF858222CC2250093EB65 /* RegistEightController.swift */,
 				827BF859222CC2250093EB65 /* RegistFiveController.swift */,
 				827BF85A222CC2250093EB65 /* RegistFourController.swift */,
@@ -1272,7 +1275,7 @@
 				827BF861222CC2250093EB65 /* BHJPickerView */,
 				827BF867222CC2250093EB65 /* DYScrollRulerView.h */,
 				827BF868222CC2250093EB65 /* DYScrollRulerView.m */,
-				827BF869222CC2250093EB65 /* LoginView.swift */,
+				827BF869222CC2250093EB65 /* UserNameLoginView.swift */,
 				827BF86A222CC2250093EB65 /* TDScrollRulerView.swift */,
 			);
 			path = View;
@@ -2550,6 +2553,7 @@
 				827BFA05222CC2260093EB65 /* UIView+HXExtension.m in Sources */,
 				827BFA80222CC2260093EB65 /* MWTapDetectingImageView.m in Sources */,
 				827BFAB9222CC2260093EB65 /* EaseViewController.m in Sources */,
+				827BFAD3222CC8BC0093EB65 /* UserNameController.swift in Sources */,
 				827BFA44222CC2260093EB65 /* LookSegmentController.swift in Sources */,
 				827BFAC4222CC2260093EB65 /* EaseBubbleView+Video.m in Sources */,
 				827BF9DA222CC2260093EB65 /* HXDatePhotoViewController.m in Sources */,
@@ -2578,7 +2582,7 @@
 				827BFA7E222CC2260093EB65 /* MWPhoto.m in Sources */,
 				827BFAA5222CC2260093EB65 /* EaseMessageModel.m in Sources */,
 				827BF9CF222CC2260093EB65 /* HXCustomCameraController.m in Sources */,
-				827BFA3D222CC2260093EB65 /* LoginView.swift in Sources */,
+				827BFA3D222CC2260093EB65 /* UserNameLoginView.swift in Sources */,
 				827BFA0A222CC2260093EB65 /* MMImageListView.swift in Sources */,
 				827BFA4B222CC2260093EB65 /* VipViewController.swift in Sources */,
 				827BFA41222CC2260093EB65 /* MeDetailCell.swift in Sources */,

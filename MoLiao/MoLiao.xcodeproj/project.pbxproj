@@ -286,6 +286,7 @@
 		827BFAD0222CC2260093EB65 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 827BF9BB222CC2260093EB65 /* EaseUIResource.bundle */; };
 		827BFAD1222CC2260093EB65 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF9BD222CC2260093EB65 /* MessageModel.swift */; };
 		827BFAD3222CC8BC0093EB65 /* UserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BFAD2222CC8BC0093EB65 /* UserNameController.swift */; };
+		827BFAD5222CF9DE0093EB65 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BFAD4222CF9DE0093EB65 /* LoginView.swift */; };
 		CC09845A21D393120074E7FE /* WJConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC09845921D393120074E7FE /* WJConfigure.swift */; };
 		CC11DCED21E1093A002424C3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = CC11DCEC21E1093A002424C3 /* message.json */; };
 		CC1EAAD721E1E3DA000BACE5 /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC1EAAD221E1E3DA000BACE5 /* GuideImage.bundle */; };
@@ -813,6 +814,7 @@
 		827BF9BB222CC2260093EB65 /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
 		827BF9BD222CC2260093EB65 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		827BFAD2222CC8BC0093EB65 /* UserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameController.swift; sourceTree = "<group>"; };
+		827BFAD4222CF9DE0093EB65 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B811B5F5CD0F3DD3D8F486EF /* Pods-MoLiao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiao.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiao/Pods-MoLiao.release.xcconfig"; sourceTree = "<group>"; };
 		CC09845921D393120074E7FE /* WJConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJConfigure.swift; sourceTree = "<group>"; };
 		CC11DCEC21E1093A002424C3 /* message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
@@ -1272,6 +1274,7 @@
 		827BF860222CC2250093EB65 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				827BFAD4222CF9DE0093EB65 /* LoginView.swift */,
 				827BF869222CC2250093EB65 /* UserNameLoginView.swift */,
 				827BF861222CC2250093EB65 /* BHJPickerView */,
 				827BF867222CC2250093EB65 /* DYScrollRulerView.h */,
@@ -2521,6 +2524,7 @@
 				827BFA11222CC2260093EB65 /* UIView+Geometry.m in Sources */,
 				827BFA34222CC2260093EB65 /* RegistSixController.swift in Sources */,
 				CC9FBC4021F711A10038AB94 /* ZUtils.swift in Sources */,
+				827BFAD5222CF9DE0093EB65 /* LoginView.swift in Sources */,
 				827BFA68222CC2260093EB65 /* MJRefreshAutoFooter.m in Sources */,
 				827BFA20222CC2260093EB65 /* UserInfoViewController.swift in Sources */,
 				827BFA62222CC2260093EB65 /* wav.mm in Sources */,

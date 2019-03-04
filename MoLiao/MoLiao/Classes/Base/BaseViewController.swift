@@ -16,6 +16,9 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
         view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false //0点在导航栏下面
         creatNavigationBarColor(barTintColor: kNavColor, tintColor: UIColor.black.alpha(0.8), barTitleColor: UIColor.black)
+        
+        // 去掉导航的阴影
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
    
     

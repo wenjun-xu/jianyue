@@ -15,6 +15,9 @@ class UserNameController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 显示导航栏
+        self.navigationController?.navigationBar.isHidden = false
+        
         // 导航栏
         setNavigation()
         

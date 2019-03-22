@@ -24,11 +24,11 @@ class UserInfoViewController: BaseViewController,UITableViewDataSource ,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         let navController = navigationController as? BaseNavgationController
-        if let edgePan = navController?.getScreenEdgePanGestureRecognizer() {
-            //在某个方法识别失败后才继续当前手势的识别
-            //如果导航栏的侧滑手势识别失败，才会执行scrolleview的手势
-            scrollView.panGestureRecognizer.require(toFail: edgePan)
-        }
+//        if let edgePan = navController?.getScreenEdgePanGestureRecognizer() {
+//            //在某个方法识别失败后才继续当前手势的识别
+//            //如果导航栏的侧滑手势识别失败，才会执行scrolleview的手势
+//            scrollView.panGestureRecognizer.require(toFail: edgePan)
+//        }
         
         let cyclePictureView: WJCyclePictureView = WJCyclePictureView(frame: CGRect(x: 0, y: -kStatusBarH, width: kScreenWidth, height: kInfoSDrecycleViewH), pictures: arrImgUrl)
         cyclePictureView.direction = .left

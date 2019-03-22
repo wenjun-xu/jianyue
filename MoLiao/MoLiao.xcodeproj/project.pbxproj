@@ -287,6 +287,8 @@
 		827BFAD1222CC2260093EB65 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF9BD222CC2260093EB65 /* MessageModel.swift */; };
 		827BFAD3222CC8BC0093EB65 /* UserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BFAD2222CC8BC0093EB65 /* UserNameController.swift */; };
 		827BFAD5222CF9DE0093EB65 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BFAD4222CF9DE0093EB65 /* LoginView.swift */; };
+		82C23E5F2244DF2300F609A2 /* IphoneNumRegistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E5E2244DF2300F609A2 /* IphoneNumRegistController.swift */; };
+		82C23E612244E0AC00F609A2 /* IphoneNumRegistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E602244E0AC00F609A2 /* IphoneNumRegistView.swift */; };
 		CC09845A21D393120074E7FE /* WJConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC09845921D393120074E7FE /* WJConfigure.swift */; };
 		CC11DCED21E1093A002424C3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = CC11DCEC21E1093A002424C3 /* message.json */; };
 		CC1EAAD721E1E3DA000BACE5 /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC1EAAD221E1E3DA000BACE5 /* GuideImage.bundle */; };
@@ -815,6 +817,8 @@
 		827BF9BD222CC2260093EB65 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		827BFAD2222CC8BC0093EB65 /* UserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameController.swift; sourceTree = "<group>"; };
 		827BFAD4222CF9DE0093EB65 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		82C23E5E2244DF2300F609A2 /* IphoneNumRegistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneNumRegistController.swift; sourceTree = "<group>"; };
+		82C23E602244E0AC00F609A2 /* IphoneNumRegistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneNumRegistView.swift; sourceTree = "<group>"; };
 		B811B5F5CD0F3DD3D8F486EF /* Pods-MoLiao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiao.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiao/Pods-MoLiao.release.xcconfig"; sourceTree = "<group>"; };
 		CC09845921D393120074E7FE /* WJConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJConfigure.swift; sourceTree = "<group>"; };
 		CC11DCEC21E1093A002424C3 /* message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
@@ -915,6 +919,7 @@
 		827BF79D222CC2250093EB65 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CC2B7FA321D0B992009B4474 /* AppDelegate.swift */,
 				827BF79E222CC2250093EB65 /* Base */,
 				827BF7A7222CC2250093EB65 /* Dynamic */,
 				827BF82D222CC2250093EB65 /* Frame */,
@@ -1256,6 +1261,7 @@
 			children = (
 				827BF857222CC2250093EB65 /* LoginViewController.swift */,
 				827BFAD2222CC8BC0093EB65 /* UserNameController.swift */,
+				82C23E5E2244DF2300F609A2 /* IphoneNumRegistController.swift */,
 				827BF854222CC2250093EB65 /* AccountViewController.swift */,
 				827BF855222CC2250093EB65 /* CodeViewController.swift */,
 				827BF856222CC2250093EB65 /* HomePageController.swift */,
@@ -1276,6 +1282,7 @@
 			children = (
 				827BFAD4222CF9DE0093EB65 /* LoginView.swift */,
 				827BF869222CC2250093EB65 /* UserNameLoginView.swift */,
+				82C23E602244E0AC00F609A2 /* IphoneNumRegistView.swift */,
 				827BF861222CC2250093EB65 /* BHJPickerView */,
 				827BF867222CC2250093EB65 /* DYScrollRulerView.h */,
 				827BF868222CC2250093EB65 /* DYScrollRulerView.m */,
@@ -2036,7 +2043,6 @@
 			children = (
 				827BF79D222CC2250093EB65 /* Classes */,
 				CC2B7FE621D0B9BD009B4474 /* Common */,
-				CC2B7FA321D0B992009B4474 /* AppDelegate.swift */,
 				CC2B7FA521D0B992009B4474 /* ViewController.swift */,
 				CC2B7FF321D0B9E5009B4474 /* MoLiao-Bridging-Header.h */,
 				CC2B7FA721D0B992009B4474 /* Main.storyboard */,
@@ -2194,7 +2200,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "徐庆标";
+				ORGANIZATIONNAME = "文瑶";
 				TargetAttributes = {
 					CC2B7F9F21D0B992009B4474 = {
 						CreatedOnToolsVersion = 10.1;
@@ -2432,6 +2438,7 @@
 				827BFA69222CC2260093EB65 /* MJRefreshBackFooter.m in Sources */,
 				827BF9C0222CC2260093EB65 /* BaseNavHiddenController.swift in Sources */,
 				827BFA4F222CC2260093EB65 /* SegmentThreeController.swift in Sources */,
+				82C23E5F2244DF2300F609A2 /* IphoneNumRegistController.swift in Sources */,
 				827BFA82222CC2260093EB65 /* MWZoomingScrollView.m in Sources */,
 				827BFAA6222CC2260093EB65 /* EaseUserModel.m in Sources */,
 				827BF9C5222CC2260093EB65 /* OtherDynamicController.swift in Sources */,
@@ -2647,6 +2654,7 @@
 				827BF9D5222CC2260093EB65 /* HXDatePhotoInteractiveTransition.m in Sources */,
 				827BFAB0222CC2260093EB65 /* EaseEmojiEmoticons.m in Sources */,
 				CC77E40A21FAAC5A009A0C49 /* WJSegmentView.swift in Sources */,
+				82C23E612244E0AC00F609A2 /* IphoneNumRegistView.swift in Sources */,
 				827BFA1F222CC2260093EB65 /* SeachViewController.swift in Sources */,
 				CC62D31021D3D18E00CEE184 /* StringExtension.swift in Sources */,
 				827BFABB222CC2260093EB65 /* EaseBaseMessageCell.m in Sources */,

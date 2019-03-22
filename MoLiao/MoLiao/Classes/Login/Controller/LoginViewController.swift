@@ -3,8 +3,8 @@
 //  LoginViewController.swift
 //  MoLiao
 //
-//  Created by 徐庆标 on 2019/1/6.
-//  Copyright © 2019 徐庆标. All rights reserved.
+//  Created by 文瑶 on 2019/1/6.
+//  Copyright © 2019 文瑶. All rights reserved.
 //
 
 import UIKit
@@ -14,18 +14,24 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "登录"
+//        self.title = "登录"
         
         view.backgroundColor = UIColor.white
         
-        // 隐藏导航栏
-        self.navigationController?.navigationBar.isHidden = true
-
         let logFrame = CGRect(x: 0, y: kScreenHeight - 140, width: kScreenWidth, height: 140)
+
         let loginView = LoginView(frame: logFrame)
         loginView.backgroundColor = UIColor.orange
         loginView.delegate = self
         self.view.addSubview(loginView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("kScreenHeight = \(kScreenHeight)")
+        // 隐藏导航栏
+        self.navigationController?.navigationBar.isHidden = true
     }
 }
 

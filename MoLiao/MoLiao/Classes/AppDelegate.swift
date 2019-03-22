@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.backgroundColor = kBgColor
-        
+ 
         
         // 登录界面
-        self.window?.rootViewController = BaseNavgationController(rootViewController: LoginViewController()) // BaseNavgationController(rootViewController: UserNameController())
+        self.window?.rootViewController = BaseNavgationController(rootViewController: RegistEightController()) // BaseNavgationController(rootViewController: UserNameController())
         window?.makeKeyAndVisible()
         
         /*

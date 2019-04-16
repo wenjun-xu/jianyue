@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		09379D8EB4CF2FC15520E03D /* Pods_MoLiao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFCD51059B8CC06EBBDE257 /* Pods_MoLiao.framework */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
+		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		516512C40DB813EF92229E24 /* Pods_MoLiaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD39F73A8594B9C03F11633F /* Pods_MoLiaoUITests.framework */; };
 		827BF9BE222CC2260093EB65 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF79F222CC2250093EB65 /* BackButton.swift */; };
 		827BF9BF222CC2260093EB65 /* BaseNavgationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A0222CC2250093EB65 /* BaseNavgationController.swift */; };
@@ -344,6 +345,7 @@
 		15A7A7C707B510E01860D0A1 /* Pods-MoLiaoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
+		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
 		257D0754854145568C900FED /* Pods-MoLiaoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoTests/Pods-MoLiaoTests.release.xcconfig"; sourceTree = "<group>"; };
 		37104A10F0E54510DE149C2E /* Pods_MoLiaoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoLiaoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFCD51059B8CC06EBBDE257 /* Pods_MoLiao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoLiao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1284,6 +1286,7 @@
 				827BF868222CC2250093EB65 /* DYScrollRulerView.m */,
 				827BF86A222CC2250093EB65 /* TDScrollRulerView.swift */,
 				20EA57162265A43B003FE2D2 /* MLAccountView.swift */,
+				20EA57182265AB70003FE2D2 /* MLCodeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2468,6 +2471,7 @@
 				827BFA9D222CC2260093EB65 /* UIImage+MultiFormat.m in Sources */,
 				827BFA88222CC2260093EB65 /* PSTCollectionViewController.m in Sources */,
 				CC09845A21D393120074E7FE /* WJConfigure.swift in Sources */,
+				20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */,
 				827BFA92222CC2260093EB65 /* MKAnnotationView+WebCache.m in Sources */,
 				827BFA8B222CC2260093EB65 /* PSTCollectionViewItemKey.m in Sources */,
 				827BFA67222CC2260093EB65 /* MBProgressHUD.m in Sources */,

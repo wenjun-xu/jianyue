@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
         
         
         // 登录界面
-        self.window?.rootViewController = BaseNavgationController(rootViewController: AccountViewController()) // BaseNavgationController(rootViewController: UserNameController())
+        self.window?.rootViewController = BaseNavgationController(rootViewController: CodeViewController()) // BaseNavgationController(rootViewController: UserNameController())
         window?.makeKeyAndVisible()
         
         /*

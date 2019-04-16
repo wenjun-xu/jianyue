@@ -3,7 +3,7 @@
 //  MoLiao
 //
 //  Created by 华通众和 on 2019/3/4.
-//  Copyright © 2019年 文瑶. All rights reserved.
+//  Copyright © 2019年 徐庆标. All rights reserved.
 //
 
 import UIKit
@@ -39,7 +39,7 @@ extension UserNameController {
     
     /// 导航栏 左侧按钮
     override func setupLeftBarItemClick() {
-        _ = self.navigationController?.popViewController(animated: true)
+//        _ = self.navigationController?.popViewController(animated: true)
         
         print("点击了 导航栏 左侧按钮")
     }

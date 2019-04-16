@@ -1,27 +1,28 @@
 //
-//  IphoneNumRegistView.swift
+//  UserNameLoginView.swift
 //  MoLiao
 //
-//  Created by 华通众和 on 2019/3/22.
-//  Copyright © 2019年 文瑶. All rights reserved.
+//  Created by 华通众和 on 2019/2/28.
+//  Copyright © 2019年 徐庆标. All rights reserved.
 //
 
 import UIKit
-protocol IphoneNumRegistViewDelegate: NSObjectProtocol {
-    /// 点击了获取验证码按钮
-    func loginButtonClick(LoginView: IphoneNumRegistView, userName: String, password: String)
+
+protocol UserNameLoginViewDelegate: NSObjectProtocol {
+    /// 点击了登录按钮
+    func loginButtonClick(LoginView: UserNameLoginView, userName: String, password: String)
     /// 点击了 “ 手机号验证码登录”
-    func loginPhotoClick(LoginView: IphoneNumRegistView)
+    func loginPhotoClick(LoginView: UserNameLoginView)
     /// 点击了 "选择区号"
-    func loginAreaClick(LoginView: IphoneNumRegistView)
+    func loginAreaClick(LoginView: UserNameLoginView)
     /// 点击了 "微信登录"
-    func loginWeiXinClick(LoginView: IphoneNumRegistView)
+    func loginWeiXinClick(LoginView: UserNameLoginView)
     /// 点击了 "QQ登录"
-    func loginQQClick(LoginView: IphoneNumRegistView)
+    func loginQQClick(LoginView: UserNameLoginView)
 }
 
-class IphoneNumRegistView: UIView {
-    
+class UserNameLoginView: UIView {
+
     // 头像
     private let aPhoto = UIImageView()
     
@@ -30,7 +31,7 @@ class IphoneNumRegistView: UIView {
     /// 密码
     let aTFPassword =  UITextField()
     
-    weak var delegate: IphoneNumRegistViewDelegate?
+    weak var delegate: UserNameLoginViewDelegate?
     
     //////// frame值 ////////
     /// x的值
@@ -63,7 +64,7 @@ class IphoneNumRegistView: UIView {
 }
 
 // MARK: - 快速登录View
-extension IphoneNumRegistView {
+extension UserNameLoginView {
     /// 手机号验证码登录
     @objc private func setPhoneClick() {
         delegate?.loginPhotoClick(LoginView: self)
@@ -76,7 +77,7 @@ extension IphoneNumRegistView {
 }
 
 // MARK: - 登录按钮的点击事件
-extension IphoneNumRegistView {
+extension UserNameLoginView {
     /// 微信登录
     @objc private func setWeiXinLoginClick() {
         delegate?.loginWeiXinClick(LoginView: self)
@@ -90,13 +91,13 @@ extension IphoneNumRegistView {
 
 
 // MARK: - 头像 View
-extension IphoneNumRegistView {
+extension UserNameLoginView {
     /// 头像 View 80 * 80
     private func setUpUIViewWithPhoto() {
         let aPY: CGFloat = 0
         let aPW: CGFloat = frameLoginView.FPhoto.frame
         let aPH: CGFloat = frameLoginView.FPhoto.frame
-        
+
         aPhoto.frame = CGRect(x: loginXSpace, y: aPY, width: aPW, height: aPH)
         aPhoto.image = UIImage(named: "IPhoto")
         addSubview(aPhoto)
@@ -104,7 +105,7 @@ extension IphoneNumRegistView {
 }
 
 // MARK: - 用户名和密码 View
-extension IphoneNumRegistView {
+extension UserNameLoginView {
     
     /// 用户名和密码 View
     private func setUIViewWithLoginView() -> UIView {
@@ -114,7 +115,7 @@ extension IphoneNumRegistView {
         let aCY: CGFloat = aPhoto.frame.maxY + 16
         let aCW: CGFloat = kScreenWidth - 2 * loginXSpace
         let aCH: CGFloat = 148
-        
+
         centerView.frame = CGRect(x: loginXSpace, y: aCY, width: aCW, height: aCH)
         
         // 账号登录 Label
@@ -145,7 +146,7 @@ extension IphoneNumRegistView {
         let phoneLine = UIView.init(frame: CGRect(x: 0, y: aTFPhone.bottomY, width: centerView.width, height: tfLine))
         phoneLine.backgroundColor = kWangjiColor
         centerView.addSubview(phoneLine)
-        
+
         // 登录密码
         aTFPassword.frame = CGRect(x: 0, y: aTFPhone.bottomY , width: centerView.width, height: tfHeight)
         aTFPassword.delegate = self
@@ -164,7 +165,7 @@ extension IphoneNumRegistView {
 }
 
 // MARK: - 登录View
-extension IphoneNumRegistView {
+extension UserNameLoginView {
     private func setupUIViewWithLoginBtn(frame: CGRect) -> UIView{
         let bgView = UIView(frame: frame)
         
@@ -173,7 +174,7 @@ extension IphoneNumRegistView {
         
         let aLBW: CGFloat = kScreenWidth - 2 * loginXSpace
         let aLBH: CGFloat = frameLoginView.FLoginBtn.frame
-        
+            
         loginBtn.frame = CGRect(x: 0, y: 0, width:aLBW, height: aLBH)
         loginBtn.layer.cornerRadius = 16
         loginBtn.setTitle("登 录", for: .normal)
@@ -182,7 +183,7 @@ extension IphoneNumRegistView {
         loginBtn.backgroundColor = UIColor(red: 209/255.0, green: 209/255.0, blue: 209/255.0, alpha: 1)
         loginBtn.setTitleColor(UIColor.white, for: .normal)
         bgView.addSubview(loginBtn)
-        
+
         
         let iPhoneIdentifyCode = UIButton.init(type: .custom)
         iPhoneIdentifyCode.frame = CGRect(x: 0, y: loginBtn.bottomY + 13, width:120, height: 16)
@@ -191,7 +192,7 @@ extension IphoneNumRegistView {
         iPhoneIdentifyCode.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         iPhoneIdentifyCode.addTarget(self, action: #selector(setPhoneClick), for: .touchUpInside)
         bgView.addSubview(iPhoneIdentifyCode)
-        
+
         
         let areaCodeBtn = UIButton.init(type: .custom)
         areaCodeBtn.frame = CGRect(x: bgView.width - 90, y: loginBtn.bottomY + 15, width: 90, height: 16)
@@ -199,7 +200,7 @@ extension IphoneNumRegistView {
         areaCodeBtn.setTitleColor(kWangjiColor, for: .normal)
         areaCodeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         areaCodeBtn.addTarget(self, action: #selector(setAreaCodeClick), for: .touchUpInside)
-        
+
         bgView.addSubview(areaCodeBtn)
         
         return bgView
@@ -208,7 +209,7 @@ extension IphoneNumRegistView {
 
 
 // MARK: - 快速登录View
-extension IphoneNumRegistView {
+extension UserNameLoginView {
     private func setupUIViewWithFastLogin(frame: CGRect) {
         let bgView = UIView(frame: frame)
         addSubview(bgView)
@@ -234,14 +235,14 @@ extension IphoneNumRegistView {
         let awxW: CGFloat = 60
         let awxX: CGFloat = kScreenWidth * 0.5 - awxW - 15
         let awxY: CGFloat = (bgView.height - awxW - aLabel.height) * 0.5
-        
+
         let weixinImage = UIButton.init(type: .custom)
         weixinImage.frame = CGRect(x: awxX, y: awxY, width: awxW, height: awxW)
         weixinImage.setImage(UIImage(named: "weixin"), for: .normal)
         weixinImage.addTarget(self, action: #selector(setWeiXinLoginClick), for: .touchUpInside)
         
         bgView.addSubview(weixinImage)
-        
+
         // QQ图标
         let qqImage = UIButton.init(type: .custom)
         qqImage.frame = CGRect(x: kScreenWidth * 0.5 + 15, y: awxY, width: awxW, height: awxW)
@@ -251,10 +252,8 @@ extension IphoneNumRegistView {
     }
 }
 
-
-
 // MARK: - 登录按钮的点击事件
-extension IphoneNumRegistView {
+extension UserNameLoginView {
     @objc private func loginClick() {
         
         if (aTFPassword.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty) || (aTFPhone.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty) {
@@ -267,20 +266,20 @@ extension IphoneNumRegistView {
 }
 
 // MARK: - UITextFieldDelegate
-extension IphoneNumRegistView: UITextFieldDelegate {
+extension UserNameLoginView: UITextFieldDelegate {
     // MARK:- 5 点击手势
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //        self.view.endEditing(true)
-        //        loginFallingAnimate()
+//        self.view.endEditing(true)
+//        loginFallingAnimate()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //        loginRisingAnimate()
+//        loginRisingAnimate()
         return true
     }
     // MARK:- 3 uitextfield编辑完成后逻辑处理
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //        loginFallingAnimate()
+//        loginFallingAnimate()
         return true
     }
 }

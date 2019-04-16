@@ -9,7 +9,8 @@
 import UIKit
 
 class RegistFiveController: BaseViewController {
-    var tempBtn:UIButton!
+    var tempBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "完善信息(5/7)"

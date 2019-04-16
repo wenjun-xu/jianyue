@@ -32,7 +32,7 @@ class BaseNavHiddenController: BaseViewController,UITableViewDataSource, UITable
         let sousuoView = UIView.init(frame: CGRect(x: 15, y: kStatusBarH, width: kNavH, height: kNavH))
         naviView.addSubview(sousuoView)
         sousuo = UIImageView.init(frame: CGRect(x: 0, y: 8, width: 21, height: 21))
-        sousuo.image = UIImage(named:"导航栏返回")
+        sousuo.image = UIImage(named:"nav_back")
         sousuoView.addSubview(sousuo)
         view.addSubview(naviView)
         

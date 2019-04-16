@@ -149,7 +149,7 @@ class MomentCell: UITableViewCell, MLLinkLabelDelegate {
                 
                 let likeLab = MLLabelUtil.kMLLinkLable()
                 likeLab.delegate = self
-                likeLab.attributedText = MLLabelUtil.kMLLinkLabelAttributedText(objc: moment.praiseNameList)
+                likeLab.attributedText = MLLabelUtil.kMLLinkLabelAttributedText(objc: moment.praiseNameList ?? "")
                 let attrStrSize = likeLab.preferredSize(withMaxWidth: CGFloat(kTextWidth))
                 likeLab.frame = CGRect(x: 5.0, y: 8.0, width: attrStrSize.width, height: attrStrSize.height)
                 self.commentView.addSubview(likeLab)

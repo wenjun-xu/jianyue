@@ -124,16 +124,16 @@ class ChooseFriendController: BaseTabViewController {
             }
         }else if indexPath.row == 4 {
             BRStringPickerView.showStringPicker(withTitle: "学历", dataSource: arrWithPlist(string: "xueli"), defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
             }
         }else if indexPath.row == 5 {
             BRStringPickerView.showStringPicker(withTitle: "婚姻状况", dataSource: hunyinSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
             }
         }else if indexPath.row == 6 {
           
             BRStringPickerView.showStringPicker(withTitle: "职业", dataSource: arrWithPlist(string: "zhiye"), defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
             }
         }else if indexPath.row == 7 {
             BRAddressPickerView.showAddressPicker(withShowType: .city, defaultSelected: nil, isAutoSelect: true, themeColor: picViewColor, resultBlock: { (province, city, area) in
@@ -146,11 +146,11 @@ class ChooseFriendController: BaseTabViewController {
         }else if indexPath.row == 8 {
            
             BRStringPickerView.showStringPicker(withTitle: "星座", dataSource: arrWithPlist(string: "xingzuo"), defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
             }
         }else {
             BRStringPickerView.showStringPicker(withTitle: "住房情况", dataSource: zhufangSource, defaultSelValue: nil, isAutoSelect: true, themeColor: picViewColor) { (xueliStr) in
-                cell.rightLabel.text = xueliStr as! String
+                cell.rightLabel.text = xueliStr as? String
             }
         }
     }

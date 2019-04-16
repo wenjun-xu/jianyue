@@ -2,8 +2,8 @@
 //  AccountViewController.swift
 //  MoLiao
 //
-//  Created by 文瑶 on 2019/1/8.
-//  Copyright © 2019 文瑶. All rights reserved.
+//  Created by 徐庆标 on 2019/1/8.
+//  Copyright © 2019 徐庆标. All rights reserved.
 //
 
 import UIKit

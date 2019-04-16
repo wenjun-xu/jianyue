@@ -18,7 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.backgroundColor = kBgColor
-
+        
+        
+        // 登录界面
+        self.window?.rootViewController = BaseNavgationController(rootViewController: LoginViewController()) // BaseNavgationController(rootViewController: UserNameController())
+        window?.makeKeyAndVisible()
+        
         /*
         //AppKey:注册的AppKey，详细见下面注释。
         //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
@@ -33,34 +38,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
         UserDefaults.standard.set("徐庆标", forKey: "nickName")
         UserDefaults.standard.synchronize()
 
- 
         
-//        //执行登录的请求
-//        EMClient.shared().login(withUsername: "xu", password: "123") { (aUsername, aError) in
-//            if (aError != nil) {
-//                print("登录失败 \(aError!.code)")
-//
-//                if (aError?.code == EMErrorUserAuthenticationFailed) {
-//                    print("密码错误 \(aError!.code)")
-//
-//                } else if (aError?.code == EMErrorUserNotFound) {
-//                    print("用户不存在 \(aError!.code)")
-//                }
-//
-//            }else {
-//                print("登录成功")
-//
-//            }
-//        }
+        //执行登录的请求
+        EMClient.shared().login(withUsername: "xu", password: "123") { (aUsername, aError) in
+            if (aError != nil) {
+                print("登录失败 \(aError!.code)")
+                
+                if (aError?.code == EMErrorUserAuthenticationFailed) {
+                    print("密码错误 \(aError!.code)")
+                    
+                } else if (aError?.code == EMErrorUserNotFound) {
+                    print("用户不存在 \(aError!.code)")
+                }
+                
+            }else {
+                print("登录成功")
+                
+            }
+        }
 
-        
+        */
         
 //        let vc = HomePageController()
 //        let nvc = BaseNavgationController.init(rootViewController: vc)
 //        self.window?.rootViewController = BaseTabBarController()
         
-        self.window?.rootViewController = BaseNavgationController.init(rootViewController: LoginViewController())
-        window?.makeKeyAndVisible()
+        
         
 
         //        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
@@ -153,5 +156,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
     }
 
 }
- */
-}
+

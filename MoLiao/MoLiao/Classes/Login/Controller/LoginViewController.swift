@@ -3,107 +3,51 @@
 //  LoginViewController.swift
 //  MoLiao
 //
-//  Created by 文瑶 on 2019/1/6.
-//  Copyright © 2019 文瑶. All rights reserved.
+//  Created by 徐庆标 on 2019/1/6.
+//  Copyright © 2019 徐庆标. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: BaseViewController,UITextFieldDelegate {
+class LoginViewController: BaseViewController {
     var window: UIWindow?
-    var centerView:UIView!
-    var textFieldPhone:UITextField!
-    var textFieldPassword:UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.title = "登录"
+        self.title = "登录"
         
         view.backgroundColor = UIColor.white
         
-        let logFrame = CGRect(x: 0, y: kScreenHeight - 140, width: kScreenWidth, height: 140)
+        // 隐藏导航栏
+        self.navigationController?.navigationBar.isHidden = true
 
+        let logFrame = CGRect(x: 0, y: kScreenHeight - 140, width: kScreenWidth, height: 140)
         let loginView = LoginView(frame: logFrame)
         loginView.backgroundColor = UIColor.orange
         loginView.delegate = self
         self.view.addSubview(loginView)
     }
+}
+
+extension LoginViewController: LoginViewDelegate {
+    func loginPhotoClick(LoginView: LoginView) {
+        print("点击了 手机号登录注册")
+    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func loginUserNameClick(LoginView: LoginView) {
+        print("点击了 账号登录")
         
-        print("kScreenHeight = \(kScreenHeight)")
-        // 隐藏导航栏
-        self.navigationController?.navigationBar.isHidden = true
+        let usernameView = UserNameController()
+        self.navigationController?.pushViewController(usernameView, animated: true)
     }
     
-    private func saveLastLoginUsername() {
-        let username = EMClient.shared().currentUsername
-        if username != nil && (!username!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty) {
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(username, forKey: "mb_lastLogin_username")
-            userDefaults.synchronize()
-        }
+    func loginWeiXinClick(LoginView: LoginView) {
+        print("点击了 微信登录")
     }
     
-    private func saveLastLoginIsAutoLogin() {
-        let isAutoLogin = EMClient.shared().options.isAutoLogin
-        
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(isAutoLogin, forKey: "mb_lastLogin_isAutoLogin")
-        userDefaults.synchronize()
-    }
-    
-    private var lastLoginUsername : String? {
-        let userDefaults = UserDefaults.standard
-        let username = userDefaults.value(forKey: "mb_lastLogin_username") as? String
-        
-        if username != nil && (!username!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty) {
-            return username
-        }
-        
-        return nil
-    }
-    
-    private var lastLoginIsAutoLogin : Bool {
-        let userDefaults = UserDefaults.standard
-        let isAutoLogin = userDefaults.value(forKey: "mb_lastLogin_isAutoLogin") as? Bool
-        
-        return isAutoLogin ?? false
+    func loginQQClick(LoginView: LoginView) {
+        print("点击了 QQ登录")
     }
     
     
-    
-    // MARK:- 5 点击手势
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        loginFallingAnimate()
-    }
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        loginRisingAnimate()
-        return true
-    }
-    // MARK:- 3 uitextfield编辑完成后逻辑处理
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        loginFallingAnimate()
-        return true
-    }
- 
-    
-    
-    // MARK:- 6 上升动画
-    func loginRisingAnimate() {
-        UIView.animate(withDuration: 0.5, animations: {
-//            self.centerView.y = self.topview.bottomY
-        })
-    }
-    
-    // MARK:- 7 下降动画
-    func loginFallingAnimate() {
-        UIView.animate(withDuration: 0.5, animations: {
-//            self.topview.y =  80
-//            self.centerView.y = 200
-        })
-    }
 }

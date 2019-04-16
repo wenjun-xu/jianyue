@@ -57,7 +57,7 @@ class RegistSecondController: BaseViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
         let date = datePicker.date
-        let dateText = formatter.string(from: date)
+        _ = formatter.string(from: date)
         
     }
     

@@ -44,7 +44,7 @@ class WJMeDetailController: BaseTabViewController ,TZImagePickerControllerDelega
         let strDataPath = Bundle.main.path(forResource: "message", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
         
-        let json = DataJson().data2JSON(data: data as! Data)
+        let json = DataJson().data2JSON(data: data! as Data)
         buildMessageByJson(json["data"])
     }
     

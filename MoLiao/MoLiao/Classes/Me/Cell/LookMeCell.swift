@@ -97,7 +97,7 @@ class LookMeCell: UITableViewCell {
     override func layoutSubviews() {
         let leftSpace:CGFloat = 15
         let imgLeftSpace:CGFloat = 15
-        let topSpace:CGFloat = 20
+        let _:CGFloat = 20
         let userImgW:CGFloat = 60
         bgview.frame = CGRect(x: 0, y: 0, width: self.width, height: self.height)
         userImg.frame = CGRect(x: leftSpace, y: leftSpace, width: userImgW, height: userImgW)

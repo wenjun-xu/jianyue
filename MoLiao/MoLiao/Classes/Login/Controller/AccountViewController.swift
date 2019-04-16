@@ -25,10 +25,10 @@ class AccountViewController: BaseViewController {
     }
 }
 
-extension AccountViewController:MLAccountViewDelegate {
+extension AccountViewController: MLAccountViewDelegate {
     
-    func loginClick(LoginView: MLAccountView) {
-        UserDefaults.standard.set(textFieldPassword.text, forKey: "loginPwd")
+    func loginClick(LoginView: MLAccountView, pwdText: String) {
+        UserDefaults.standard.set(pwdText, forKey: "loginPwd")
         let vc = CodeViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -9,14 +9,8 @@
 import UIKit
 
 protocol MLAccountViewDelegate: NSObjectProtocol {
-    /// 点击了 “ 手机号登录”
-    func loginClick(LoginView: MLAccountView)
-    /// 点击了 "账号登录"
-//    func loginUserNameClick(LoginView: LoginView)
-//    /// 点击了 "微信登录"
-//    func loginWeiXinClick(LoginView: LoginView)
-//    /// 点击了 "QQ登录"
-//    func loginQQClick(LoginView: LoginView)
+    /// 点击了 “下一页”
+    func loginClick(LoginView: MLAccountView, pwdText: String)
 }
 
 
@@ -112,6 +106,6 @@ extension MLAccountView {
 extension MLAccountView {
     @objc private func loginClick() {
 
-        delegate?.loginClick(LoginView: self)
+        delegate?.loginClick(LoginView: self, pwdText: textFieldPassword.text!)
     }
 }

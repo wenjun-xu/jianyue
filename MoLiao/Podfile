@@ -10,7 +10,7 @@ target 'MoLiao' do
 #    pod 'SKPhotoBrowser'            , '4.1.1'             #20180904注释 图片浏览器
     pod 'SwiftyJSON'            , '4.0.0'                 #20180904注释 json解析
     pod 'BetterSegmentedControl', '~> 1.0'
-#    pod 'TwicketSegmentedControl'
+    pod 'TwicketSegmentedControl'
     pod 'BRPickerView'
     pod 'Masonry'
 #    pod 'SDCycleScrollView'                     #20180904注释 轮播图

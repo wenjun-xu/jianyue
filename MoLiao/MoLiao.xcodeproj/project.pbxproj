@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09379D8EB4CF2FC15520E03D /* Pods_MoLiao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFCD51059B8CC06EBBDE257 /* Pods_MoLiao.framework */; };
+		206ECFD22266F2C000ABFE99 /* MLRegistGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -132,7 +133,7 @@
 		827BFA33222CC2260093EB65 /* RegistSevenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85C222CC2250093EB65 /* RegistSevenController.swift */; };
 		827BFA34222CC2260093EB65 /* RegistSixController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85D222CC2250093EB65 /* RegistSixController.swift */; };
 		827BFA35222CC2260093EB65 /* RegistThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85E222CC2250093EB65 /* RegistThreeController.swift */; };
-		827BFA36222CC2260093EB65 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85F222CC2250093EB65 /* RegistViewController.swift */; };
+		827BFA36222CC2260093EB65 /* MLRegistGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */; };
 		827BFA37222CC2260093EB65 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF862222CC2250093EB65 /* AddressModel.swift */; };
 		827BFA38222CC2260093EB65 /* BHJPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF863222CC2250093EB65 /* BHJPickerView.swift */; };
 		827BFA39222CC2260093EB65 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 827BF864222CC2250093EB65 /* city.json */; };
@@ -344,6 +345,7 @@
 		0ADCBEB98C5C61CA1BC6A8EE /* Pods-MoLiao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiao/Pods-MoLiao.debug.xcconfig"; sourceTree = "<group>"; };
 		106CB8BC6E87B7B965402741 /* Pods-MoLiaoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoTests/Pods-MoLiaoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		15A7A7C707B510E01860D0A1 /* Pods-MoLiaoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistGenderView.swift; sourceTree = "<group>"; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
@@ -522,7 +524,7 @@
 		827BF85C222CC2250093EB65 /* RegistSevenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSevenController.swift; sourceTree = "<group>"; };
 		827BF85D222CC2250093EB65 /* RegistSixController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSixController.swift; sourceTree = "<group>"; };
 		827BF85E222CC2250093EB65 /* RegistThreeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistThreeController.swift; sourceTree = "<group>"; };
-		827BF85F222CC2250093EB65 /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRegistGenderController.swift; sourceTree = "<group>"; };
 		827BF862222CC2250093EB65 /* AddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		827BF863222CC2250093EB65 /* BHJPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHJPickerView.swift; sourceTree = "<group>"; };
 		827BF864222CC2250093EB65 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
@@ -1266,6 +1268,7 @@
 				827BF854222CC2250093EB65 /* AccountViewController.swift */,
 				827BF855222CC2250093EB65 /* CodeViewController.swift */,
 				827BF856222CC2250093EB65 /* HomePageController.swift */,
+				827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */,
 				827BF858222CC2250093EB65 /* RegistEightController.swift */,
 				827BF859222CC2250093EB65 /* RegistFiveController.swift */,
 				827BF85A222CC2250093EB65 /* RegistFourController.swift */,
@@ -1273,7 +1276,6 @@
 				827BF85C222CC2250093EB65 /* RegistSevenController.swift */,
 				827BF85D222CC2250093EB65 /* RegistSixController.swift */,
 				827BF85E222CC2250093EB65 /* RegistThreeController.swift */,
-				827BF85F222CC2250093EB65 /* RegistViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1290,6 +1292,7 @@
 				20EA57162265A43B003FE2D2 /* MLAccountView.swift */,
 				20EA57182265AB70003FE2D2 /* MLCodeView.swift */,
 				20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */,
+				206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2418,7 +2421,7 @@
 				827BFA17222CC2260093EB65 /* HomeCell.swift in Sources */,
 				827BFA22222CC2260093EB65 /* HZBannerModel.m in Sources */,
 				827BFA28222CC2260093EB65 /* PGIndexBannerSubiew.m in Sources */,
-				827BFA36222CC2260093EB65 /* RegistViewController.swift in Sources */,
+				827BFA36222CC2260093EB65 /* MLRegistGenderController.swift in Sources */,
 				827BFA7C222CC2260093EB65 /* MWGridCell.m in Sources */,
 				827BFA55222CC2260093EB65 /* MessageCell.swift in Sources */,
 				827BFA90222CC2260093EB65 /* PSTGridLayoutRow.m in Sources */,
@@ -2554,6 +2557,7 @@
 				827BFAB1222CC2260093EB65 /* EaseEmotionEscape.m in Sources */,
 				20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */,
 				827BF9DB222CC2260093EB65 /* HXDatePhotoViewFlowLayout.m in Sources */,
+				206ECFD22266F2C000ABFE99 /* MLRegistGenderView.swift in Sources */,
 				827BF9C9222CC2260093EB65 /* HXAlbumlistView.m in Sources */,
 				827BFA24222CC2260093EB65 /* HZBannerViewFlowLayout.m in Sources */,
 				827BFA73222CC2260093EB65 /* MJRefreshGifHeader.m in Sources */,

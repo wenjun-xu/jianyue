@@ -1,24 +1,73 @@
 //
-//  RegistViewController.swift
+//  MLRegistGenderController.swift
 //  MoLiao
 //
-//  Created by 徐庆标 on 2019/1/7.
-//  Copyright © 2019 徐庆标. All rights reserved.
+//  Created by study on 2019/4/17.
+//  Copyright © 2019年 WY. All rights reserved.
 //
 
 import UIKit
-import BRPickerView
-class RegistViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "完善信息(1/7)"
-        view.backgroundColor = kBgColor
-        let bgView = UIView.init(frame: CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace))
+enum typeGender {
+    /// 女性
+    case genderFemale
+    /// 男性
+    case genderMale
+    /// 中性
+    case genderNeutral
+}
+
+protocol MLRegistGenderViewDelegate: NSObjectProtocol {
+    /// 性别按钮
+    func genderBtnClick(pageView: MLRegistGenderView, gender: typeGender)
+}
+
+/// 完善信息 - 性别选择
+class MLRegistGenderView: UIView {
+
+    private let bgView = UIView()
+    weak var delegate: MLRegistGenderViewDelegate?
+    
+    private var aGenderType = typeGender.genderNeutral
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupBGView()
+
+        setupContent()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK:- 点击事件
+extension MLRegistGenderView {
+    @objc func nextClick(sender:UIButton) {
+        
+        if sender.tag == 1000 {
+            aGenderType = typeGender.genderMale
+            
+        } else {
+            aGenderType = typeGender.genderFemale
+        }
+        
+        self.delegate?.genderBtnClick(pageView: self, gender: aGenderType)
+    }
+}
+
+extension MLRegistGenderView {
+    private func setupBGView() {
+        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
         bgView.backgroundColor = UIColor.white
         bgView.layer.cornerRadius = 8
         bgView.clipsToBounds = true
-        view.addSubview(bgView)
+        self.addSubview(bgView)
+    }
+    
+    private func setupContent() {
         
         let imgWidth:CGFloat = 100
         let leftSpace:CGFloat = (kScreenWidth - 2*imgWidth) / 3.0
@@ -38,7 +87,7 @@ class RegistViewController: BaseViewController {
         leftBtn.addTarget(self, action: #selector(nextClick(sender:)), for: .touchUpInside)
         bgView.addSubview(leftBtn)
         
-
+        
         let leftLabel = UILabel.init(frame: CGRect(x: leftSpace, y: leftBtn.bottomY + 10, width: imgWidth, height: 22))
         leftLabel.text = "男"
         leftLabel.font = UIFont.systemFont(ofSize: 16.0)
@@ -62,74 +111,7 @@ class RegistViewController: BaseViewController {
         rightLabel.textColor = UIColor.black.alpha(0.7)
         rightLabel.textAlignment = .center
         bgView.addSubview(rightLabel)
-        
     }
     
-    @objc func nextClick(sender:UIButton) {
-        if sender.tag == 1000 {
-            
-        }else {
-            
-        }
-        let vc = RegistSecondController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
+   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -48,7 +48,7 @@ extension HomePageController: MLHomePageViewDelegate {
     }
     
     func registerClick(pageView: MLHomePageView) {
-        let vc = RegistViewController()
+        let vc = MLRegistGenderController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -59,7 +59,7 @@ extension MLHomePageView {
         let leftSpace:CGFloat = 17
         
         let leftBtn = UIButton.init(type: .custom)
-        leftBtn.frame = CGRect(x: leftSpace, y: kScreenHeight - 50, width: (kScreenWidth / 2.0 - leftSpace - centerSpace/2.0), height: 45)
+        leftBtn.frame = CGRect(x: leftSpace, y: kScreenHeight - 110, width: (kScreenWidth / 2.0 - leftSpace - centerSpace/2.0), height: 45)
         leftBtn.layer.cornerRadius = 6
         leftBtn.tag = 1000
         leftBtn.setTitle("注册", for: .normal)
@@ -69,7 +69,7 @@ extension MLHomePageView {
         self.addSubview(leftBtn)
         
         let rightBtn = UIButton.init(type: .custom)
-        rightBtn.frame = CGRect(x: kScreenWidth / 2.0 + centerSpace / 2.0, y: kScreenHeight - 50, width: kScreenWidth / 2.0 - leftSpace - centerSpace/2.0, height: 45)
+        rightBtn.frame = CGRect(x: kScreenWidth / 2.0 + centerSpace / 2.0, y: kScreenHeight - 110, width: kScreenWidth / 2.0 - leftSpace - centerSpace/2.0, height: 45)
         rightBtn.layer.cornerRadius = 6
         rightBtn.tag = 1001
         rightBtn.setTitle("登录", for: .normal)

@@ -26,7 +26,7 @@ class MLRegistGenderController: BaseViewController {
 // MARK:- MLRegistGenderViewDelegate
 extension MLRegistGenderController: MLRegistGenderViewDelegate {
     func genderBtnClick(pageView: MLRegistGenderView, gender: typeGender) {
-        let vc = RegistSecondController()
+        let vc = RegistBirthdayController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

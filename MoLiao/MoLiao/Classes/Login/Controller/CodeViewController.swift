@@ -23,12 +23,11 @@ class CodeViewController: BaseViewController {
         codeView.delegate = self
         self.view.addSubview(codeView)
     }
-    
 }
 
 extension CodeViewController: MLCodeViewDelegate {
     func loginClick(CodeView: MLCodeView, codeText: String) {
-        let vc = RegistEightController()
+        let vc = RegistNameController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

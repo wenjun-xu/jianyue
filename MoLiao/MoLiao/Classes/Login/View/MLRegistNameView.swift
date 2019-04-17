@@ -1,5 +1,5 @@
 //
-//  MLRegistCompanyAreaView.swift
+//  MLRegistNameView.swift
 //  MoLiao
 //
 //  Created by study on 2019/4/17.
@@ -8,16 +8,20 @@
 
 import UIKit
 
-protocol MLRegistCompanyAreaViewDelegate: NSObjectProtocol {
+protocol MLRegistNameViewDelegate: NSObjectProtocol {
     /// 公司所在地
-    func companyAreaBtnClick(pageView: MLRegistCompanyAreaView, height: String)
+    func loginClick(pageView: MLRegistNameView, name: String, pwd: String)
 }
 
-///  "完善信息(4/7)" - 工作地区
-class MLRegistCompanyAreaView: UIView {
-    private let bgView = UIView()
-    weak var delegate: MLRegistCompanyAreaViewDelegate?
+///  为自己起一个有趣的名字
+class MLRegistNameView: UIView {
     
+    var textView:UITextView!
+    
+    var tempBtn: UIButton!
+    
+    private let bgView = UIView()
+    weak var delegate: MLRegistNameViewDelegate?
     /// 身高
     private var heightString = ""
     
@@ -36,24 +40,22 @@ class MLRegistCompanyAreaView: UIView {
 }
 
 // MARK:- 点击事件
-extension MLRegistCompanyAreaView {
-    @objc func nextClick() {
+extension MLRegistNameView {
+    
+    /// 进入主界面
+    @objc private func comeMainController() {
+        let loginPwd: String = UserDefaults.standard.object(forKey: "loginPwd") as! String
+        //用户不存在后就注册
+        //执行注册的请求
+        print("loginPwd==",loginPwd)
+        print("textView==",textView.text)
         
-    }
-}
-
-// MARK:- PickerDelegate
-extension MLRegistCompanyAreaView: PickerDelegate{
-    //MARK: - PickerDelegate
-    func selectedAddress(_ pickerView: BHJPickerView, _ procince: AddressModel, _ city: AddressModel, _ area: AddressModel) {
-        
-        let messge = procince.region_name! + city.region_name! + area.region_name!
-        print("messge==",messge)
+        self.delegate?.loginClick(pageView: self, name: textView.text, pwd: loginPwd)
     }
 }
 
 // MARK:- UI创建
-extension MLRegistCompanyAreaView {
+extension MLRegistNameView {
     
     private func setupBGView() {
         bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
@@ -65,23 +67,27 @@ extension MLRegistCompanyAreaView {
     
     private func setupContent() {
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的工作地区在哪里"
+        topTitle.text = "为自己起一个有趣的名字吧"
         topTitle.textAlignment = .center
         topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
         bgView.addSubview(topTitle)
         
-        let pickerView = BHJPickerView.init(self, frame: CGRect(x: 20, y: topTitle.bottomY + 20, width: kScreenWidth - 40 - 2*kBgViewSpace, height: 200))
-        pickerView.pickerDelegate = self
-        bgView.addSubview(pickerView)
+        
+        textView = UITextView.init(frame: CGRect(x: (bgView.width - 220) / 2.0, y: topTitle.bottomY + 50, width: 220, height: 60))
+        textView.font = UIFont.boldSystemFont(ofSize: 20.0)
+        textView.textAlignment = .center
+        textView.backgroundColor = UIColor.gray.alpha(0.3)
+        textView.textAlignment = .center
+        bgView.addSubview(textView)
+        
         
         let nextBtn = UIButton.init(type: .custom)
         nextBtn.frame = CGRect(x: 20, y: kScreenHeight - kStatusBarH - kNavH - 100, width: kScreenWidth - 40 - 2*kBgViewSpace, height: 45)
-        nextBtn.setTitle("下一步", for: .normal)
+        nextBtn.setTitle("进入陌聊", for: .normal)
         nextBtn.layer.cornerRadius = 8
         nextBtn.clipsToBounds = true
         nextBtn.backgroundColor = UIColor.blue //kNavColor
-        nextBtn.addTarget(self, action: #selector(nextClick), for: .touchUpInside)
+        nextBtn.addTarget(self, action: #selector(comeMainController), for: .touchUpInside)
         bgView.addSubview(nextBtn)
-        // Do any additional setup after loading the view.
     }
 }

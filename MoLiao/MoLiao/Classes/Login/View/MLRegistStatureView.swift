@@ -34,6 +34,23 @@ class MLRegistStatureView: UIView {
     
 }
 
+// MARK:- DYScrollRulerDelegate
+extension MLRegistStatureView: DYScrollRulerDelegate {
+    func dyScrollRulerView(_ rulerView: DYScrollRulerView!, valueChange value: Float) {
+        self.heightString = "\(value)"
+    }
+    
+}
+
+// MARK:- 点击事件
+extension MLRegistStatureView {
+    @objc func nextClick() {
+        self.delegate?.statureBtnClick(pageView: self, height: heightString)
+    }
+}
+
+
+// MARK:- UI创建
 extension MLRegistStatureView {
     private func setupBGView() {
         bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
@@ -70,14 +87,6 @@ extension MLRegistStatureView {
         bgView.addSubview(nextBtn)
     }
     
-    @objc func nextClick() {
-        self.delegate?.statureBtnClick(pageView: self, height: heightString)
-    }
+    
 }
 
-extension MLRegistStatureView: DYScrollRulerDelegate {
-    func dyScrollRulerView(_ rulerView: DYScrollRulerView!, valueChange value: Float) {
-        self.heightString = "\(value)"
-    }
-
-}

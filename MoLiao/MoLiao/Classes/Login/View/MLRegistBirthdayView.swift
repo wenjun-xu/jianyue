@@ -35,6 +35,27 @@ class MLRegistBirthdayView: UIView {
 
 }
 
+// MARK:- 点击事件
+extension MLRegistBirthdayView {
+    // MARK: - 日期选择器响应方法
+    @objc func dateChanged(datePicker:UIDatePicker)
+    {
+        // 更新提醒时间文本框
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        let date = datePicker.date
+        let birString = formatter.string(from: date)
+        
+        birthdayString = birString
+    }
+    
+    @objc func nextClick() {
+        
+        self.delegate?.birthdayBtnClick(pageView: self, birthday: birthdayString)
+    }
+}
+
+// MARK:- UI创建
 extension MLRegistBirthdayView {
     private func setupBGView() {
         bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
@@ -76,20 +97,5 @@ extension MLRegistBirthdayView {
         bgView.addSubview(nextBtn)
     }
     
-    // MARK: - 日期选择器响应方法
-    @objc func dateChanged(datePicker:UIDatePicker)
-    {
-        // 更新提醒时间文本框
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
-        let date = datePicker.date
-        let birString = formatter.string(from: date)
-        
-        birthdayString = birString
-    }
-    
-    @objc func nextClick() {
-        
-        self.delegate?.birthdayBtnClick(pageView: self, birthday: birthdayString)
-    }
+   
 }

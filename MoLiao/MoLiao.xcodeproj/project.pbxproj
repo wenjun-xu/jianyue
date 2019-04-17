@@ -14,6 +14,8 @@
 		206ECFD82266FDF300ABFE99 /* MLRegistCompanyAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD72266FDF300ABFE99 /* MLRegistCompanyAreaView.swift */; };
 		206ECFDA226701E400ABFE99 /* MLRegistEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD9226701E400ABFE99 /* MLRegistEducationView.swift */; };
 		206ECFDC2267045A00ABFE99 /* MLRegistMaritalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */; };
+		206ECFDE2267195000ABFE99 /* MLRegistSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */; };
+		206ECFE022671D9900ABFE99 /* MLRegistNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -131,11 +133,11 @@
 		827BFA2C222CC2260093EB65 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF855222CC2250093EB65 /* CodeViewController.swift */; };
 		827BFA2D222CC2260093EB65 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF856222CC2250093EB65 /* HomePageController.swift */; };
 		827BFA2E222CC2260093EB65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF857222CC2250093EB65 /* LoginViewController.swift */; };
-		827BFA2F222CC2260093EB65 /* RegistEightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF858222CC2250093EB65 /* RegistEightController.swift */; };
+		827BFA2F222CC2260093EB65 /* RegistNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF858222CC2250093EB65 /* RegistNameController.swift */; };
 		827BFA30222CC2260093EB65 /* RegistEducationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF859222CC2250093EB65 /* RegistEducationController.swift */; };
 		827BFA31222CC2260093EB65 /* RegistCompanyAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */; };
 		827BFA32222CC2260093EB65 /* RegistBirthdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */; };
-		827BFA33222CC2260093EB65 /* RegistSevenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85C222CC2250093EB65 /* RegistSevenController.swift */; };
+		827BFA33222CC2260093EB65 /* RegistSalaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85C222CC2250093EB65 /* RegistSalaryController.swift */; };
 		827BFA34222CC2260093EB65 /* RegistMaritalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85D222CC2250093EB65 /* RegistMaritalController.swift */; };
 		827BFA35222CC2260093EB65 /* RegistStatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85E222CC2250093EB65 /* RegistStatureController.swift */; };
 		827BFA36222CC2260093EB65 /* MLRegistGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */; };
@@ -356,6 +358,8 @@
 		206ECFD72266FDF300ABFE99 /* MLRegistCompanyAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistCompanyAreaView.swift; sourceTree = "<group>"; };
 		206ECFD9226701E400ABFE99 /* MLRegistEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistEducationView.swift; sourceTree = "<group>"; };
 		206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistMaritalView.swift; sourceTree = "<group>"; };
+		206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistSalaryView.swift; sourceTree = "<group>"; };
+		206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistNameView.swift; sourceTree = "<group>"; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
@@ -527,11 +531,11 @@
 		827BF855222CC2250093EB65 /* CodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		827BF856222CC2250093EB65 /* HomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		827BF857222CC2250093EB65 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		827BF858222CC2250093EB65 /* RegistEightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEightController.swift; sourceTree = "<group>"; };
+		827BF858222CC2250093EB65 /* RegistNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistNameController.swift; sourceTree = "<group>"; };
 		827BF859222CC2250093EB65 /* RegistEducationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEducationController.swift; sourceTree = "<group>"; };
 		827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCompanyAreaController.swift; sourceTree = "<group>"; };
 		827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistBirthdayController.swift; sourceTree = "<group>"; };
-		827BF85C222CC2250093EB65 /* RegistSevenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSevenController.swift; sourceTree = "<group>"; };
+		827BF85C222CC2250093EB65 /* RegistSalaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSalaryController.swift; sourceTree = "<group>"; };
 		827BF85D222CC2250093EB65 /* RegistMaritalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistMaritalController.swift; sourceTree = "<group>"; };
 		827BF85E222CC2250093EB65 /* RegistStatureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistStatureController.swift; sourceTree = "<group>"; };
 		827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRegistGenderController.swift; sourceTree = "<group>"; };
@@ -1284,8 +1288,8 @@
 				827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */,
 				827BF859222CC2250093EB65 /* RegistEducationController.swift */,
 				827BF85D222CC2250093EB65 /* RegistMaritalController.swift */,
-				827BF858222CC2250093EB65 /* RegistEightController.swift */,
-				827BF85C222CC2250093EB65 /* RegistSevenController.swift */,
+				827BF85C222CC2250093EB65 /* RegistSalaryController.swift */,
+				827BF858222CC2250093EB65 /* RegistNameController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1308,6 +1312,8 @@
 				206ECFD72266FDF300ABFE99 /* MLRegistCompanyAreaView.swift */,
 				206ECFD9226701E400ABFE99 /* MLRegistEducationView.swift */,
 				206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */,
+				206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */,
+				206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2453,7 +2459,7 @@
 				827BFA9C222CC2260093EB65 /* UIImage+GIF.m in Sources */,
 				827BFA4E222CC2260093EB65 /* SegmentOneController.swift in Sources */,
 				827BFA99222CC2260093EB65 /* SDWebImageManager.m in Sources */,
-				827BFA2F222CC2260093EB65 /* RegistEightController.swift in Sources */,
+				827BFA2F222CC2260093EB65 /* RegistNameController.swift in Sources */,
 				827BFA84222CC2260093EB65 /* DACircularProgressView.m in Sources */,
 				827BFA46222CC2260093EB65 /* MeNewController.swift in Sources */,
 				CC318BFD220886DB004632DD /* PickerModel.swift in Sources */,
@@ -2474,7 +2480,7 @@
 				827BFA97222CC2260093EB65 /* SDWebImageDownloader.m in Sources */,
 				827BF9E8222CC2260093EB65 /* HXPhotoView.m in Sources */,
 				827BFABA222CC2260093EB65 /* EaseUserCell.m in Sources */,
-				827BFA33222CC2260093EB65 /* RegistSevenController.swift in Sources */,
+				827BFA33222CC2260093EB65 /* RegistSalaryController.swift in Sources */,
 				827BFAAB222CC2260093EB65 /* UIViewController+HUD.m in Sources */,
 				206ECFDA226701E400ABFE99 /* MLRegistEducationView.swift in Sources */,
 				827BF9E7222CC2260093EB65 /* HXPhotoTools.m in Sources */,
@@ -2579,6 +2585,7 @@
 				827BF9C9222CC2260093EB65 /* HXAlbumlistView.m in Sources */,
 				827BFA24222CC2260093EB65 /* HZBannerViewFlowLayout.m in Sources */,
 				827BFA73222CC2260093EB65 /* MJRefreshGifHeader.m in Sources */,
+				206ECFDE2267195000ABFE99 /* MLRegistSalaryView.swift in Sources */,
 				827BF9D7222CC2260093EB65 /* HXDatePhotoPreviewBottomView.m in Sources */,
 				827BFA7E222CC2260093EB65 /* MWPhoto.m in Sources */,
 				827BFAA5222CC2260093EB65 /* EaseMessageModel.m in Sources */,
@@ -2631,6 +2638,7 @@
 				827BFA95222CC2260093EB65 /* SDWebImageCompat.m in Sources */,
 				827BFAAA222CC2260093EB65 /* UIViewController+DismissKeyboard.m in Sources */,
 				827BF9DE222CC2260093EB65 /* HXDateVideoEditViewController.m in Sources */,
+				206ECFE022671D9900ABFE99 /* MLRegistNameView.swift in Sources */,
 				827BFA8F222CC2260093EB65 /* PSTGridLayoutItem.m in Sources */,
 				CC2B7FA421D0B992009B4474 /* AppDelegate.swift in Sources */,
 				827BFA6A222CC2260093EB65 /* MJRefreshComponent.m in Sources */,

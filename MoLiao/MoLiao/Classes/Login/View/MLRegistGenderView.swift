@@ -58,6 +58,8 @@ extension MLRegistGenderView {
     }
 }
 
+
+// MARK:- UI创建
 extension MLRegistGenderView {
     private func setupBGView() {
         bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)

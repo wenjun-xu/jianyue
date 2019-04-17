@@ -11,8 +11,6 @@ import UIKit
 class AccountViewController: BaseViewController {
     var window: UIWindow?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

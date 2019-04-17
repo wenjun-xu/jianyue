@@ -11,14 +11,18 @@ import UIKit
 
 protocol MLRegistMaritalViewDelegate: NSObjectProtocol {
     /// 婚姻状况
-    func maritalClick(pageView: MLRegistMaritalView, education: String)
+    func maritalClick(pageView: MLRegistMaritalView, marital: String)
 }
 
 ///  "完善信息(6/7)" - 婚姻
 class MLRegistMaritalView: UIView {
     
+    var tempBtn: UIButton!
+    
     private let bgView = UIView()
+    
     weak var delegate: MLRegistMaritalViewDelegate?
+    
     /// 身高
     private var heightString = ""
     
@@ -36,7 +40,32 @@ class MLRegistMaritalView: UIView {
     
 }
 
-extension MLRegistEducationView {
+// MARK:- 按钮点击
+extension MLRegistMaritalView {
+    @objc func clickAction(sender:UIButton)  {
+        if tempBtn == nil {
+            sender.isSelected = true
+            tempBtn = sender
+            tempBtn.backgroundColor = kNavColor
+            
+        }else if (tempBtn != nil && tempBtn == sender){
+            sender.isSelected = true
+            sender.backgroundColor = kNavColor
+        }else if (tempBtn != sender && tempBtn != nil) {
+            tempBtn.isSelected = false
+            sender.isSelected = true
+            tempBtn.backgroundColor = UIColor.clear
+            sender.backgroundColor = kNavColor
+            tempBtn = sender
+        }
+        UserDefaults.standard.set(sender.tag, forKey: "sixtemptag")
+        
+        self.delegate?.maritalClick(pageView: self, marital: sender.currentTitle ?? "")
+    }
+}
+
+// MARK:- UI创建
+extension MLRegistMaritalView {
     
     private func setupBGView() {
         bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
@@ -76,25 +105,5 @@ extension MLRegistEducationView {
             
             bgView.addSubview(btn)
         }
-    }
-
-    @objc func clickAction(sender:UIButton)  {
-        if tempBtn == nil {
-            sender.isSelected = true
-            tempBtn = sender
-            tempBtn.backgroundColor = kNavColor
-            
-        }else if (tempBtn != nil && tempBtn == sender){
-            sender.isSelected = true
-            sender.backgroundColor = kNavColor
-        }else if (tempBtn != sender && tempBtn != nil) {
-            tempBtn.isSelected = false
-            sender.isSelected = true
-            tempBtn.backgroundColor = UIColor.clear
-            sender.backgroundColor = kNavColor
-            tempBtn = sender
-        }
-        UserDefaults.standard.set(sender.tag, forKey: "sixtemptag")
-        
     }
 }

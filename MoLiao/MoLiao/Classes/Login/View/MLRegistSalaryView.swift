@@ -1,25 +1,54 @@
 //
-//  RegistSevenController.swift
+//  MLRegistSalaryView.swift
 //  MoLiao
 //
-//  Created by 徐庆标 on 2019/1/8.
-//  Copyright © 2019 徐庆标. All rights reserved.
+//  Created by study on 2019/4/17.
+//  Copyright © 2019年 WY. All rights reserved.
 //
 
 import UIKit
 
-class RegistSevenController: BaseViewController {
-    var tempBtn:UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "完善信息(7/7)"
-        view.backgroundColor = kBgColor
-        let bgView = UIView.init(frame: CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace))
+protocol MLRegistSalaryViewDelegate: NSObjectProtocol {
+    /// 公司所在地
+    func salaryBtnClick(pageView: MLRegistSalaryView, salary: String)
+}
+
+///  "完善信息(7/7)" - 收入
+class MLRegistSalaryView: UIView {
+    
+    var tempBtn: UIButton!
+
+    private let bgView = UIView()
+    weak var delegate: MLRegistSalaryViewDelegate?
+    /// 身高
+    private var heightString = ""
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupBGView()
+        
+        setupContent()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK:- UI创建
+extension MLRegistSalaryView {
+    
+    private func setupBGView() {
+        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
         bgView.backgroundColor = UIColor.white
         bgView.layer.cornerRadius = 8
         bgView.clipsToBounds = true
-        view.addSubview(bgView)
-        
+        self.addSubview(bgView)
+    }
+    
+    private func setupContent() {
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
         topTitle.text = "你的月收入是"
         topTitle.textAlignment = .center
@@ -69,8 +98,8 @@ class RegistSevenController: BaseViewController {
             tempBtn = sender
         }
         UserDefaults.standard.set(sender.tag, forKey: "tempseventag")
-        let vc = AccountViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        self.delegate?.salaryBtnClick(pageView: self, salary: sender.currentTitle ?? "")
     }
     
 }

@@ -34,6 +34,7 @@ class MLHomePageView: UIView {
 
 }
 
+// MARK:- 点击事件
 extension MLHomePageView {
     /// 登录按钮点击事件
     @objc private func loginAction()  {
@@ -46,6 +47,8 @@ extension MLHomePageView {
     }
 }
 
+
+// MARK:- UI创建
 extension MLHomePageView {
     private func setupBGView() {
         let bgView = UIImageView.init(frame: self.bounds)

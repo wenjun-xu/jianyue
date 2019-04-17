@@ -28,7 +28,7 @@ extension RegistEducationController: MLRegistEducationViewDelegate {
     func educationClick(pageView: MLRegistEducationView, education: String) {
         print("education = \(education)")
         
-        let vc = RegistSixController()
+        let vc = RegistMaritalController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -33,9 +33,34 @@ class MLRegistEducationView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
+// MARK:- 点击事件
+extension MLRegistEducationView {
+    @objc func clickAction(sender: UIButton)  {
+        if tempBtn == nil {
+            sender.isSelected = true
+            tempBtn = sender
+            tempBtn.backgroundColor = UIColor.blue //kNavColor
+            
+        }else if (tempBtn != nil && tempBtn == sender){
+            sender.isSelected = true
+            sender.backgroundColor = kNavColor
+        }else if (tempBtn != sender && tempBtn != nil) {
+            tempBtn.isSelected = false
+            sender.isSelected = true
+            tempBtn.backgroundColor = UIColor.clear
+            sender.backgroundColor = kNavColor
+            tempBtn = sender
+        }
+        UserDefaults.standard.set(sender.tag, forKey: "temptag")
+        
+        let str = sender.currentTitle ?? ""
+        self.delegate?.educationClick(pageView: self, education: str)
+    }
+}
+
+// MARK:- UI创建
 extension MLRegistEducationView {
     
     private func setupBGView() {
@@ -76,28 +101,5 @@ extension MLRegistEducationView {
             
             bgView.addSubview(btn)
         }
-        
-    }
-    
-    @objc func clickAction(sender: UIButton)  {
-        if tempBtn == nil {
-            sender.isSelected = true
-            tempBtn = sender
-            tempBtn.backgroundColor = UIColor.blue //kNavColor
-            
-        }else if (tempBtn != nil && tempBtn == sender){
-            sender.isSelected = true
-            sender.backgroundColor = kNavColor
-        }else if (tempBtn != sender && tempBtn != nil) {
-            tempBtn.isSelected = false
-            sender.isSelected = true
-            tempBtn.backgroundColor = UIColor.clear
-            sender.backgroundColor = kNavColor
-            tempBtn = sender
-        }
-        UserDefaults.standard.set(sender.tag, forKey: "temptag")
-        
-        let str = sender.currentTitle ?? ""
-        self.delegate?.educationClick(pageView: self, education: str)
     }
 }

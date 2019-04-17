@@ -1,26 +1,50 @@
 //
-//  RegistThreeController.swift
+//  MLRegistStatureView.swift
 //  MoLiao
 //
-//  Created by 徐庆标 on 2019/1/8.
-//  Copyright © 2019 徐庆标. All rights reserved.
+//  Created by study on 2019/4/17.
+//  Copyright © 2019年 WY. All rights reserved.
 //
 
 import UIKit
 
-class RegistThreeController: BaseViewController ,DYScrollRulerDelegate{
-  
-    var rulerView:TDScrollRulerView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "完善信息(3/7)"
+protocol MLRegistStatureViewDelegate: NSObjectProtocol {
+    /// 身高按钮
+    func statureBtnClick(pageView: MLRegistStatureView, height: String)
+}
+
+/// "完善信息(3/7)" - 身高
+class MLRegistStatureView: UIView {
+    private let bgView = UIView()
+    weak var delegate: MLRegistStatureViewDelegate?
+    /// 身高
+    private var heightString = ""
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        view.backgroundColor = kBgColor
-        let bgView = UIView.init(frame: CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace))
+        setupBGView()
+        
+        setupContent()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension MLRegistStatureView {
+    private func setupBGView() {
+        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
         bgView.backgroundColor = UIColor.white
         bgView.layer.cornerRadius = 8
         bgView.clipsToBounds = true
-        view.addSubview(bgView)
+        self.addSubview(bgView)
+    }
+    
+    private func setupContent() {
+        
         
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
         topTitle.text = "你的身高是"
@@ -41,56 +65,19 @@ class RegistThreeController: BaseViewController ,DYScrollRulerDelegate{
         nextBtn.setTitle("下一步", for: .normal)
         nextBtn.layer.cornerRadius = 8
         nextBtn.clipsToBounds = true
-        nextBtn.backgroundColor = kNavColor
+        nextBtn.backgroundColor = UIColor.blue //kNavColor
         nextBtn.addTarget(self, action: #selector(nextClick), for: .touchUpInside)
         bgView.addSubview(nextBtn)
     }
+    
     @objc func nextClick() {
-        let vc = RegistFourController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.delegate?.statureBtnClick(pageView: self, height: heightString)
     }
-    
-    
-    func dyScrollRulerView(_ rulerView: DYScrollRulerView!, valueChange value: Float) {
-        
-    }
-    
 }
 
+extension MLRegistStatureView: DYScrollRulerDelegate {
+    func dyScrollRulerView(_ rulerView: DYScrollRulerView!, valueChange value: Float) {
+        self.heightString = "\(value)"
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

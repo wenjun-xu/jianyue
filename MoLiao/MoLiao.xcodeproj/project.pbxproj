@@ -10,6 +10,7 @@
 		09379D8EB4CF2FC15520E03D /* Pods_MoLiao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFCD51059B8CC06EBBDE257 /* Pods_MoLiao.framework */; };
 		206ECFD22266F2C000ABFE99 /* MLRegistGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */; };
 		206ECFD42266F7AD00ABFE99 /* MLRegistBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD32266F7AD00ABFE99 /* MLRegistBirthdayView.swift */; };
+		206ECFD62266FA7F00ABFE99 /* MLRegistStatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD52266FA7F00ABFE99 /* MLRegistStatureView.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -130,10 +131,10 @@
 		827BFA2F222CC2260093EB65 /* RegistEightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF858222CC2250093EB65 /* RegistEightController.swift */; };
 		827BFA30222CC2260093EB65 /* RegistFiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF859222CC2250093EB65 /* RegistFiveController.swift */; };
 		827BFA31222CC2260093EB65 /* RegistFourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85A222CC2250093EB65 /* RegistFourController.swift */; };
-		827BFA32222CC2260093EB65 /* RegistSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85B222CC2250093EB65 /* RegistSecondController.swift */; };
+		827BFA32222CC2260093EB65 /* RegistBirthdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */; };
 		827BFA33222CC2260093EB65 /* RegistSevenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85C222CC2250093EB65 /* RegistSevenController.swift */; };
 		827BFA34222CC2260093EB65 /* RegistSixController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85D222CC2250093EB65 /* RegistSixController.swift */; };
-		827BFA35222CC2260093EB65 /* RegistThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85E222CC2250093EB65 /* RegistThreeController.swift */; };
+		827BFA35222CC2260093EB65 /* RegistStatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85E222CC2250093EB65 /* RegistStatureController.swift */; };
 		827BFA36222CC2260093EB65 /* MLRegistGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */; };
 		827BFA37222CC2260093EB65 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF862222CC2250093EB65 /* AddressModel.swift */; };
 		827BFA38222CC2260093EB65 /* BHJPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF863222CC2250093EB65 /* BHJPickerView.swift */; };
@@ -348,6 +349,7 @@
 		15A7A7C707B510E01860D0A1 /* Pods-MoLiaoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistGenderView.swift; sourceTree = "<group>"; };
 		206ECFD32266F7AD00ABFE99 /* MLRegistBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistBirthdayView.swift; sourceTree = "<group>"; };
+		206ECFD52266FA7F00ABFE99 /* MLRegistStatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistStatureView.swift; sourceTree = "<group>"; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
@@ -522,10 +524,10 @@
 		827BF858222CC2250093EB65 /* RegistEightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEightController.swift; sourceTree = "<group>"; };
 		827BF859222CC2250093EB65 /* RegistFiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistFiveController.swift; sourceTree = "<group>"; };
 		827BF85A222CC2250093EB65 /* RegistFourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistFourController.swift; sourceTree = "<group>"; };
-		827BF85B222CC2250093EB65 /* RegistSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSecondController.swift; sourceTree = "<group>"; };
+		827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistBirthdayController.swift; sourceTree = "<group>"; };
 		827BF85C222CC2250093EB65 /* RegistSevenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSevenController.swift; sourceTree = "<group>"; };
 		827BF85D222CC2250093EB65 /* RegistSixController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSixController.swift; sourceTree = "<group>"; };
-		827BF85E222CC2250093EB65 /* RegistThreeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistThreeController.swift; sourceTree = "<group>"; };
+		827BF85E222CC2250093EB65 /* RegistStatureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistStatureController.swift; sourceTree = "<group>"; };
 		827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRegistGenderController.swift; sourceTree = "<group>"; };
 		827BF862222CC2250093EB65 /* AddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		827BF863222CC2250093EB65 /* BHJPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHJPickerView.swift; sourceTree = "<group>"; };
@@ -1271,13 +1273,13 @@
 				827BF855222CC2250093EB65 /* CodeViewController.swift */,
 				827BF856222CC2250093EB65 /* HomePageController.swift */,
 				827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */,
-				827BF85B222CC2250093EB65 /* RegistSecondController.swift */,
+				827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */,
+				827BF85E222CC2250093EB65 /* RegistStatureController.swift */,
 				827BF858222CC2250093EB65 /* RegistEightController.swift */,
 				827BF859222CC2250093EB65 /* RegistFiveController.swift */,
 				827BF85A222CC2250093EB65 /* RegistFourController.swift */,
 				827BF85C222CC2250093EB65 /* RegistSevenController.swift */,
 				827BF85D222CC2250093EB65 /* RegistSixController.swift */,
-				827BF85E222CC2250093EB65 /* RegistThreeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1296,6 +1298,7 @@
 				20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */,
 				206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */,
 				206ECFD32266F7AD00ABFE99 /* MLRegistBirthdayView.swift */,
+				206ECFD52266FA7F00ABFE99 /* MLRegistStatureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2525,6 +2528,7 @@
 				827BFA0E222CC2260093EB65 /* GlobalFile.swift in Sources */,
 				827BFA03222CC2260093EB65 /* UIImage+HXExtension.m in Sources */,
 				827BFA5A222CC2260093EB65 /* EMAudioPlayerUtil.m in Sources */,
+				206ECFD62266FA7F00ABFE99 /* MLRegistStatureView.swift in Sources */,
 				827BFA53222CC2260093EB65 /* SegmentView.m in Sources */,
 				827BF9C7222CC2260093EB65 /* WJDynamicViewController.swift in Sources */,
 				827BFA15222CC2260093EB65 /* BiaoQianCell.swift in Sources */,
@@ -2555,7 +2559,7 @@
 				827BFA08222CC2260093EB65 /* Comment.swift in Sources */,
 				827BFA13222CC2260093EB65 /* WJDynamicCell.swift in Sources */,
 				827BFAC8222CC2260093EB65 /* EaseChatToolbarItem.m in Sources */,
-				827BFA35222CC2260093EB65 /* RegistThreeController.swift in Sources */,
+				827BFA35222CC2260093EB65 /* RegistStatureController.swift in Sources */,
 				CC62D31A21D4D73E00CEE184 /* DataJson.swift in Sources */,
 				827BFAB1222CC2260093EB65 /* EaseEmotionEscape.m in Sources */,
 				20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */,
@@ -2658,7 +2662,7 @@
 				827BFAB6222CC2260093EB65 /* EaseMessageViewController.m in Sources */,
 				827BFA96222CC2260093EB65 /* SDWebImageDecoder.m in Sources */,
 				827BFAB5222CC2260093EB65 /* EaseLocationViewController.m in Sources */,
-				827BFA32222CC2260093EB65 /* RegistSecondController.swift in Sources */,
+				827BFA32222CC2260093EB65 /* RegistBirthdayController.swift in Sources */,
 				827BFACE222CC2260093EB65 /* EaseRecordView.m in Sources */,
 				827BFAA8222CC2260093EB65 /* NSDateFormatter+Category.m in Sources */,
 				827BF9D0222CC2260093EB65 /* HXCustomCameraViewController.m in Sources */,

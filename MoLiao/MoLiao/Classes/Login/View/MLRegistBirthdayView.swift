@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol MLRegistBirthdayViewDelegate: NSObjectProtocol {
-    /// 性别按钮
+    /// 生日按钮
     func birthdayBtnClick(pageView: MLRegistBirthdayView, birthday: String)
 }
 
@@ -87,7 +87,6 @@ extension MLRegistBirthdayView {
         
         birthdayString = birString
     }
-    
     
     @objc func nextClick() {
         

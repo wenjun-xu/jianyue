@@ -30,7 +30,7 @@ extension RegistBirthdayController: MLRegistBirthdayViewDelegate {
         
         print("birthday = \(birthday)")
         
-        let vc = RegistThreeController()
+        let vc = RegistStatureController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

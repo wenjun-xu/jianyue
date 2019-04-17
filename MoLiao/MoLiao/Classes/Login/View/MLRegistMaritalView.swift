@@ -1,25 +1,52 @@
 //
-//  RegistSixController.swift
+//  MLRegistMaritalView.swift
 //  MoLiao
 //
-//  Created by 徐庆标 on 2019/1/8.
-//  Copyright © 2019 徐庆标. All rights reserved.
+//  Created by study on 2019/4/17.
+//  Copyright © 2019年 WY. All rights reserved.
 //
 
 import UIKit
 
-class RegistSixController: BaseViewController {
-    var tempBtn:UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "完善信息(6/7)"
-        view.backgroundColor = kBgColor
-        let bgView = UIView.init(frame: CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace))
+
+protocol MLRegistMaritalViewDelegate: NSObjectProtocol {
+    /// 婚姻状况
+    func maritalClick(pageView: MLRegistMaritalView, education: String)
+}
+
+///  "完善信息(6/7)" - 婚姻
+class MLRegistMaritalView: UIView {
+    
+    private let bgView = UIView()
+    weak var delegate: MLRegistMaritalViewDelegate?
+    /// 身高
+    private var heightString = ""
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupBGView()
+        
+        setupContent()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension MLRegistEducationView {
+    
+    private func setupBGView() {
+        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
         bgView.backgroundColor = UIColor.white
         bgView.layer.cornerRadius = 8
         bgView.clipsToBounds = true
-        view.addSubview(bgView)
-        
+        self.addSubview(bgView)
+    }
+    
+    private func setupContent() {
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
         topTitle.text = "你的婚姻状况"
         topTitle.textAlignment = .center
@@ -49,11 +76,8 @@ class RegistSixController: BaseViewController {
             
             bgView.addSubview(btn)
         }
-        
-        
-        
     }
-    
+
     @objc func clickAction(sender:UIButton)  {
         if tempBtn == nil {
             sender.isSelected = true
@@ -71,23 +95,6 @@ class RegistSixController: BaseViewController {
             tempBtn = sender
         }
         UserDefaults.standard.set(sender.tag, forKey: "sixtemptag")
-        let vc = RegistSevenController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

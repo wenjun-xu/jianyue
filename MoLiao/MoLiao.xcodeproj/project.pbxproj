@@ -11,6 +11,9 @@
 		206ECFD22266F2C000ABFE99 /* MLRegistGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */; };
 		206ECFD42266F7AD00ABFE99 /* MLRegistBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD32266F7AD00ABFE99 /* MLRegistBirthdayView.swift */; };
 		206ECFD62266FA7F00ABFE99 /* MLRegistStatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD52266FA7F00ABFE99 /* MLRegistStatureView.swift */; };
+		206ECFD82266FDF300ABFE99 /* MLRegistCompanyAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD72266FDF300ABFE99 /* MLRegistCompanyAreaView.swift */; };
+		206ECFDA226701E400ABFE99 /* MLRegistEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFD9226701E400ABFE99 /* MLRegistEducationView.swift */; };
+		206ECFDC2267045A00ABFE99 /* MLRegistMaritalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -129,11 +132,11 @@
 		827BFA2D222CC2260093EB65 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF856222CC2250093EB65 /* HomePageController.swift */; };
 		827BFA2E222CC2260093EB65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF857222CC2250093EB65 /* LoginViewController.swift */; };
 		827BFA2F222CC2260093EB65 /* RegistEightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF858222CC2250093EB65 /* RegistEightController.swift */; };
-		827BFA30222CC2260093EB65 /* RegistFiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF859222CC2250093EB65 /* RegistFiveController.swift */; };
-		827BFA31222CC2260093EB65 /* RegistFourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85A222CC2250093EB65 /* RegistFourController.swift */; };
+		827BFA30222CC2260093EB65 /* RegistEducationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF859222CC2250093EB65 /* RegistEducationController.swift */; };
+		827BFA31222CC2260093EB65 /* RegistCompanyAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */; };
 		827BFA32222CC2260093EB65 /* RegistBirthdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */; };
 		827BFA33222CC2260093EB65 /* RegistSevenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85C222CC2250093EB65 /* RegistSevenController.swift */; };
-		827BFA34222CC2260093EB65 /* RegistSixController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85D222CC2250093EB65 /* RegistSixController.swift */; };
+		827BFA34222CC2260093EB65 /* RegistMaritalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85D222CC2250093EB65 /* RegistMaritalController.swift */; };
 		827BFA35222CC2260093EB65 /* RegistStatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85E222CC2250093EB65 /* RegistStatureController.swift */; };
 		827BFA36222CC2260093EB65 /* MLRegistGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */; };
 		827BFA37222CC2260093EB65 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF862222CC2250093EB65 /* AddressModel.swift */; };
@@ -350,6 +353,9 @@
 		206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistGenderView.swift; sourceTree = "<group>"; };
 		206ECFD32266F7AD00ABFE99 /* MLRegistBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistBirthdayView.swift; sourceTree = "<group>"; };
 		206ECFD52266FA7F00ABFE99 /* MLRegistStatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistStatureView.swift; sourceTree = "<group>"; };
+		206ECFD72266FDF300ABFE99 /* MLRegistCompanyAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistCompanyAreaView.swift; sourceTree = "<group>"; };
+		206ECFD9226701E400ABFE99 /* MLRegistEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistEducationView.swift; sourceTree = "<group>"; };
+		206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistMaritalView.swift; sourceTree = "<group>"; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
@@ -522,11 +528,11 @@
 		827BF856222CC2250093EB65 /* HomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		827BF857222CC2250093EB65 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		827BF858222CC2250093EB65 /* RegistEightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEightController.swift; sourceTree = "<group>"; };
-		827BF859222CC2250093EB65 /* RegistFiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistFiveController.swift; sourceTree = "<group>"; };
-		827BF85A222CC2250093EB65 /* RegistFourController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistFourController.swift; sourceTree = "<group>"; };
+		827BF859222CC2250093EB65 /* RegistEducationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEducationController.swift; sourceTree = "<group>"; };
+		827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCompanyAreaController.swift; sourceTree = "<group>"; };
 		827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistBirthdayController.swift; sourceTree = "<group>"; };
 		827BF85C222CC2250093EB65 /* RegistSevenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSevenController.swift; sourceTree = "<group>"; };
-		827BF85D222CC2250093EB65 /* RegistSixController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistSixController.swift; sourceTree = "<group>"; };
+		827BF85D222CC2250093EB65 /* RegistMaritalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistMaritalController.swift; sourceTree = "<group>"; };
 		827BF85E222CC2250093EB65 /* RegistStatureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistStatureController.swift; sourceTree = "<group>"; };
 		827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRegistGenderController.swift; sourceTree = "<group>"; };
 		827BF862222CC2250093EB65 /* AddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
@@ -1275,11 +1281,11 @@
 				827BF85F222CC2250093EB65 /* MLRegistGenderController.swift */,
 				827BF85B222CC2250093EB65 /* RegistBirthdayController.swift */,
 				827BF85E222CC2250093EB65 /* RegistStatureController.swift */,
+				827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */,
+				827BF859222CC2250093EB65 /* RegistEducationController.swift */,
+				827BF85D222CC2250093EB65 /* RegistMaritalController.swift */,
 				827BF858222CC2250093EB65 /* RegistEightController.swift */,
-				827BF859222CC2250093EB65 /* RegistFiveController.swift */,
-				827BF85A222CC2250093EB65 /* RegistFourController.swift */,
 				827BF85C222CC2250093EB65 /* RegistSevenController.swift */,
-				827BF85D222CC2250093EB65 /* RegistSixController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1299,6 +1305,9 @@
 				206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */,
 				206ECFD32266F7AD00ABFE99 /* MLRegistBirthdayView.swift */,
 				206ECFD52266FA7F00ABFE99 /* MLRegistStatureView.swift */,
+				206ECFD72266FDF300ABFE99 /* MLRegistCompanyAreaView.swift */,
+				206ECFD9226701E400ABFE99 /* MLRegistEducationView.swift */,
+				206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2423,7 +2432,7 @@
 				827BF9D9222CC2260093EB65 /* HXDatePhotoToolManager.m in Sources */,
 				827BF9D1222CC2260093EB65 /* HXCustomCollectionReusableView.m in Sources */,
 				827BFA7A222CC2260093EB65 /* UIView+MJExtension.m in Sources */,
-				827BFA31222CC2260093EB65 /* RegistFourController.swift in Sources */,
+				827BFA31222CC2260093EB65 /* RegistCompanyAreaController.swift in Sources */,
 				827BFA17222CC2260093EB65 /* HomeCell.swift in Sources */,
 				827BFA22222CC2260093EB65 /* HZBannerModel.m in Sources */,
 				827BFA28222CC2260093EB65 /* PGIndexBannerSubiew.m in Sources */,
@@ -2467,6 +2476,7 @@
 				827BFABA222CC2260093EB65 /* EaseUserCell.m in Sources */,
 				827BFA33222CC2260093EB65 /* RegistSevenController.swift in Sources */,
 				827BFAAB222CC2260093EB65 /* UIViewController+HUD.m in Sources */,
+				206ECFDA226701E400ABFE99 /* MLRegistEducationView.swift in Sources */,
 				827BF9E7222CC2260093EB65 /* HXPhotoTools.m in Sources */,
 				827BFAD1222CC2260093EB65 /* MessageModel.swift in Sources */,
 				827BFA2B222CC2260093EB65 /* AccountViewController.swift in Sources */,
@@ -2500,12 +2510,13 @@
 				827BFA29222CC2260093EB65 /* WJCyclePictureView.swift in Sources */,
 				827BFA2A222CC2260093EB65 /* WJScrollView.swift in Sources */,
 				827BF9D6222CC2260093EB65 /* HXDatePhotoPersentInteractiveTransition.m in Sources */,
+				206ECFDC2267045A00ABFE99 /* MLRegistMaritalView.swift in Sources */,
 				827BFA40222CC2260093EB65 /* LookMeCell.swift in Sources */,
 				827BFA6B222CC2260093EB65 /* MJRefreshFooter.m in Sources */,
 				827BFA9F222CC2260093EB65 /* UIImageView+HighlightedWebCache.m in Sources */,
 				827BFA61222CC2260093EB65 /* amrFileCodec.mm in Sources */,
 				827BFA11222CC2260093EB65 /* UIView+Geometry.m in Sources */,
-				827BFA34222CC2260093EB65 /* RegistSixController.swift in Sources */,
+				827BFA34222CC2260093EB65 /* RegistMaritalController.swift in Sources */,
 				CC9FBC4021F711A10038AB94 /* ZUtils.swift in Sources */,
 				827BFAD5222CF9DE0093EB65 /* LoginView.swift in Sources */,
 				827BFA68222CC2260093EB65 /* MJRefreshAutoFooter.m in Sources */,
@@ -2589,6 +2600,7 @@
 				827BF9E4222CC2260093EB65 /* HXPhotoManager.m in Sources */,
 				827BFA42222CC2260093EB65 /* ChooseFriendController.swift in Sources */,
 				827BF9CD222CC2260093EB65 /* HXCollectionView.m in Sources */,
+				206ECFD82266FDF300ABFE99 /* MLRegistCompanyAreaView.swift in Sources */,
 				827BF9C3222CC2260093EB65 /* BaseViewController.swift in Sources */,
 				827BFAAD222CC2260093EB65 /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				827BFA45222CC2260093EB65 /* MeLookController.swift in Sources */,
@@ -2603,7 +2615,7 @@
 				827BFA8D222CC2260093EB65 /* PSTCollectionViewUpdateItem.m in Sources */,
 				827BF9C1222CC2260093EB65 /* BaseTabBarController.swift in Sources */,
 				827BFABF222CC2260093EB65 /* EaseBubbleView+File.m in Sources */,
-				827BFA30222CC2260093EB65 /* RegistFiveController.swift in Sources */,
+				827BFA30222CC2260093EB65 /* RegistEducationController.swift in Sources */,
 				827BFA6E222CC2260093EB65 /* MJRefreshAutoNormalFooter.m in Sources */,
 				827BFA00222CC2260093EB65 /* NSDate+HXExtension.m in Sources */,
 				827BFAA4222CC2260093EB65 /* EaseConversationModel.m in Sources */,

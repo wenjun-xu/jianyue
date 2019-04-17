@@ -28,7 +28,7 @@ class RegistStatureController: BaseViewController {
 extension RegistStatureController:MLRegistStatureViewDelegate {
     func statureBtnClick(pageView: MLRegistStatureView, height: String) {
         print("height = \(height)")
-        let vc = RegistFourController()
+        let vc = RegistCompanyAreaController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

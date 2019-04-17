@@ -1,32 +1,58 @@
 //
-//  RegistFiveController.swift
+//  MLRegistEducationView.swift
 //  MoLiao
 //
-//  Created by 徐庆标 on 2019/1/8.
-//  Copyright © 2019 徐庆标. All rights reserved.
+//  Created by study on 2019/4/17.
+//  Copyright © 2019年 WY. All rights reserved.
 //
 
 import UIKit
 
-class RegistFiveController: BaseViewController {
+protocol MLRegistEducationViewDelegate: NSObjectProtocol {
+    /// 学历
+    func educationClick(pageView: MLRegistEducationView, education: String)
+}
+
+///  "完善信息(5/7)" - 学历
+class MLRegistEducationView: UIView {
     var tempBtn: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "完善信息(5/7)"
-        view.backgroundColor = kBgColor
-        let bgView = UIView.init(frame: CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace))
+    private let bgView = UIView()
+    weak var delegate: MLRegistEducationViewDelegate?
+    /// 身高
+    private var heightString = ""
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupBGView()
+        
+        setupContent()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension MLRegistEducationView {
+    
+    private func setupBGView() {
+        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
         bgView.backgroundColor = UIColor.white
         bgView.layer.cornerRadius = 8
         bgView.clipsToBounds = true
-        view.addSubview(bgView)
-        
+        self.addSubview(bgView)
+    }
+    
+    private func setupContent() {
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
         topTitle.text = "你的学历是"
         topTitle.textAlignment = .center
         topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
         bgView.addSubview(topTitle)
-
+        
         let temptag:Int = UserDefaults.standard.integer(forKey: "temptag")
         let arrTitle = ["高中及以下","中专","大专","大学本科","硕士","博士"]
         for i in 1..<7 {
@@ -53,12 +79,12 @@ class RegistFiveController: BaseViewController {
         
     }
     
-    @objc func clickAction(sender:UIButton)  {
+    @objc func clickAction(sender: UIButton)  {
         if tempBtn == nil {
             sender.isSelected = true
             tempBtn = sender
-            tempBtn.backgroundColor = kNavColor
-
+            tempBtn.backgroundColor = UIColor.blue //kNavColor
+            
         }else if (tempBtn != nil && tempBtn == sender){
             sender.isSelected = true
             sender.backgroundColor = kNavColor
@@ -70,47 +96,8 @@ class RegistFiveController: BaseViewController {
             tempBtn = sender
         }
         UserDefaults.standard.set(sender.tag, forKey: "temptag")
-        let vc = RegistSixController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let str = sender.currentTitle ?? ""
+        self.delegate?.educationClick(pageView: self, education: str)
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -23,6 +23,7 @@ class MLRegistStatureView: MLRegistBaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupTopicView(title: "你的身高是")
         setupContent()
     }
     
@@ -52,14 +53,7 @@ extension MLRegistStatureView {
 extension MLRegistStatureView {    
     private func setupContent() {
         
-        
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的身高是"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
-        
-        let rulerView = DYScrollRulerView.init(frame: CGRect(x: 20, y: topTitle.bottomY + 50, width: kScreenWidth - 40 - 2*kBgViewSpace, height: 200), theMinValue: 140, theMaxValue: 220, theStep: 1, theUnit: "com", theNum: 5)
+        let rulerView = DYScrollRulerView.init(frame: CGRect(x: 20, y: FRegist_titleY, width: kScreenWidth - 40 - 2*kBgViewSpace, height: 200), theMinValue: 140, theMaxValue: 220, theStep: 1, theUnit: "com", theNum: 5)
         rulerView?.setDefaultValue(155, animated: true)
         rulerView?.bgColor = UIColor.gray
         rulerView?.triangleColor = UIColor.white

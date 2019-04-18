@@ -24,6 +24,7 @@ class MLRegistCompanyAreaView: MLRegistBaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupTopicView(title: "你的工作地区在哪里")
         setupContent()
     }
     
@@ -53,13 +54,8 @@ extension MLRegistCompanyAreaView: PickerDelegate{
 extension MLRegistCompanyAreaView {
         
     private func setupContent() {
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的工作地区在哪里"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
         
-        let pickerView = BHJPickerView.init(self, frame: CGRect(x: 20, y: topTitle.bottomY + 20, width: kScreenWidth - 40 - 2*kBgViewSpace, height: 200))
+        let pickerView = BHJPickerView.init(self, frame: CGRect(x: 20, y: FRegist_titleY, width: kScreenWidth - 40 - 2*kBgViewSpace, height: 200))
         pickerView.pickerDelegate = self
         bgView.addSubview(pickerView)
         

@@ -24,6 +24,7 @@ class MLRegistEducationView: MLRegistBaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupTopicView(title: "你的学历是")
         setupContent()
     }
     
@@ -60,20 +61,7 @@ extension MLRegistEducationView {
 // MARK:- UI创建
 extension MLRegistEducationView {
     
-    private func setupBGView() {
-        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
-        bgView.backgroundColor = UIColor.white
-        bgView.layer.cornerRadius = 8
-        bgView.clipsToBounds = true
-        self.addSubview(bgView)
-    }
-    
     private func setupContent() {
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的学历是"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
         
         let temptag:Int = UserDefaults.standard.integer(forKey: "temptag")
         let arrTitle = ["高中及以下","中专","大专","大学本科","硕士","博士"]

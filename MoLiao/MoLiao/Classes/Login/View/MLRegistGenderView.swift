@@ -32,7 +32,9 @@ class MLRegistGenderView: MLRegistBaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupTopicView(title: "你的性别是")
         setupContent()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,50 +61,33 @@ extension MLRegistGenderView {
 // MARK:- UI创建
 extension MLRegistGenderView {
     private func setupContent() {
+
+        // 创建男性
+        let maleFrame = CGRect(x: FRegist_leftSpace, y: 150, width: FRegist_imageWidth, height: FRegist_imageWidth)
+        setupView(image: "shuaige", text: "男", frame: maleFrame)
         
-        let imgWidth:CGFloat = 100
-        let leftSpace:CGFloat = (kScreenWidth - 2*imgWidth) / 3.0
-        let titleBttomY:CGFloat = 90
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的性别是"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
-        
+        // 创建女性
+        let aFmX: CGFloat = 2 * FRegist_leftSpace + FRegist_imageWidth
+        let femaleFrame = CGRect(x: aFmX, y: 150, width: FRegist_imageWidth, height: FRegist_imageWidth)
+        setupView(image: "meinv", text: "女", frame: femaleFrame)
+    }
+    
+    private func setupView(image: String, text: String, frame: CGRect) {
         let leftBtn = UIButton.init(type: .custom)
-        leftBtn.frame = CGRect(x: leftSpace, y: topTitle.bottomY + titleBttomY, width: imgWidth, height: imgWidth)
-        leftBtn.setImage(UIImage(named: "shuaige"), for: .normal)
-        leftBtn.layer.cornerRadius = imgWidth/2.0
+        leftBtn.frame = frame
+        leftBtn.setImage(UIImage(named: image), for: .normal)
+        leftBtn.layer.cornerRadius = frame.width / 2.0
         leftBtn.clipsToBounds = true
         leftBtn.tag = 1000
         leftBtn.addTarget(self, action: #selector(nextClick(sender:)), for: .touchUpInside)
         bgView.addSubview(leftBtn)
         
         
-        let leftLabel = UILabel.init(frame: CGRect(x: leftSpace, y: leftBtn.bottomY + 10, width: imgWidth, height: 22))
-        leftLabel.text = "男"
+        let leftLabel = UILabel.init(frame: CGRect(x: frame.origin.x, y: leftBtn.bottomY + 10, width: frame.width, height: 22))
+        leftLabel.text = text
         leftLabel.font = UIFont.systemFont(ofSize: 16.0)
         leftLabel.textColor = UIColor.black.alpha(0.7)
         leftLabel.textAlignment = .center
         bgView.addSubview(leftLabel)
-        
-        
-        let rightBtn = UIButton.init(type: .custom)
-        rightBtn.frame = CGRect(x: 2*leftSpace + imgWidth, y: topTitle.bottomY + titleBttomY, width: imgWidth, height: imgWidth)
-        rightBtn.setImage(UIImage(named: "meinv"), for: .normal)
-        rightBtn.layer.cornerRadius = imgWidth/2.0
-        rightBtn.clipsToBounds = true
-        leftBtn.tag = 1001
-        rightBtn.addTarget(self, action: #selector(nextClick(sender:)), for: .touchUpInside)
-        bgView.addSubview(rightBtn)
-        
-        let rightLabel = UILabel.init(frame: CGRect(x: 2*leftSpace + imgWidth, y: rightBtn.bottomY + 10, width: imgWidth, height: 22))
-        rightLabel.text = "女"
-        rightLabel.font = UIFont.systemFont(ofSize: 16.0)
-        rightLabel.textColor = UIColor.black.alpha(0.7)
-        rightLabel.textAlignment = .center
-        bgView.addSubview(rightLabel)
     }
-    
-   
 }

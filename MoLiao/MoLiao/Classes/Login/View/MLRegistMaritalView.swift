@@ -26,14 +26,14 @@ class MLRegistMaritalView: MLRegistBaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
+        
+        setupTopicView(title: "你的婚姻状况")
         setupContent()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 // MARK:- 按钮点击
@@ -64,11 +64,7 @@ extension MLRegistMaritalView {
 extension MLRegistMaritalView {
     
     private func setupContent() {
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的婚姻状况"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
+
         let temptag:Int = UserDefaults.standard.integer(forKey: "sixtemptag")
 
         let arrTitle = ["未婚","离异","丧偶"]

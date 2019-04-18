@@ -24,7 +24,8 @@ class MLRegistSalaryView: MLRegistBaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
+        
+        setupTopicView(title: "你的月收入是")
         setupContent()
     }
     
@@ -38,11 +39,6 @@ class MLRegistSalaryView: MLRegistBaseView {
 extension MLRegistSalaryView {
     
     private func setupContent() {
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的月收入是"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
         
         let temptag:Int = UserDefaults.standard.integer(forKey: "tempseventag")
         let arrTitle = ["3000元以下","3000~5000元","5000~8000元","8000~12000元","1200～15000元","15000～20000元","20000~50000元","50000元以上"]

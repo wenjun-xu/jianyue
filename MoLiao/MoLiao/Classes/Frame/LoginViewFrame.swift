@@ -8,6 +8,13 @@
 
 import Foundation
 
+///
+public let FRegist_imageWidth: CGFloat = 100
+///
+public let FRegist_leftSpace: CGFloat = (kScreenWidth - 2 * FRegist_imageWidth) / 3.0
+/// 子类中z第一个View 的 y值
+public let FRegist_titleY: CGFloat = 150
+
 
 // MARK:- 界面用到的Frame值
 enum frameLoginView {

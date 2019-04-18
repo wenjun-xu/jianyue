@@ -22,7 +22,7 @@ class MLRegistBirthdayView: MLRegistBaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupTopicView(title: "你的出生日期是")
         setupContent()
     }
     
@@ -34,8 +34,7 @@ class MLRegistBirthdayView: MLRegistBaseView {
 // MARK:- 点击事件
 extension MLRegistBirthdayView {
     // MARK: - 日期选择器响应方法
-    @objc func dateChanged(datePicker:UIDatePicker)
-    {
+    @objc func dateChanged(datePicker:UIDatePicker) {
         // 更新提醒时间文本框
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
@@ -55,14 +54,8 @@ extension MLRegistBirthdayView {
 extension MLRegistBirthdayView {    
     private func setupContent() {
         
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "你的出生日期是"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
-        
         let datepicker = UIDatePicker()
-        datepicker.frame = CGRect(x: 12, y: topTitle.bottomY + 40, width: kScreenWidth - 24 - 2*kBgViewSpace, height: 200)
+        datepicker.frame = CGRect(x: 12, y: FRegist_titleY, width: kScreenWidth - 24 - 2 * kBgViewSpace, height: 200)
         bgView.addSubview(datepicker)
         let oneYear = TimeInterval(60 * 60 * 24 * 365)
         let nowYear = TimeInterval(60 * 60 * 24 * 365 * 31)

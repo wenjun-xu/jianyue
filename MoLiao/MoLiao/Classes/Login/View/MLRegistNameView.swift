@@ -27,6 +27,7 @@ class MLRegistNameView: MLRegistBaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupTopicView(title: "为自己起一个有趣的名字吧")
         setupContent()
     }
     
@@ -54,14 +55,8 @@ extension MLRegistNameView {
 extension MLRegistNameView {
     
     private func setupContent() {
-        let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))
-        topTitle.text = "为自己起一个有趣的名字吧"
-        topTitle.textAlignment = .center
-        topTitle.font = UIFont.boldSystemFont(ofSize: 24.0)
-        bgView.addSubview(topTitle)
         
-        
-        textView = UITextView.init(frame: CGRect(x: (bgView.width - 220) / 2.0, y: topTitle.bottomY + 50, width: 220, height: 60))
+        textView = UITextView.init(frame: CGRect(x: (bgView.width - 220) / 2.0, y: FRegist_titleY, width: 220, height: 60))
         textView.font = UIFont.boldSystemFont(ofSize: 20.0)
         textView.textAlignment = .center
         textView.backgroundColor = UIColor.gray.alpha(0.3)

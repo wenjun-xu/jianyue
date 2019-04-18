@@ -14,16 +14,14 @@ protocol MLRegistStatureViewDelegate: NSObjectProtocol {
 }
 
 /// "完善信息(3/7)" - 身高
-class MLRegistStatureView: UIView {
-    private let bgView = UIView()
+class MLRegistStatureView: MLRegistBaseView {
+
     weak var delegate: MLRegistStatureViewDelegate?
     /// 身高
     private var heightString = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupBGView()
         
         setupContent()
     }
@@ -51,15 +49,7 @@ extension MLRegistStatureView {
 
 
 // MARK:- UI创建
-extension MLRegistStatureView {
-    private func setupBGView() {
-        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
-        bgView.backgroundColor = UIColor.white
-        bgView.layer.cornerRadius = 8
-        bgView.clipsToBounds = true
-        self.addSubview(bgView)
-    }
-    
+extension MLRegistStatureView {    
     private func setupContent() {
         
         

@@ -15,12 +15,10 @@ protocol MLRegistMaritalViewDelegate: NSObjectProtocol {
 }
 
 ///  "完善信息(6/7)" - 婚姻
-class MLRegistMaritalView: UIView {
+class MLRegistMaritalView: MLRegistBaseView {
     
     var tempBtn: UIButton!
-    
-    private let bgView = UIView()
-    
+        
     weak var delegate: MLRegistMaritalViewDelegate?
     
     /// 身高
@@ -28,9 +26,7 @@ class MLRegistMaritalView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupBGView()
-        
+                
         setupContent()
     }
     
@@ -66,14 +62,6 @@ extension MLRegistMaritalView {
 
 // MARK:- UI创建
 extension MLRegistMaritalView {
-    
-    private func setupBGView() {
-        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
-        bgView.backgroundColor = UIColor.white
-        bgView.layer.cornerRadius = 8
-        bgView.clipsToBounds = true
-        self.addSubview(bgView)
-    }
     
     private func setupContent() {
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))

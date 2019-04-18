@@ -14,20 +14,17 @@ protocol MLRegistSalaryViewDelegate: NSObjectProtocol {
 }
 
 ///  "完善信息(7/7)" - 收入
-class MLRegistSalaryView: UIView {
+class MLRegistSalaryView: MLRegistBaseView {
     
     var tempBtn: UIButton!
 
-    private let bgView = UIView()
     weak var delegate: MLRegistSalaryViewDelegate?
     /// 身高
     private var heightString = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupBGView()
-        
+                
         setupContent()
     }
     
@@ -39,14 +36,6 @@ class MLRegistSalaryView: UIView {
 
 // MARK:- UI创建
 extension MLRegistSalaryView {
-    
-    private func setupBGView() {
-        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
-        bgView.backgroundColor = UIColor.white
-        bgView.layer.cornerRadius = 8
-        bgView.clipsToBounds = true
-        self.addSubview(bgView)
-    }
     
     private func setupContent() {
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))

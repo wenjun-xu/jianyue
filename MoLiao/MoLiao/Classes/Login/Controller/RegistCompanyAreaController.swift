@@ -26,7 +26,10 @@ class RegistCompanyAreaController: BaseViewController {
 }
 
 extension RegistCompanyAreaController: MLRegistCompanyAreaViewDelegate {
-    func companyAreaBtnClick(pageView: MLRegistCompanyAreaView, height: String) {
+    func companyAreaBtnClick(pageView: MLRegistCompanyAreaView, area: String) {
+        
+        print("公司地址 = \(area)")
+        
         let vc = RegistEducationController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

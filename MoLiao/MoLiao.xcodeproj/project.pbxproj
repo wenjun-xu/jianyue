@@ -16,6 +16,7 @@
 		206ECFDC2267045A00ABFE99 /* MLRegistMaritalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */; };
 		206ECFDE2267195000ABFE99 /* MLRegistSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */; };
 		206ECFE022671D9900ABFE99 /* MLRegistNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */; };
+		209BEDA222683DB700246182 /* MLRegistBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEDA122683DB700246182 /* MLRegistBaseView.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -360,6 +361,7 @@
 		206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistMaritalView.swift; sourceTree = "<group>"; };
 		206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistSalaryView.swift; sourceTree = "<group>"; };
 		206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistNameView.swift; sourceTree = "<group>"; };
+		209BEDA122683DB700246182 /* MLRegistBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistBaseView.swift; sourceTree = "<group>"; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
@@ -1314,6 +1316,7 @@
 				206ECFDB2267045A00ABFE99 /* MLRegistMaritalView.swift */,
 				206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */,
 				206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */,
+				209BEDA122683DB700246182 /* MLRegistBaseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2627,6 +2630,7 @@
 				827BFA00222CC2260093EB65 /* NSDate+HXExtension.m in Sources */,
 				827BFAA4222CC2260093EB65 /* EaseConversationModel.m in Sources */,
 				CC1EAAD821E1E3DA000BACE5 /* DHGifImageOperation.m in Sources */,
+				209BEDA222683DB700246182 /* MLRegistBaseView.swift in Sources */,
 				827BFA43222CC2260093EB65 /* LookMeController.swift in Sources */,
 				827BFAC5222CC2260093EB65 /* EaseBubbleView+Voice.m in Sources */,
 				827BFA85222CC2260093EB65 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,

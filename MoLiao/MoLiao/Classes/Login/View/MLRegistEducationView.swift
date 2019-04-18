@@ -14,18 +14,15 @@ protocol MLRegistEducationViewDelegate: NSObjectProtocol {
 }
 
 ///  "完善信息(5/7)" - 学历
-class MLRegistEducationView: UIView {
+class MLRegistEducationView: MLRegistBaseView {
     var tempBtn: UIButton!
     
-    private let bgView = UIView()
     weak var delegate: MLRegistEducationViewDelegate?
     /// 身高
     private var heightString = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupBGView()
         
         setupContent()
     }

@@ -23,9 +23,8 @@ protocol MLRegistGenderViewDelegate: NSObjectProtocol {
 }
 
 /// 完善信息 - 性别选择
-class MLRegistGenderView: UIView {
-
-    private let bgView = UIView()
+class MLRegistGenderView: MLRegistBaseView {
+    
     weak var delegate: MLRegistGenderViewDelegate?
     
     private var aGenderType = typeGender.genderNeutral
@@ -33,8 +32,6 @@ class MLRegistGenderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupBGView()
-
         setupContent()
     }
     
@@ -61,14 +58,6 @@ extension MLRegistGenderView {
 
 // MARK:- UI创建
 extension MLRegistGenderView {
-    private func setupBGView() {
-        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
-        bgView.backgroundColor = UIColor.white
-        bgView.layer.cornerRadius = 8
-        bgView.clipsToBounds = true
-        self.addSubview(bgView)
-    }
-    
     private func setupContent() {
         
         let imgWidth:CGFloat = 100

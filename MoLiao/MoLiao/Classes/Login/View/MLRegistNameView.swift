@@ -14,13 +14,12 @@ protocol MLRegistNameViewDelegate: NSObjectProtocol {
 }
 
 ///  为自己起一个有趣的名字
-class MLRegistNameView: UIView {
+class MLRegistNameView: MLRegistBaseView {
     
     var textView:UITextView!
     
     var tempBtn: UIButton!
     
-    private let bgView = UIView()
     weak var delegate: MLRegistNameViewDelegate?
     /// 身高
     private var heightString = ""
@@ -28,15 +27,12 @@ class MLRegistNameView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupBGView()
-        
         setupContent()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 // MARK:- 点击事件
@@ -56,14 +52,6 @@ extension MLRegistNameView {
 
 // MARK:- UI创建
 extension MLRegistNameView {
-    
-    private func setupBGView() {
-        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
-        bgView.backgroundColor = UIColor.white
-        bgView.layer.cornerRadius = 8
-        bgView.clipsToBounds = true
-        self.addSubview(bgView)
-    }
     
     private func setupContent() {
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))

@@ -15,8 +15,7 @@ protocol MLRegistBirthdayViewDelegate: NSObjectProtocol {
 }
 
 /// 完善信息(2/7) - 出生日期
-class MLRegistBirthdayView: UIView {
-    private let bgView = UIView()
+class MLRegistBirthdayView: MLRegistBaseView {
     weak var delegate: MLRegistBirthdayViewDelegate?
     /// 生日
     private var birthdayString = ""
@@ -24,15 +23,12 @@ class MLRegistBirthdayView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupBGView()
-        
         setupContent()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 // MARK:- 点击事件
@@ -56,15 +52,7 @@ extension MLRegistBirthdayView {
 }
 
 // MARK:- UI创建
-extension MLRegistBirthdayView {
-    private func setupBGView() {
-        bgView.frame = CGRect(x: kBgViewSpace, y: kBgViewSpace, width: kScreenWidth - 2*kBgViewSpace, height: kScreenHeight - kStatusBarH - kNavH - 2*kBgViewSpace)
-        bgView.backgroundColor = UIColor.white
-        bgView.layer.cornerRadius = 8
-        bgView.clipsToBounds = true
-        self.addSubview(bgView)
-    }
-    
+extension MLRegistBirthdayView {    
     private func setupContent() {
         
         let topTitle = UILabel.init(frame: CGRect(x: 0, y: 80, width: bgView.width, height: 40))

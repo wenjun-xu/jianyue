@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol MLHeadFirstViewDelegate: NSObjectProtocol {
+    func nextPageClick(view: MLHeadFirstView)
+}
+
 /// 左侧标题  右侧副标题
 class MLHeadFirstView: UIView {
 
     /// 左侧标题
     private let leftLabel = UILabel()
     private let moreBtn = UIButton()
+    
+    weak var delegate: MLHeadFirstViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,17 +51,15 @@ extension MLHeadFirstView {
     }
 }
 
-// MARK:- /// 查看更多
+// MARK:- 按钮的点击事件
 extension MLHeadFirstView {
-    /// 查看更多
+    /// 按钮的点击事件
     @objc private func moreClick() {
-        print("查看更多")
-//        let vc = MoreSelectController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        self.delegate?.nextPageClick(view: self)
     }
 }
 
-// MARK:- /// 查看更多
+// MARK:- 外界传值
 extension MLHeadFirstView {
     
     /// 外界传值
@@ -67,8 +71,13 @@ extension MLHeadFirstView {
         self.leftLabel.text = leftLabel
         
         guard let rightL = rightLabel else {
+            // 隐藏
+            moreBtn.isHidden = true
             return
         }
-         moreBtn.setTitle(rightL, for: .normal)
+        
+        // 显示
+        moreBtn.isHidden = false
+        moreBtn.setTitle(rightL, for: .normal)
     }
 }

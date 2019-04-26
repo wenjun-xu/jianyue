@@ -19,6 +19,8 @@
 		209BEDA222683DB700246182 /* MLRegistBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEDA122683DB700246182 /* MLRegistBaseView.swift */; };
 		209BEE632271801300246182 /* MLRegistGenderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE622271801300246182 /* MLRegistGenderTest.swift */; };
 		209BEE6522729AD000246182 /* MLHeadFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE6422729AD000246182 /* MLHeadFirstView.swift */; };
+		20D61D912272CA300020FB42 /* MLBastContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D902272CA300020FB42 /* MLBastContentCell.swift */; };
+		20D61D932272F6340020FB42 /* BastMatch.json in Resources */ = {isa = PBXBuildFile; fileRef = 20D61D922272F6340020FB42 /* BastMatch.json */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -367,6 +369,8 @@
 		209BEE622271801300246182 /* MLRegistGenderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistGenderTest.swift; sourceTree = "<group>"; };
 		209BEE6422729AD000246182 /* MLHeadFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MLHeadFirstView.swift; path = MoLiao/Classes/Home/view/MLHeadFirstView.swift; sourceTree = SOURCE_ROOT; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		20D61D902272CA300020FB42 /* MLBastContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastContentCell.swift; sourceTree = "<group>"; };
+		20D61D922272F6340020FB42 /* BastMatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BastMatch.json; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
 		20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHomePageView.swift; sourceTree = "<group>"; };
@@ -1208,6 +1212,7 @@
 				827BF832222CC2250093EB65 /* ConditionSearchCell.swift */,
 				827BF833222CC2250093EB65 /* HomeCell.swift */,
 				827BF834222CC2250093EB65 /* OtherInfoTopCell.swift */,
+				20D61D902272CA300020FB42 /* MLBastContentCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1247,6 +1252,7 @@
 			children = (
 				827BF848222CC2250093EB65 /* BiaoQianModel.swift */,
 				827BF849222CC2250093EB65 /* HomeModel.swift */,
+				20D61D922272F6340020FB42 /* BastMatch.json */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2299,6 +2305,7 @@
 				827BF9EA222CC2260093EB65 /* hx_camera_flashlight@2x.png in Resources */,
 				827BFA39222CC2260093EB65 /* city.json in Resources */,
 				827BF9F0222CC2260093EB65 /* hx_faceu_camera@3x.png in Resources */,
+				20D61D932272F6340020FB42 /* BastMatch.json in Resources */,
 				827BF9F2222CC2260093EB65 /* hx_flash_pic_nopreview@2x.png in Resources */,
 				CC1EAAD721E1E3DA000BACE5 /* GuideImage.bundle in Resources */,
 				827BFA76222CC2260093EB65 /* MJRefresh.bundle in Resources */,
@@ -2665,6 +2672,7 @@
 				827BF9D5222CC2260093EB65 /* HXDatePhotoInteractiveTransition.m in Sources */,
 				827BFAB0222CC2260093EB65 /* EaseEmojiEmoticons.m in Sources */,
 				CC77E40A21FAAC5A009A0C49 /* WJSegmentView.swift in Sources */,
+				20D61D912272CA300020FB42 /* MLBastContentCell.swift in Sources */,
 				206ECFD42266F7AD00ABFE99 /* MLRegistBirthdayView.swift in Sources */,
 				827BFA1F222CC2260093EB65 /* SeachViewController.swift in Sources */,
 				CC62D31021D3D18E00CEE184 /* StringExtension.swift in Sources */,

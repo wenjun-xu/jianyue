@@ -77,6 +77,4 @@ extension MLRegistBirthdayView {
         nextBtn.addTarget(self, action: #selector(nextClick), for: .touchUpInside)
         bgView.addSubview(nextBtn)
     }
-    
-   
 }

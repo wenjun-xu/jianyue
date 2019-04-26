@@ -21,8 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
         
         
         // 登录界面
-        self.window?.rootViewController = BaseNavgationController(rootViewController: MLRegistGenderController()) // BaseNavgationController(rootViewController: UserNameController())
-        window?.makeKeyAndVisible()
+//        let vc = HomePageController()
+//        let nvc = BaseNavgationController.init(rootViewController: vc)
+        self.window?.rootViewController = BaseTabBarController()
+        
+//        self.window?.rootViewController = BaseNavgationController(rootViewController: MLRegistGenderController()) // BaseNavgationController(rootViewController: UserNameController())
+//        window?.makeKeyAndVisible()
         
         /*
         //AppKey:注册的AppKey，详细见下面注释。
@@ -59,9 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
 
         */
         
-//        let vc = HomePageController()
-//        let nvc = BaseNavgationController.init(rootViewController: vc)
-//        self.window?.rootViewController = BaseTabBarController()
+
         
         
         

@@ -23,6 +23,4 @@ class HomeModel: NSObject {
     var isHuiYuan:Bool!
     var isDuBai:Bool!
     var Picture: String!
-
-    
 }

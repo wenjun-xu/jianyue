@@ -17,6 +17,8 @@
 		206ECFDE2267195000ABFE99 /* MLRegistSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */; };
 		206ECFE022671D9900ABFE99 /* MLRegistNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */; };
 		209BEDA222683DB700246182 /* MLRegistBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEDA122683DB700246182 /* MLRegistBaseView.swift */; };
+		209BEE632271801300246182 /* MLRegistGenderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE622271801300246182 /* MLRegistGenderTest.swift */; };
+		209BEE6522729AD000246182 /* MLHeadFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE6422729AD000246182 /* MLHeadFirstView.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -362,6 +364,8 @@
 		206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistSalaryView.swift; sourceTree = "<group>"; };
 		206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistNameView.swift; sourceTree = "<group>"; };
 		209BEDA122683DB700246182 /* MLRegistBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistBaseView.swift; sourceTree = "<group>"; };
+		209BEE622271801300246182 /* MLRegistGenderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistGenderTest.swift; sourceTree = "<group>"; };
+		209BEE6422729AD000246182 /* MLHeadFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MLHeadFirstView.swift; path = MoLiao/Classes/Home/view/MLHeadFirstView.swift; sourceTree = SOURCE_ROOT; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
@@ -1211,10 +1215,10 @@
 		827BF835222CC2250093EB65 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				827BF839222CC2250093EB65 /* HomeNewController.swift */,
 				827BF836222CC2250093EB65 /* BiaoQianSearchController.swift */,
 				827BF837222CC2250093EB65 /* ConditionSearchController.swift */,
 				827BF838222CC2250093EB65 /* HomeDetailController.swift */,
-				827BF839222CC2250093EB65 /* HomeNewController.swift */,
 				827BF83A222CC2250093EB65 /* MoreSelectController.swift */,
 				827BF83B222CC2250093EB65 /* OtherInformationController.swift */,
 				827BF83C222CC2250093EB65 /* SeachViewController.swift */,
@@ -1263,6 +1267,7 @@
 			children = (
 				827BF850222CC2250093EB65 /* WJCyclePictureView.swift */,
 				827BF851222CC2250093EB65 /* WJScrollView.swift */,
+				209BEE6422729AD000246182 /* MLHeadFirstView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2098,6 +2103,7 @@
 			children = (
 				CC2B7FC621D0B994009B4474 /* MoLiaoUITests.swift */,
 				CC2B7FC821D0B994009B4474 /* Info.plist */,
+				209BEE622271801300246182 /* MLRegistGenderTest.swift */,
 			);
 			path = MoLiaoUITests;
 			sourceTree = "<group>";
@@ -2479,6 +2485,7 @@
 				827BFA2C222CC2260093EB65 /* CodeViewController.swift in Sources */,
 				827BFAA7222CC2260093EB65 /* NSDate+Category.m in Sources */,
 				827BF9E6222CC2260093EB65 /* HXPhotoSubViewCell.m in Sources */,
+				209BEE6522729AD000246182 /* MLHeadFirstView.swift in Sources */,
 				827BFAA0222CC2260093EB65 /* UIImageView+WebCache.m in Sources */,
 				827BFA97222CC2260093EB65 /* SDWebImageDownloader.m in Sources */,
 				827BF9E8222CC2260093EB65 /* HXPhotoView.m in Sources */,
@@ -2714,6 +2721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2B7FC721D0B994009B4474 /* MoLiaoUITests.swift in Sources */,
+				209BEE632271801300246182 /* MLRegistGenderTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2985,7 +2993,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A9NU434F6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MoLiaoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3006,7 +3014,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A9NU434F6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MoLiaoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -15,6 +15,8 @@ public let FRegist_leftSpace: CGFloat = (kScreenWidth - 2 * FRegist_imageWidth) 
 /// 子类中z第一个View 的 y值
 public let FRegist_titleY: CGFloat = 150
 
+/// 20的距离
+public let leftSpace_20: CGFloat = 20
 
 // MARK:- 界面用到的Frame值
 enum frameLoginView {

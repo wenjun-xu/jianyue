@@ -10,7 +10,12 @@ import UIKit
 import SwiftyJSON
 import SDWebImage
 import Kingfisher
-class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPagedFlowViewDataSource{
+
+typealias HomeNewDelegate = NewPagedFlowViewDelegate & NewPagedFlowViewDataSource
+
+/// 首页 - 推荐
+class HomeNewController: BaseTabViewController  {
+    
     var userLabel:UILabel!
     var userDetailLabel:UILabel!
     var pageFlowView:NewPagedFlowView!
@@ -21,26 +26,56 @@ class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPaged
     fileprivate var topGroup = ["home_one","home_two","home_three"]
     fileprivate var iconGroup = ["0000","1111","2222","3333","4444","5555"]
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /// 导航栏创建
+        setupNavView()
+        /// Json 数据
+        getJsonData()
+        /// tableView 的基本数据
+        setupBaseTableView()
+        /// 创建 Ui
+        setupView()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+}
+
+// MARK:-  UI创建
+extension HomeNewController {
+    /// 导航栏创建
+    private func setupNavView() {
         self.title = "推荐"
-        let leftSpace:CGFloat = 20
+        
         navigationController?.navigationBar.shadowImage = UIImage.init()
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "sousuo"), style: .plain, target: self, action: #selector(rightClick))
+        
+        /// 导航栏搜索右侧按钮
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "sousuo"), style: .plain, target: self, action: #selector(SearchNavClick))
+    }
+    
+    /// Json 数据
+    private func getJsonData() {
         let strDataPath = Bundle.main.path(forResource: "home", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
-        
         let json = DataJson().data2JSON(data: data! as Data)
         buildModelCommonByJson(json["data"])
-        
+    }
+    
+    /// tableView 的基本数据
+    private func setupBaseTableView() {
         tableView.height = kScreenHeight - kTabbarHeight - kStatusBarH - kNavH
         tableView.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = UIColor.white
         tableView.separatorStyle = .none//去除分割线
-        
-        let headerView = UIView.init()
+    }
+    /// 广告轮播器
+    private func setupHeadView() {
+        /// 广告轮播器
         pageFlowView = NewPagedFlowView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 170))
         pageFlowView.delegate = self
         pageFlowView.dataSource = self
@@ -50,22 +85,19 @@ class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPaged
         pageFlowView.pageControl = pageControl
         pageFlowView.addSubview(pageControl)
         pageFlowView.reloadData()
-        headerView.addSubview(pageFlowView)
+        
+        tableView.tableHeaderView = pageFlowView
+    }
+    
+    private func setupView() {
+//        let headerView = UIView.init()
+        
+        /// 广告轮播器
+        setupHeadView()
         
         
-        let leftLabel = UILabel.init(frame: CGRect(x: leftSpace, y: pageFlowView.bottomY + 20, width: 200, height: 50))
-        leftLabel.text = "最佳匹配"
-        leftLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight(rawValue: 1.2))
-        headerView.addSubview(leftLabel)
         
-        let moreBtn = UIButton.init(frame: CGRect(x: kScreenWidth - leftSpace - 60, y: leftLabel.y, width: 60, height: 50))
-        moreBtn.setTitleColor(UIColor.gray, for: .normal)
-        moreBtn.titleLabel?.font = UIFont.systemFont(ofSize: 13.0)
-        moreBtn.titleLabel?.textAlignment = .right
-        moreBtn.setTitle("查看更多", for: .normal)
-        moreBtn.addTarget(self, action: #selector(moreClick), for: .touchUpInside)
-        headerView.addSubview(moreBtn)
-
+        /*
         centerFlowView = NewPagedFlowView.init(frame: CGRect(x: 0, y: leftLabel.bottomY, width: kScreenWidth, height: 140*widthRatio))
         centerFlowView.leftRightMargin = 40
         centerFlowView.isOpenAutoScroll = false
@@ -79,30 +111,128 @@ class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPaged
         userLabel.textAlignment = .center
         userLabel.font = UIFont.systemFont(ofSize: 14.0)
         headerView.addSubview(userLabel)
-
-        userDetailLabel = UILabel.init(frame: CGRect(x: leftSpace, y: userLabel.bottomY, width: kScreenWidth - 2*leftSpace, height: 20))
+        
+        userDetailLabel = UILabel.init(frame: CGRect(x: leftSpace_20, y: userLabel.bottomY, width: kScreenWidth - 2 * leftSpace_20, height: 20))
         userDetailLabel.textAlignment = .center
         userDetailLabel.text = detailTitleArr[0]
         userDetailLabel.textColor = UIColor.gray
         userDetailLabel.font = UIFont.systemFont(ofSize: 14.0)
         headerView.addSubview(userDetailLabel)
         
-        let meiriLabel = UILabel.init(frame: CGRect(x: leftSpace, y: userDetailLabel.bottomY + 5, width: 200, height: 30))
+        let meiriLabel = UILabel.init(frame: CGRect(x: leftSpace_20, y: userDetailLabel.bottomY + 5, width: 200, height: 30))
         meiriLabel.text = "真心推荐"
         meiriLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight(rawValue: 1.2))
         headerView.addSubview(meiriLabel)
         
         headerView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: pageFlowView.height + centerFlowView.height + leftLabel.height + userLabel.height + 30 + meiriLabel.height + userDetailLabel.height)
         tableView.tableHeaderView = headerView
-        
+ 
+ */
+    }
+}
+
+extension HomeNewController {
+    
+}
+
+extension HomeNewController {
+    
+}
+
+// MARK:- UITableViewDelegate || UITableViewDataSource
+extension HomeNewController: HomeNewDelegate {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 0
+        }
+        else {
+            print("section = \(section)")
+            return arrDataCommon.count
+        }
+    }
     
-    @objc func moreClick() {
-        let vc = MoreSelectController()
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell
+        if (cell == nil) {
+            cell = HomeCell(style: .default, reuseIdentifier: "HomeCell")
+        }
+        cell?.selectionStyle = .none
+        let model = arrDataCommon[indexPath.row]
+        cell?.model = model
+        cell?.topOneLabel.text = model.topTwoTitle
+        cell?.topTwoLabel.text = "| " + model.topThreeTitle
+        cell?.topThreeLabel.text = "| " +  model.centerTwoTitle
+        cell?.centerOneLabel.text = "| " + model.topOneTitle
+        cell?.userImg.image = UIImage(named: model.Picture)
+        cell?.img_NameLabel.text = model.Title
+        cell?.img_BottomLabel.text = model.Content
+        if model.isHuiYuan {
+            cell?.img_huiyuan.isHidden = false
+        }else {
+            cell?.img_huiyuan.isHidden = true
+        }
+        
+        return cell!
+    }
+  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = OtherInformationController()
+        vc.isNavHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+// MARK:- UITableViewHeaderView
+extension HomeNewController {
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        if indexPath.section == 0 {
+//            return 100
+//        }
+//        return 140
+//    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
     
+    /// 使用 viewForHeaderInSection -> UIView 必须实现 heightForHeaderInSection -> CGFloat 方法，否则没有View
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 { // 最佳匹配
+            let headView = MLHeadFirstView(frame: CGRect(x: leftSpace_20, y:  20, width: 200, height: 50))
+            headView.setupContext(leftLabel: "最佳匹配", rightLabel: "查看更多")
+            return headView
+        } else if section == 1 { // 真心推荐
+            let headView = MLHeadFirstView(frame: CGRect(x: leftSpace_20, y:  20, width: 200, height: 50))
+            headView.setupContext(leftLabel: "真心推荐", rightLabel: nil)
+            return headView
+        }
+        
+        let  view = UIView()
+        view.backgroundColor = UIColor.black
+        return UIView()
+    }
+}
+
+// MARK:- UIScrollViewDelegate
+extension HomeNewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffsetY = scrollView.contentOffset.y
+        
+        if currentOffsetY >= kNavH + kStatusBarH {
+            navigationController?.navigationBar.shadowImage = getImageWithColor(color: UIColor.gray.alpha(0.3))
+        }else {
+            navigationController?.navigationBar.shadowImage = UIImage.init()
+        }
+    }
+}
+
+// MARK:- NewPagedFlowViewDelegate & NewPagedFlowViewDataSource
+extension HomeNewController {
     func didScroll(toPage pageNumber: Int, in flowView: NewPagedFlowView!) {
         if flowView == pageFlowView {
             
@@ -124,8 +254,9 @@ class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPaged
             return CGSize(width: 120*widthRatio, height: 120*widthRatio)
         }
     }
+    
     func numberOfPages(in flowView: NewPagedFlowView!) -> Int {
-       
+        
         if flowView == pageFlowView {
             return topGroup.count
         }else {
@@ -155,35 +286,18 @@ class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPaged
             bannerView?.mainImageView.image = UIImage(named: iconGroup[index])
             return bannerView
         }
-      
+        
     }
-    
-    @objc func rightClick() {
-        let vc = ConditionSearchController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    
-    
+}
+
+// MARK:- 获取 JSON 里面的数据
+extension HomeNewController {
+    /// 获取 JSON 里面的数据 给 arrDataCommon 赋值
     func buildModelCommonByJson(_ json: JSON){
         print("json==",json)
+        
         self.arrDataCommon.removeAll()
+        
         for item in json.arrayValue {
             let model = HomeModel()
             model.Title = item["Title"].stringValue
@@ -200,64 +314,14 @@ class HomeNewController: BaseTabViewController,NewPagedFlowViewDelegate,NewPaged
             self.arrDataCommon.append(model)
         }
     }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell
-        if (cell == nil) {
-            cell = HomeCell(style: .default, reuseIdentifier: "HomeCell")
+}
 
-        }
-        cell?.selectionStyle = .none
-        let model = arrDataCommon[indexPath.row]
-        cell?.model = model
-        cell?.topOneLabel.text = model.topTwoTitle
-        cell?.topTwoLabel.text = "| " + model.topThreeTitle
-        cell?.topThreeLabel.text = "| " +  model.centerTwoTitle
-        cell?.centerOneLabel.text = "| " + model.topOneTitle
-        cell?.userImg.image = UIImage(named: model.Picture)
-        cell?.img_NameLabel.text = model.Title
-        cell?.img_BottomLabel.text = model.Content
-        if model.isHuiYuan {
-            cell?.img_huiyuan.isHidden = false
-        }else {
-            cell?.img_huiyuan.isHidden = true
-        }
-        
-        return cell!
-    }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
-    }
+// MARK:- 按钮点击事件 - 查看更多 || 导航栏搜索按钮
+extension HomeNewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrDataCommon.count
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = OtherInformationController()
-        vc.isNavHidden = false
+    /// 导航栏搜索按钮
+    @objc private func SearchNavClick() {
+        let vc = ConditionSearchController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {        
-        let currentOffsetY = scrollView.contentOffset.y
-
-        if currentOffsetY >= kNavH + kStatusBarH {
-            navigationController?.navigationBar.shadowImage = getImageWithColor(color: UIColor.gray.alpha(0.3))
-        }else {
-            navigationController?.navigationBar.shadowImage = UIImage.init()
-        }
-    }
-    
-    
 }

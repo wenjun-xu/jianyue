@@ -30,7 +30,9 @@ class BaseTabViewController: BaseViewController,UITableViewDataSource, UITableVi
         tableView.backgroundColor = kBgColor
         view.addSubview(tableView)
     }
-    
+}
+
+extension BaseTabViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
@@ -80,16 +82,4 @@ class BaseTabViewController: BaseViewController,UITableViewDataSource, UITableVi
     func actLoadMore(){
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

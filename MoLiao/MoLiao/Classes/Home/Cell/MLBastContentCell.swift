@@ -14,11 +14,14 @@ protocol MLBastContentCellDelegate: NSObjectProtocol {
 
 /// 最佳匹配
 class MLBastContentCell: UITableViewCell {
-    fileprivate var iconGroup = ["0000","1111","2222","3333","4444","5555"]
     
     private var centerFlowView: NewPagedFlowView!
-    private var userLabel:UILabel!
-    private var userDetailLabel:UILabel!
+    /// 用户名
+    private var userLabel: UILabel!
+    /// 详情
+    private var userDetailLabel: UILabel!
+    
+    public var aCellModel: [usersBastMatchModel] = []
     
     weak var delegate: MLBastContentCellDelegate?
     
@@ -60,9 +63,9 @@ class MLBastContentCell: UITableViewCell {
 
 // MARK:- UI赋值
 extension MLBastContentCell {
-    public func setupData(userString: String, detail: String) {
-        userLabel.text =  userString
-        userDetailLabel.text = detail 
+    public func setupData(model: usersBastMatchModel) {
+        userLabel.text =  model.username
+        userDetailLabel.text = model.detail
     }
 }
 
@@ -94,7 +97,8 @@ extension MLBastContentCell {
 // MARK:- NewPagedFlowViewDelegate, NewPagedFlowViewDataSource
 extension MLBastContentCell: NewPagedFlowViewDelegate, NewPagedFlowViewDataSource {
     func numberOfPages(in flowView: NewPagedFlowView!) -> Int {
-        return iconGroup.count
+        print("aCellModel.count = \(aCellModel.count)")
+        return aCellModel.count
     }
     
     func flowView(_ flowView: NewPagedFlowView!, cellForPageAt index: Int) -> PGIndexBannerSubiew! {
@@ -107,13 +111,14 @@ extension MLBastContentCell: NewPagedFlowViewDelegate, NewPagedFlowViewDataSourc
             bannerView?.layer.masksToBounds = true
         }
         
-        bannerView?.mainImageView.image = UIImage(named: iconGroup[index])
+        let iconG = ( aCellModel[index].icon )!
+        bannerView?.mainImageView.image = UIImage(named: iconG)
         return bannerView
     }
     
     func didScroll(toPage pageNumber: Int, in flowView: NewPagedFlowView!) {
-//        userLabel.text = titlesGroup[pageNumber]
-//        userDetailLabel.text = detailTitleArr[pageNumber]
+        userLabel.text = aCellModel[pageNumber].username   
+        userDetailLabel.text = aCellModel[pageNumber].detail
     }
     
     func didSelectCell(_ subView: PGIndexBannerSubiew!, withSubViewIndex subIndex: Int) {

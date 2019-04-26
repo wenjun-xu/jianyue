@@ -22,6 +22,8 @@ class HomeNewController: BaseTabViewController  {
 
     fileprivate var topGroup = ["home_one","home_two","home_three"]
 
+    /// cell 中的数据
+    private var aCellModel: [usersBastMatchModel] = []
     
     
     
@@ -71,8 +73,8 @@ extension HomeNewController {
         let data = NSData(contentsOfFile: strDataPath!)
         let json = DataJson().data2JSON(data: data! as Data)
         
-        print("最佳匹配 \(json)")
-//        buildModelCommonByJson(json["data"])
+        let aBastModel = MLBastMatchModel(json: json)
+        aCellModel = (aBastModel?.aModel)!
     }
     
     /// tableView 的基本数据
@@ -122,10 +124,9 @@ extension HomeNewController: HomeNewDelegate {
             
             let cell = MLBastContentCell.cell(tableView: tableView)
             cell.delegate = self
-//            titlesGroup[0]
-            
-//            let
-//            cell.setupData(userString: <#T##String#>, detail: detailTitleArr[0])
+            cell.aCellModel = self.aCellModel
+            let aModel = aCellModel[indexPath.row]
+            cell.setupData(model: aModel)
             return cell
             
         } else {  // 真心推荐

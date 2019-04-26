@@ -21,6 +21,7 @@
 		209BEE6522729AD000246182 /* MLHeadFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE6422729AD000246182 /* MLHeadFirstView.swift */; };
 		20D61D912272CA300020FB42 /* MLBastContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D902272CA300020FB42 /* MLBastContentCell.swift */; };
 		20D61D932272F6340020FB42 /* BastMatch.json in Resources */ = {isa = PBXBuildFile; fileRef = 20D61D922272F6340020FB42 /* BastMatch.json */; };
+		20D61D952272FF4D0020FB42 /* MLBastMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -371,6 +372,7 @@
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20D61D902272CA300020FB42 /* MLBastContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastContentCell.swift; sourceTree = "<group>"; };
 		20D61D922272F6340020FB42 /* BastMatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BastMatch.json; sourceTree = "<group>"; };
+		20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastMatchModel.swift; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
 		20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHomePageView.swift; sourceTree = "<group>"; };
@@ -1253,6 +1255,7 @@
 				827BF848222CC2250093EB65 /* BiaoQianModel.swift */,
 				827BF849222CC2250093EB65 /* HomeModel.swift */,
 				20D61D922272F6340020FB42 /* BastMatch.json */,
+				20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2692,6 +2695,7 @@
 				827BFA7D222CC2260093EB65 /* MWGridViewController.m in Sources */,
 				827BFA3E222CC2260093EB65 /* TDScrollRulerView.swift in Sources */,
 				CCB7A09A21DF5565007E29E9 /* zApiServiceOher.swift in Sources */,
+				20D61D952272FF4D0020FB42 /* MLBastMatchModel.swift in Sources */,
 				827BFA3B222CC2260093EB65 /* NSDate+Date.swift in Sources */,
 				CCB7A09C21DF5615007E29E9 /* ZUtilsDetail.swift in Sources */,
 				827BFA52222CC2260093EB65 /* SegmentHeaderView.m in Sources */,

@@ -10,9 +10,12 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+
+typealias JSON = SwiftyJSON.JSON
 protocol JSONCoverible {
     static func fromJSON(json: JSON?) -> Self?
 }
+
 class zApiServiceOher: NSObject {
 
     /*

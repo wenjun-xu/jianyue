@@ -20,9 +20,14 @@
 		209BEE632271801300246182 /* MLRegistGenderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE622271801300246182 /* MLRegistGenderTest.swift */; };
 		209BEE6522729AD000246182 /* MLHeadFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE6422729AD000246182 /* MLHeadFirstView.swift */; };
 		20D61D912272CA300020FB42 /* MLBastContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D902272CA300020FB42 /* MLBastContentCell.swift */; };
-		20D61D932272F6340020FB42 /* BastMatch.json in Resources */ = {isa = PBXBuildFile; fileRef = 20D61D922272F6340020FB42 /* BastMatch.json */; };
 		20D61D952272FF4D0020FB42 /* MLBastMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */; };
-		20D61D99227524B30020FB42 /* MLBastMatchJsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D98227524B30020FB42 /* MLBastMatchJsonTool.swift */; };
+		20D61D9B227538540020FB42 /* MLSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D9A227538540020FB42 /* MLSubtitleView.swift */; };
+		20D61D9D22753CF70020FB42 /* MLDynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D9C22753CF70020FB42 /* MLDynamicCell.swift */; };
+		20D61DA0227543FE0020FB42 /* MLPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D9F227543FE0020FB42 /* MLPersonModel.swift */; };
+		20D61DA5227544950020FB42 /* BastMatch.json in Resources */ = {isa = PBXBuildFile; fileRef = 20D61DA2227544950020FB42 /* BastMatch.json */; };
+		20D61DA6227544950020FB42 /* PersonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 20D61DA3227544950020FB42 /* PersonData.json */; };
+		20D61DA7227544950020FB42 /* MLBastMatchJsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61DA4227544950020FB42 /* MLBastMatchJsonTool.swift */; };
+		20D61DA9227545170020FB42 /* MLPersonDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61DA8227545170020FB42 /* MLPersonDataCell.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -372,9 +377,14 @@
 		209BEE6422729AD000246182 /* MLHeadFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MLHeadFirstView.swift; path = MoLiao/Classes/Home/view/MLHeadFirstView.swift; sourceTree = SOURCE_ROOT; };
 		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20D61D902272CA300020FB42 /* MLBastContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastContentCell.swift; sourceTree = "<group>"; };
-		20D61D922272F6340020FB42 /* BastMatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BastMatch.json; sourceTree = "<group>"; };
 		20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastMatchModel.swift; sourceTree = "<group>"; };
-		20D61D98227524B30020FB42 /* MLBastMatchJsonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastMatchJsonTool.swift; sourceTree = "<group>"; };
+		20D61D9A227538540020FB42 /* MLSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MLSubtitleView.swift; path = MoLiao/Classes/Home/view/MLSubtitleView.swift; sourceTree = SOURCE_ROOT; };
+		20D61D9C22753CF70020FB42 /* MLDynamicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLDynamicCell.swift; sourceTree = "<group>"; };
+		20D61D9F227543FE0020FB42 /* MLPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLPersonModel.swift; sourceTree = "<group>"; };
+		20D61DA2227544950020FB42 /* BastMatch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BastMatch.json; sourceTree = "<group>"; };
+		20D61DA3227544950020FB42 /* PersonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PersonData.json; sourceTree = "<group>"; };
+		20D61DA4227544950020FB42 /* MLBastMatchJsonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBastMatchJsonTool.swift; sourceTree = "<group>"; };
+		20D61DA8227545170020FB42 /* MLPersonDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLPersonDataCell.swift; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
 		20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHomePageView.swift; sourceTree = "<group>"; };
@@ -925,6 +935,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20D61DA1227544950020FB42 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				20D61DA2227544950020FB42 /* BastMatch.json */,
+				20D61DA3227544950020FB42 /* PersonData.json */,
+				20D61DA4227544950020FB42 /* MLBastMatchJsonTool.swift */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
 		5894EAD343AB42F94FF92A4A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1199,6 +1219,7 @@
 		827BF82F222CC2250093EB65 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				20D61DA1227544950020FB42 /* Json */,
 				827BF830222CC2250093EB65 /* Cell */,
 				827BF835222CC2250093EB65 /* Controller */,
 				827BF83E222CC2250093EB65 /* HZBannerView */,
@@ -1215,8 +1236,10 @@
 				827BF831222CC2250093EB65 /* BiaoQianCell.swift */,
 				827BF832222CC2250093EB65 /* ConditionSearchCell.swift */,
 				827BF833222CC2250093EB65 /* HomeCell.swift */,
-				827BF834222CC2250093EB65 /* OtherInfoTopCell.swift */,
 				20D61D902272CA300020FB42 /* MLBastContentCell.swift */,
+				827BF834222CC2250093EB65 /* OtherInfoTopCell.swift */,
+				20D61D9C22753CF70020FB42 /* MLDynamicCell.swift */,
+				20D61DA8227545170020FB42 /* MLPersonDataCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1225,11 +1248,11 @@
 			isa = PBXGroup;
 			children = (
 				827BF839222CC2250093EB65 /* HomeNewController.swift */,
+				827BF83B222CC2250093EB65 /* OtherInformationController.swift */,
 				827BF836222CC2250093EB65 /* BiaoQianSearchController.swift */,
 				827BF837222CC2250093EB65 /* ConditionSearchController.swift */,
 				827BF838222CC2250093EB65 /* HomeDetailController.swift */,
 				827BF83A222CC2250093EB65 /* MoreSelectController.swift */,
-				827BF83B222CC2250093EB65 /* OtherInformationController.swift */,
 				827BF83C222CC2250093EB65 /* SeachViewController.swift */,
 				827BF83D222CC2250093EB65 /* UserInfoViewController.swift */,
 			);
@@ -1256,9 +1279,8 @@
 			children = (
 				827BF848222CC2250093EB65 /* BiaoQianModel.swift */,
 				827BF849222CC2250093EB65 /* HomeModel.swift */,
-				20D61D922272F6340020FB42 /* BastMatch.json */,
 				20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */,
-				20D61D98227524B30020FB42 /* MLBastMatchJsonTool.swift */,
+				20D61D9F227543FE0020FB42 /* MLPersonModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1280,6 +1302,7 @@
 				827BF850222CC2250093EB65 /* WJCyclePictureView.swift */,
 				827BF851222CC2250093EB65 /* WJScrollView.swift */,
 				209BEE6422729AD000246182 /* MLHeadFirstView.swift */,
+				20D61D9A227538540020FB42 /* MLSubtitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2290,6 +2313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D61DA5227544950020FB42 /* BastMatch.json in Resources */,
 				827BF9FF222CC2260093EB65 /* 导航@2x.png in Resources */,
 				827BF9EB222CC2260093EB65 /* hx_compose_guide_check_box_default@2x.png in Resources */,
 				827BF9F5222CC2260093EB65 /* hx_original_normal@2x.png in Resources */,
@@ -2297,6 +2321,7 @@
 				827BF9F8222CC2260093EB65 /* hx_paizhao_bianji_xuanzhuan@2x.png in Resources */,
 				CC2B7FB121D0B994009B4474 /* LaunchScreen.storyboard in Resources */,
 				CCF769BE21DA54D7005C8D6A /* biaoqian.json in Resources */,
+				20D61DA6227544950020FB42 /* PersonData.json in Resources */,
 				CCBD920121E08F8800717ED3 /* dynamic.json in Resources */,
 				827BF9E9222CC2260093EB65 /* hx_alert_failed@2x.png in Resources */,
 				CC318C01221274E0004632DD /* City.plist in Resources */,
@@ -2311,7 +2336,6 @@
 				827BF9EA222CC2260093EB65 /* hx_camera_flashlight@2x.png in Resources */,
 				827BFA39222CC2260093EB65 /* city.json in Resources */,
 				827BF9F0222CC2260093EB65 /* hx_faceu_camera@3x.png in Resources */,
-				20D61D932272F6340020FB42 /* BastMatch.json in Resources */,
 				827BF9F2222CC2260093EB65 /* hx_flash_pic_nopreview@2x.png in Resources */,
 				CC1EAAD721E1E3DA000BACE5 /* GuideImage.bundle in Resources */,
 				827BFA76222CC2260093EB65 /* MJRefresh.bundle in Resources */,
@@ -2447,6 +2471,7 @@
 				827BFAC1222CC2260093EB65 /* EaseBubbleView+Image.m in Sources */,
 				827BF9E3222CC2260093EB65 /* HXPhotoCustomNavigationBar.m in Sources */,
 				827BFA09222CC2260093EB65 /* Moment.swift in Sources */,
+				20D61D9B227538540020FB42 /* MLSubtitleView.swift in Sources */,
 				827BFA0F222CC2260093EB65 /* MLLabelUtil.swift in Sources */,
 				827BFA69222CC2260093EB65 /* MJRefreshBackFooter.m in Sources */,
 				827BF9C0222CC2260093EB65 /* BaseNavHiddenController.swift in Sources */,
@@ -2488,6 +2513,7 @@
 				827BFA75222CC2260093EB65 /* MJRefreshStateHeader.m in Sources */,
 				CC2B7FA621D0B992009B4474 /* ViewController.swift in Sources */,
 				827BFAAE222CC2260093EB65 /* EaseMessageReadManager.m in Sources */,
+				20D61DA0227543FE0020FB42 /* MLPersonModel.swift in Sources */,
 				827BFA81222CC2260093EB65 /* MWTapDetectingView.m in Sources */,
 				827BFACA222CC2260093EB65 /* EaseTextView.m in Sources */,
 				827BFA3F222CC2260093EB65 /* BottomSelectCell.swift in Sources */,
@@ -2499,6 +2525,7 @@
 				827BFAA7222CC2260093EB65 /* NSDate+Category.m in Sources */,
 				827BF9E6222CC2260093EB65 /* HXPhotoSubViewCell.m in Sources */,
 				209BEE6522729AD000246182 /* MLHeadFirstView.swift in Sources */,
+				20D61D9D22753CF70020FB42 /* MLDynamicCell.swift in Sources */,
 				827BFAA0222CC2260093EB65 /* UIImageView+WebCache.m in Sources */,
 				827BFA97222CC2260093EB65 /* SDWebImageDownloader.m in Sources */,
 				827BF9E8222CC2260093EB65 /* HXPhotoView.m in Sources */,
@@ -2566,6 +2593,7 @@
 				827BFAC6222CC2260093EB65 /* EaseBubbleView.m in Sources */,
 				CC1EAAD921E1E3DA000BACE5 /* DHGuidePageHUD.m in Sources */,
 				827BFA0E222CC2260093EB65 /* GlobalFile.swift in Sources */,
+				20D61DA7227544950020FB42 /* MLBastMatchJsonTool.swift in Sources */,
 				827BFA03222CC2260093EB65 /* UIImage+HXExtension.m in Sources */,
 				827BFA5A222CC2260093EB65 /* EMAudioPlayerUtil.m in Sources */,
 				206ECFD62266FA7F00ABFE99 /* MLRegistStatureView.swift in Sources */,
@@ -2631,6 +2659,7 @@
 				827BFA42222CC2260093EB65 /* ChooseFriendController.swift in Sources */,
 				827BF9CD222CC2260093EB65 /* HXCollectionView.m in Sources */,
 				206ECFD82266FDF300ABFE99 /* MLRegistCompanyAreaView.swift in Sources */,
+				20D61DA9227545170020FB42 /* MLPersonDataCell.swift in Sources */,
 				827BF9C3222CC2260093EB65 /* BaseViewController.swift in Sources */,
 				827BFAAD222CC2260093EB65 /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				827BFA45222CC2260093EB65 /* MeLookController.swift in Sources */,
@@ -2654,7 +2683,6 @@
 				827BFA43222CC2260093EB65 /* LookMeController.swift in Sources */,
 				827BFAC5222CC2260093EB65 /* EaseBubbleView+Voice.m in Sources */,
 				827BFA85222CC2260093EB65 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
-				20D61D99227524B30020FB42 /* MLBastMatchJsonTool.swift in Sources */,
 				827BF9C6222CC2260093EB65 /* WJDynamicNewController.swift in Sources */,
 				827BFAC7222CC2260093EB65 /* EaseChatToolbar.m in Sources */,
 				827BF9DF222CC2260093EB65 /* HXDownloadProgressView.m in Sources */,

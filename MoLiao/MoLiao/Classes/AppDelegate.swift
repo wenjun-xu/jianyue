@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
         // 登录界面
 //        let vc = HomePageController()
 //        let nvc = BaseNavgationController.init(rootViewController: vc)
-        self.window?.rootViewController = BaseTabBarController()
+        // BaseTabBarController
+        self.window?.rootViewController = OtherInformationController()
+        
         
 //        self.window?.rootViewController = BaseNavgationController(rootViewController: MLRegistGenderController()) // BaseNavgationController(rootViewController: UserNameController())
 //        window?.makeKeyAndVisible()

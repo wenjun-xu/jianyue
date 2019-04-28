@@ -11,6 +11,7 @@ import SwiftyJSON
 //import SDCycleScrollView
 import JCyclePictureView
 class OtherInformationController: BaseTabViewController {
+    
     fileprivate var arrDataCommon = [HomeModel]()
     private var naviView = UIView()
     fileprivate var tuijianlabel = UILabel()
@@ -19,6 +20,11 @@ class OtherInformationController: BaseTabViewController {
     var isNavHidden:Bool = true
     fileprivate var arrImgUrl = ["img_nine","img_five","img_two","img_three"]
     fileprivate var sectionH:CGFloat = 200
+    
+    private var personData: [MLPersonDataModel] = {
+        return MLBastMatchJsonTool.getPersonDataJsonData().aModel
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.y = -kStatusBarH
@@ -185,84 +191,7 @@ class OtherInformationController: BaseTabViewController {
         }
         naviView.backgroundColor = kNavColor.alpha(alpha)
     }    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
-        if indexPath.section == 0 {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "OtherInfoTopCell")
-            if (cell == nil) {
-                cell = OtherInfoTopCell(style: .default, reuseIdentifier: "OtherInfoTopCell")
-            }
-            cell?.selectionStyle = .none
-            cell?.separatorInset = UIEdgeInsets.init(top: 0, left: kScreenWidth, bottom: 0, right: 0)
-            return cell!
-        } else if indexPath.section == 1 {
-            let otherHomeNewsCell = "top"
-            var cell = tableView.dequeueReusableCell(withIdentifier: otherHomeNewsCell)
-            if cell == nil {
-                cell = UITableViewCell(style: .default, reuseIdentifier: otherHomeNewsCell)
-                cell?.separatorInset = UIEdgeInsets(top: 0,left: kScreenWidth, bottom: 0, right: 0)
-                cell?.selectionStyle = .none
-                cell?.addSubview(addDynamic())
-            }
-            return cell!
-        }
-        else if indexPath.section == 2 {
-           
-            let otherHomeNewsCell = "center"
-            var cell = tableView.dequeueReusableCell(withIdentifier: otherHomeNewsCell)
-            if cell == nil {
-                cell = UITableViewCell(style: .default, reuseIdentifier: otherHomeNewsCell)
-                cell?.separatorInset = UIEdgeInsets(top: 0,left: kScreenWidth, bottom: 0, right: 0)
-                cell?.selectionStyle = .none
-                cell?.addSubview(addSectionView())
 
-            }
-            return cell!
-        }else {
-            let otherHomeNewsCell = "bottom"
-            var cell = tableView.dequeueReusableCell(withIdentifier: otherHomeNewsCell)
-            if cell == nil {
-                cell = UITableViewCell(style: .default, reuseIdentifier: otherHomeNewsCell)
-                cell?.separatorInset = UIEdgeInsets(top: 0,left: kScreenWidth, bottom: 0, right: 0)
-                cell?.selectionStyle = .none
-                cell?.addSubview(biaozhun())
-            }
-            return cell!
-        }
-       
-    }
-    
-    func addDynamic() -> UIView {
-        let leftSpace:CGFloat = 12
-        let topSpace:CGFloat = 12
-        let imgW:CGFloat = (kScreenWidth - 2*leftSpace - 20) / 3.0
-        let sectionView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: sectionH))
-        let leftView = UIView.init(frame: CGRect(x: leftSpace, y: topSpace + 2, width: 4, height: 15))
-        leftView.backgroundColor = UIColor.orange
-        sectionView.addSubview(leftView)
-        
-        let topLabel = UILabel.init(frame: CGRect(x: leftView.rightX + 5, y: topSpace, width: 200, height: 20))
-        topLabel.text = "动态"
-        topLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
-        sectionView.addSubview(topLabel)
-        
-        let rightBtn = UIButton.init(frame: CGRect(x: kScreenWidth - leftSpace - 50, y: topSpace, width: 50, height: 20))
-        rightBtn.setTitle("查看更多", for: .normal)
-        rightBtn.setTitleColor(UIColor.gray, for: .normal)
-        rightBtn.titleLabel?.font = UIFont.systemFont(ofSize: 12.0)
-        sectionView.addSubview(rightBtn)
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.nextClick))
-        rightBtn.isUserInteractionEnabled = true
-        rightBtn.addGestureRecognizer(tapGR)
-        
-        for i in 0...2 {
-            let img = UIImageView.init(frame: CGRect(x: leftSpace + CGFloat(i)*(imgW + 10), y: topLabel.bottomY + 20, width: imgW, height: imgW))
-            img.image = UIImage(named: "0000")
-            sectionView.addSubview(img)
-        }
-        return sectionView
-    }
     
    @objc func nextClick() {
         let vc = OtherDynamicController()
@@ -339,72 +268,138 @@ class OtherInformationController: BaseTabViewController {
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12.0)
     }
+//
+//    func addSectionView() -> UIView {
+//        let leftSpace:CGFloat = 12
+//        let topSpace:CGFloat = 12
+//        let middleSpace:CGFloat = 20
+//        let centerLeftSpace:CGFloat = 10
+//        let centerMiddleSpace:CGFloat = 15
+//        let sectionView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: sectionH))
+//
+//        let firstlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
+//        firstlabel.text = "未婚"
+//        customLabelLayer(label: firstlabel)
+//        sectionView.addSubview(firstlabel)
+//
+//        let secondlabel = UILabel.init(frame: CGRect(x: firstlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
+//        secondlabel.text = "24岁"
+//        customLabelLayer(label: secondlabel)
+//        sectionView.addSubview(secondlabel)
+//
+//        let threelabel = UILabel.init(frame: CGRect(x: secondlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 150, height: 24))
+//        threelabel.text = "工作地区:北京东城区"
+//        customLabelLayer(label: threelabel)
+//        sectionView.addSubview(threelabel)
+//
+//        let fourlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
+//        fourlabel.text = "166com"
+//        customLabelLayer(label: fourlabel)
+//        sectionView.addSubview(fourlabel)
+//
+//        let fivelabel = UILabel.init(frame: CGRect(x: fourlabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 60, height: 24))
+//        fivelabel.text = "47kg"
+//        customLabelLayer(label: fivelabel)
+//        sectionView.addSubview(fivelabel)
+//
+//        let sixlabel = UILabel.init(frame: CGRect(x: fivelabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 140, height: 24))
+//        sixlabel.text = "月收入:8000-12000"
+//        customLabelLayer(label: sixlabel)
+//        sectionView.addSubview(sixlabel)
+//
+//        let sevenlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
+//        sevenlabel.text = "狮子座"
+//        customLabelLayer(label: sevenlabel)
+//        sectionView.addSubview(sevenlabel)
+//
+//        let eightlabel = UILabel.init(frame: CGRect(x: sevenlabel.rightX + middleSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
+//        eightlabel.text = "销售"
+//        customLabelLayer(label: eightlabel)
+//        sectionView.addSubview(eightlabel)
+//
+//        let ninelabel = UILabel.init(frame: CGRect(x: eightlabel.rightX + middleSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
+//        ninelabel.text = "本科"
+//        customLabelLayer(label: ninelabel)
+//        sectionView.addSubview(ninelabel)
+//        return sectionView
+//    }
     
-    func addSectionView() -> UIView {
-        let leftSpace:CGFloat = 12
-        let topSpace:CGFloat = 12
-        let middleSpace:CGFloat = 20
-        let centerLeftSpace:CGFloat = 10
-        let centerMiddleSpace:CGFloat = 15
-        let sectionView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: sectionH))
+    
+    
+    
+}
+// MARK:- <#zhushi#>
+extension OtherInformationController {
+    
+}
+
+// MARK:- <#zhushi#>
+extension OtherInformationController {
+    
+}
+
+
+// MARK:- <#zhushi#>
+extension OtherInformationController {
+    
+}
+
+// MARK:- <#zhushi#>
+extension OtherInformationController {
+    
+}
+
+// MARK:- <#zhushi#>
+extension OtherInformationController {
+    
+}
+
+// MARK:- tableView: cellForRowAt
+extension OtherInformationController {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let leftView = UIView.init(frame: CGRect(x: leftSpace, y: topSpace + 2, width: 4, height: 15))
-        leftView.backgroundColor = UIColor.orange
-        sectionView.addSubview(leftView)
+        if indexPath.section == 0 {  // 头部 - 个人信息
+            let cell = OtherInfoTopCell.cell(tableView: tableView)
+            return cell
+            
+        } else if indexPath.section == 1 {            
+            let cell = MLDynamicCell.cell(tableView: tableView)
+            return cell
+        }
+        else if indexPath.section == 2 {
+            
+//            let otherHomeNewsCell = "center"
+//            var cell = tableView.dequeueReusableCell(withIdentifier: otherHomeNewsCell)
+//            if cell == nil {
+//                cell = UITableViewCell(style: .default, reuseIdentifier: otherHomeNewsCell)
+//                cell?.separatorInset = UIEdgeInsets(top: 0,left: kScreenWidth, bottom: 0, right: 0)
+//                cell?.selectionStyle = .none
+//                cell?.addSubview(addSectionView())
+//
+//            }
+            
+            let cell = MLPersonDataCell.cell(tableView: tableView)
+            let aModel = personData[indexPath.row]
+            cell.setupData(model: aModel)
+            return cell
+        }else {
+            let otherHomeNewsCell = "bottom"
+            var cell = tableView.dequeueReusableCell(withIdentifier: otherHomeNewsCell)
+            if cell == nil {
+                cell = UITableViewCell(style: .default, reuseIdentifier: otherHomeNewsCell)
+                cell?.separatorInset = UIEdgeInsets(top: 0,left: kScreenWidth, bottom: 0, right: 0)
+                cell?.selectionStyle = .none
+                cell?.addSubview(biaozhun())
+            }
+            return cell!
+        }
         
-        let topLabel = UILabel.init(frame: CGRect(x: leftView.rightX + 5, y: topSpace, width: 200, height: 20))
-        topLabel.text = "个人资料"
-        topLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
-        sectionView.addSubview(topLabel)
-        
-        let firstlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
-        firstlabel.text = "未婚"
-        customLabelLayer(label: firstlabel)
-        sectionView.addSubview(firstlabel)
-        
-        let secondlabel = UILabel.init(frame: CGRect(x: firstlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
-        secondlabel.text = "24岁"
-        customLabelLayer(label: secondlabel)
-        sectionView.addSubview(secondlabel)
-        
-        let threelabel = UILabel.init(frame: CGRect(x: secondlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 150, height: 24))
-        threelabel.text = "工作地区:北京东城区"
-        customLabelLayer(label: threelabel)
-        sectionView.addSubview(threelabel)
-        
-        let fourlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-        fourlabel.text = "166com"
-        customLabelLayer(label: fourlabel)
-        sectionView.addSubview(fourlabel)
-        
-        let fivelabel = UILabel.init(frame: CGRect(x: fourlabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 60, height: 24))
-        fivelabel.text = "47kg"
-        customLabelLayer(label: fivelabel)
-        sectionView.addSubview(fivelabel)
-        
-        let sixlabel = UILabel.init(frame: CGRect(x: fivelabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 140, height: 24))
-        sixlabel.text = "月收入:8000-12000"
-        customLabelLayer(label: sixlabel)
-        sectionView.addSubview(sixlabel)
-        
-        let sevenlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-        sevenlabel.text = "狮子座"
-        customLabelLayer(label: sevenlabel)
-        sectionView.addSubview(sevenlabel)
-        
-        let eightlabel = UILabel.init(frame: CGRect(x: sevenlabel.rightX + middleSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-        eightlabel.text = "销售"
-        customLabelLayer(label: eightlabel)
-        sectionView.addSubview(eightlabel)
-        
-        let ninelabel = UILabel.init(frame: CGRect(x: eightlabel.rightX + middleSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-        ninelabel.text = "本科"
-        customLabelLayer(label: ninelabel)
-        sectionView.addSubview(ninelabel)
-        return sectionView
     }
-    
-    
+}
+
+
+// MARK:- UITableViewDelegate || UITableViewDataSource
+extension OtherInformationController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 80
@@ -415,17 +410,41 @@ class OtherInformationController: BaseTabViewController {
         return 4
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        
+        switch section {
+        case 0:
+            return 1
+        default:
             return 1
         }
-        return 1
+        
     }
+}
+
+// MARK:- UITableViewHeaderView
+extension OtherInformationController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0
         }
-        return 15
+        return 50
     }
     
+    /// 使用 viewForHeaderInSection -> UIView 必须实现 heightForHeaderInSection -> CGFloat 方法，否则没有View
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 { // 动态
+            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 50))
+            aView.setupContext(leftLabel: "动态", rightLabel: "查看更多")
+            return aView
+        } else if section == 2 { // 个人资料
+            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 50))
+            aView.setupContext(leftLabel: "个人资料", rightLabel: nil)
+            return aView
+        }
+        
+        let  view = UIView()
+        view.backgroundColor = UIColor.black
+        return UIView()
+    }
 }

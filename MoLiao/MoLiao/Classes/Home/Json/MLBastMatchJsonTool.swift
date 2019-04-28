@@ -30,4 +30,13 @@ class MLBastMatchJsonTool: NSObject {
         return aModel!
     }
 
+    /// 个人资料 Json 数据
+    class func getPersonDataJsonData() -> MLPersonModel {
+        let strDataPath = Bundle.main.path(forResource: "PersonData", ofType: "json")
+        let data = NSData(contentsOfFile: strDataPath!)
+        let json = DataJson().data2JSON(data: data! as Data)
+        
+        let aModel = MLPersonModel(json: json)
+        return aModel!
+    }
 }

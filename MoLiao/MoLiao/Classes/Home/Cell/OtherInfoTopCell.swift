@@ -32,12 +32,45 @@ class OtherInfoTopCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    class func cell(tableView: UITableView) -> OtherInfoTopCell{
+        let indentifier:String = "OtherInfoTopCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: indentifier)
+        
+        if cell == nil {
+            cell = OtherInfoTopCell(style: .default, reuseIdentifier: indentifier)
+            cell?.separatorInset = UIEdgeInsets.init(top: 0, left: kScreenWidth, bottom: 0, right: 0)
+            cell?.backgroundColor = UIColor.white
+            cell?.selectionStyle = .none;
+        }
+        
+        return cell  as! OtherInfoTopCell
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpUI()
     }
-    func setUpUI() {
+   
+    override func layoutSubviews() {
+        setupFrame()
+    }
+    
+}
+// MARK:- 事件点击
+extension OtherInfoTopCell {
+    @objc private func guanzhuClick(sender:UIButton) {
+        if sender.isSelected {
+            
+        }else {
+            
+        }
+        sender.isSelected = !sender.isSelected
+    }
+}
+
+// MARK:- UI创建
+extension OtherInfoTopCell {
+    private func setUpUI() {
         
         img_NameLabel = UILabel()
         img_NameLabel.text = "孙小美"
@@ -73,15 +106,8 @@ class OtherInfoTopCell: UITableViewCell {
         guanzhuBtn.addTarget(self, action: #selector(guanzhuClick(sender:)), for: .touchUpInside)
         self.contentView.addSubview(guanzhuBtn)
     }
-    @objc func guanzhuClick(sender:UIButton) {
-        if sender.isSelected {
-            
-        }else {
-            
-        }
-        sender.isSelected = !sender.isSelected
-    }
-    override func layoutSubviews() {
+    
+    private func setupFrame() {
         let guanzhuH:CGFloat = 30
         var expectSize = CGSize(width: 0, height: 0)
         expectSize = img_NameLabel.sizeThatFits(CGSize(width: 999, height: 25))
@@ -94,11 +120,11 @@ class OtherInfoTopCell: UITableViewCell {
         
         var topThreeLabelSize = CGSize(width: 0, height: 0)
         topThreeLabelSize = topThreeLabel.sizeThatFits(CGSize(width: 999, height: 22))
-     
+        
         let topSpeace:CGFloat = 16
         let labelSpace:CGFloat = 24
         img_NameLabel.frame = CGRect(x: labelSpace , y: topSpeace, width: expectSize.width, height: 25)
-    
+        
         topOneLabel.frame = CGRect(x:labelSpace , y: img_NameLabel.bottomY, width: topOneLabelSize.width, height: 22)
         topTwoLabel.frame = CGRect(x:topOneLabel.rightX + 2, y: img_NameLabel.bottomY, width: topTwoLabelSize.width, height: 22)
         
@@ -106,5 +132,4 @@ class OtherInfoTopCell: UITableViewCell {
         
         guanzhuBtn.frame = CGRect(x: kScreenWidth - 100, y: (self.height - guanzhuH) / 2.0, width: 80, height: guanzhuH)
     }
-    
 }

@@ -22,6 +22,7 @@
 		20D61D912272CA300020FB42 /* MLBastContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D902272CA300020FB42 /* MLBastContentCell.swift */; };
 		20D61D932272F6340020FB42 /* BastMatch.json in Resources */ = {isa = PBXBuildFile; fileRef = 20D61D922272F6340020FB42 /* BastMatch.json */; };
 		20D61D952272FF4D0020FB42 /* MLBastMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */; };
+		20D61D99227524B30020FB42 /* MLBastMatchJsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D98227524B30020FB42 /* MLBastMatchJsonTool.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -373,6 +374,7 @@
 		20D61D902272CA300020FB42 /* MLBastContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastContentCell.swift; sourceTree = "<group>"; };
 		20D61D922272F6340020FB42 /* BastMatch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BastMatch.json; sourceTree = "<group>"; };
 		20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastMatchModel.swift; sourceTree = "<group>"; };
+		20D61D98227524B30020FB42 /* MLBastMatchJsonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastMatchJsonTool.swift; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
 		20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHomePageView.swift; sourceTree = "<group>"; };
@@ -1256,6 +1258,7 @@
 				827BF849222CC2250093EB65 /* HomeModel.swift */,
 				20D61D922272F6340020FB42 /* BastMatch.json */,
 				20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */,
+				20D61D98227524B30020FB42 /* MLBastMatchJsonTool.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2651,6 +2654,7 @@
 				827BFA43222CC2260093EB65 /* LookMeController.swift in Sources */,
 				827BFAC5222CC2260093EB65 /* EaseBubbleView+Voice.m in Sources */,
 				827BFA85222CC2260093EB65 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				20D61D99227524B30020FB42 /* MLBastMatchJsonTool.swift in Sources */,
 				827BF9C6222CC2260093EB65 /* WJDynamicNewController.swift in Sources */,
 				827BFAC7222CC2260093EB65 /* EaseChatToolbar.m in Sources */,
 				827BF9DF222CC2260093EB65 /* HXDownloadProgressView.m in Sources */,

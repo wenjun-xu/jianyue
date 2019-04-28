@@ -21,7 +21,9 @@ class MLBastContentCell: UITableViewCell {
     /// 详情
     private var userDetailLabel: UILabel!
     
-    public var aCellModel: [usersBastMatchModel] = []
+    private var aCellModel: [usersBastMatchModel] = {
+        return MLBastMatchJsonTool.getBastMatchJsonData().aModel
+    }()
     
     weak var delegate: MLBastContentCellDelegate?
     

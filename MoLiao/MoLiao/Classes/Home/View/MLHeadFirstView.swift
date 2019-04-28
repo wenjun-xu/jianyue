@@ -35,9 +35,7 @@ class MLHeadFirstView: UIView {
 // MARK:- 创建UI界面
 extension MLHeadFirstView {
     /// 创建UI界面
-    private func setupUIView() {
-        self.backgroundColor = UIColor.orange
-        
+    private func setupUIView() {        
         leftLabel.frame = CGRect(x: leftSpace_20, y: 0, width: 200, height: 50)
         leftLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight(rawValue: 1.2))
         self.addSubview(leftLabel)

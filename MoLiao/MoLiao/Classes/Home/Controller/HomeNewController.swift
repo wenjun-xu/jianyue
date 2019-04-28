@@ -18,29 +18,28 @@ class HomeNewController: BaseTabViewController  {
     
     var pageFlowView:NewPagedFlowView!
     
-    fileprivate var arrDataCommon = [HomeModel]()
+    fileprivate var arrDataCommon: [HomeCellModel] = {
+        return MLBastMatchJsonTool.getTrueHeartJsonData().aModel
+    }()
 
     fileprivate var topGroup = ["home_one","home_two","home_three"]
 
     /// cell 中的数据
-    private var aCellModel: [usersBastMatchModel] = []
+    private var aCellModel: [usersBastMatchModel] = {
+        return MLBastMatchJsonTool.getBastMatchJsonData().aModel
+    }()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /// 最佳匹配 Json 数据
-        getBastMatchJsonData()
-        
-//        /// 导航栏创建
-//        setupNavView()
-//        /// Json 数据
-//        getJsonData()
-//        /// tableView 的基本数据
-//        setupBaseTableView()
-//        /// 广告轮播器
-//        setupHeadView()
+
+        /// 导航栏创建
+        setupNavView()
+        /// tableView 的基本数据
+        setupBaseTableView()
+        /// 广告轮播器
+        setupHeadView()
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
@@ -59,24 +58,7 @@ extension HomeNewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "sousuo"), style: .plain, target: self, action: #selector(SearchNavClick))
     }
     
-    /// Json 数据
-    private func getJsonData() {
-        let strDataPath = Bundle.main.path(forResource: "home", ofType: "json")
-        let data = NSData(contentsOfFile: strDataPath!)
-        let json = DataJson().data2JSON(data: data! as Data)
-        buildModelCommonByJson(json["data"])
-    }
-    
-    /// 最佳匹配 Json 数据
-    private func getBastMatchJsonData() {
-        let strDataPath = Bundle.main.path(forResource: "BastMatch", ofType: "json")
-        let data = NSData(contentsOfFile: strDataPath!)
-        let json = DataJson().data2JSON(data: data! as Data)
-        
-        let aBastModel = MLBastMatchModel(json: json)
-        aCellModel = (aBastModel?.aModel)!
-    }
-    
+
     /// tableView 的基本数据
     private func setupBaseTableView() {
         tableView.height = kScreenHeight - kTabbarHeight - kStatusBarH - kNavH
@@ -124,32 +106,20 @@ extension HomeNewController: HomeNewDelegate {
             
             let cell = MLBastContentCell.cell(tableView: tableView)
             cell.delegate = self
-            cell.aCellModel = self.aCellModel
+            
+            // 只是给第一个赋值
             let aModel = aCellModel[indexPath.row]
             cell.setupData(model: aModel)
             return cell
             
         } else {  // 真心推荐
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell
-            if (cell == nil) {
-                cell = HomeCell(style: .default, reuseIdentifier: "HomeCell")
-            }
-            cell?.selectionStyle = .none
-            let model = arrDataCommon[indexPath.row]
-            cell?.model = model
-            cell?.topOneLabel.text = model.topTwoTitle
-            cell?.topTwoLabel.text = "| " + model.topThreeTitle
-            cell?.topThreeLabel.text = "| " +  model.centerTwoTitle
-            cell?.centerOneLabel.text = "| " + model.topOneTitle
-            cell?.userImg.image = UIImage(named: model.Picture)
-            cell?.img_NameLabel.text = model.Title
-            cell?.img_BottomLabel.text = model.Content
-            if model.isHuiYuan {
-                cell?.img_huiyuan.isHidden = false
-            }else {
-                cell?.img_huiyuan.isHidden = true
-            }
-             return cell!
+            
+            let cell = HomeCell.cell(tableView: tableView)
+            
+            let aHomeModel = arrDataCommon[indexPath.row]
+            cell.setupData(model: aHomeModel)
+
+             return cell
         }
     }
   
@@ -235,32 +205,6 @@ extension HomeNewController {
         
         bannerView?.mainImageView.image = UIImage(named: topGroup[index])
         return bannerView
-    }
-}
-
-// MARK:- 获取 JSON 里面的数据
-extension HomeNewController {
-    /// 获取 JSON 里面的数据 给 arrDataCommon 赋值
-    func buildModelCommonByJson(_ json: JSON){
-        print("json==",json)
-        
-        self.arrDataCommon.removeAll()
-        
-        for item in json.arrayValue {
-            let model = HomeModel()
-            model.Title = item["Title"].stringValue
-            model.Content = item["Content"].stringValue
-            model.isHuiYuan = item["isHuiYuan"].boolValue
-            model.isDuBai = item["isDuBai"].boolValue
-            model.Picture = item["Picture"].stringValue
-            model.topOneTitle = item["topOneTitle"].stringValue
-            model.topTwoTitle = item["topTwoTitle"].stringValue
-            model.topThreeTitle = item["topThreeTitle"].stringValue
-            model.centerOneTitle = item["centerOneTitle"].stringValue
-            model.centerTwoTitle = item["centerTwoTitle"].stringValue
-            model.centerThreeTitle = item["centerThreeTitle"].stringValue
-            self.arrDataCommon.append(model)
-        }
     }
 }
 

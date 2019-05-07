@@ -7,7 +7,7 @@
 //
 
 import XCTest
-//@testable import MoLiao
+@testable import MoLiao
 
 class MoLiaoTests: XCTestCase {
 

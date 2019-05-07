@@ -8,10 +8,16 @@
 
 import UIKit
 
+typealias LabelProtocol = UICollectionViewDelegate & UICollectionViewDataSource & UICollectionViewDelegateFlowLayout
+
 /// 推荐详情 - 个人资料
 class MLPersonDataCell: UITableViewCell {
     
-    private var aLabel: [UILabel]?
+    private var aString: [MLPersonDataModel] = []
+    
+    private var colltionView : UICollectionView!
+    //collectionView的高度约束
+//    private var collectionViewHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +46,7 @@ class MLPersonDataCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupCellUI()
+        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,51 +57,41 @@ class MLPersonDataCell: UITableViewCell {
 
 // MARK:- UI创建
 extension MLPersonDataCell {
-    public func setupData(model: MLPersonDataModel) {
+    public func setupData(model: [MLPersonDataModel]) {
     
-        aLabel?[0].text = model.title
+        aString = model
+        
+        print("aString = \(aString)")
+        //collectionView重新加载数据
+        self.colltionView!.reloadData()
+        
+        //更新collectionView的高度约束
+        let contentSize = self.colltionView.collectionViewLayout.collectionViewContentSize
+        self.colltionView.frame.size = contentSize
+        self.colltionView.collectionViewLayout.invalidateLayout()
+        
     }
 }
 
 // MARK:- UI创建
 extension MLPersonDataCell {
-    private func setupCellUI() {
-        //每个Item宽高
-        let H: CGFloat = 24
-        //每行列数
-        let rank: Int = 3
-        //每行间距
-        let rowMargin: CGFloat = 20
-        //每列间距
-        let rankMargin: CGFloat = 20
-        //Item索引 ->根据需求改变索引
-        let index: Int = 9;
+    /// 初始化 UICollectionView 并注册 UICollectionViewCell
+    private func setupView() {
+        let layout = UICollectionViewFlowLayout()
+        // 必须写，用来自动计算行高
+        layout.estimatedItemSize = CGSize(width: 100, height: self.frame.size.height)
         
-        /// 宽度 - 不固定
-        var W: CGFloat = 60
-        //Item top
-        let top: CGFloat = 50;
+        colltionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), collectionViewLayout: layout)
         
-        for i in 0..<index {
-            //Item X轴
-            let X = CGFloat(i % rank) * (W + rankMargin);
-            //Item Y轴
-            let Y = CGFloat(i / rank) * (H + rowMargin);
-
-            print("X = \(X)")
-            print("Y =\(Y)")
-            
-            let label = UILabel()
-            customLabelLayer(label: label)
-            contentView.addSubview(label)
-            
-            let labelW: CGFloat = label.text?.autoLabelHeight(with: H, font: UIFont.systemFont(ofSize: 12.0)) ?? 0
-            label.frame = CGRect(x: X, y: Y + top, width: W, height: H)
-
-            W = labelW + rankMargin
-            
-            aLabel?.append(label)
-        }
+        print("colltionView.frame = \(colltionView!.frame)")
+        
+        //注册一个cell
+        colltionView! .register(WYLabelCell.self, forCellWithReuseIdentifier:"cell")
+        colltionView?.delegate = self;
+        colltionView?.dataSource = self;
+        colltionView?.backgroundColor = UIColor.purple
+        
+        contentView.addSubview(colltionView!)
     }
     
     
@@ -114,18 +110,18 @@ extension MLPersonDataCell {
     }
 }
 
-extension String {
-    /// label宽度自适应
-    ///
-    /// - Parameters:
-    ///   - text: 文字
-    ///   - labelWidth: 最大宽度
-    ///   - attributes: 字体，行距等
-    /// - Returns: 高度
-    func autoLabelHeight(with labelHeight: CGFloat ,font: UIFont) -> CGFloat {
-        var size = CGRect()
-        let size2 = CGSize(width: 0, height: labelHeight)//设置label的最大宽度
-        size = self.boundingRect(with: size2, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : font] , context: nil);
-        return size.size.width
+extension MLPersonDataCell: LabelProtocol {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return aString.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WYLabelCell
+        
+        let aModel = aString[indexPath.row]
+        cell.label.text = aModel.title
+        
+        return cell
     }
 }

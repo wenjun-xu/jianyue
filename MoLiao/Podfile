@@ -28,15 +28,4 @@ target 'MoLiao' do
 #    pod 'ZKSegment'
 #    pod 'LinkedScroll'
 
-
-  target 'MoLiaoTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MoLiaoUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

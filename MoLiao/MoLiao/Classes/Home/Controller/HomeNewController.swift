@@ -29,6 +29,7 @@ class HomeNewController: BaseTabViewController  {
         return MLBastMatchJsonTool.getBastMatchJsonData().aModel
     }()
     
+    private var homeDataSource: MLHomeNewDataSource?
     
     
     override func viewDidLoad() {
@@ -40,10 +41,13 @@ class HomeNewController: BaseTabViewController  {
         setupBaseTableView()
         /// 广告轮播器
         setupHeadView()
+ 
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
+    
 }
 
 // MARK:-  UI创建
@@ -89,7 +93,7 @@ extension HomeNewController: HomeNewDelegate {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -98,24 +102,24 @@ extension HomeNewController: HomeNewDelegate {
             return arrDataCommon.count
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
+
+
         if indexPath.section == 0 { // 最佳匹配
-            
+
             let cell = MLBastContentCell.cell(tableView: tableView)
             cell.delegate = self
-            
+
             // 只是给第一个赋值
             let aModel = aCellModel[indexPath.row]
             cell.setupData(model: aModel)
             return cell
-            
+
         } else {  // 真心推荐
-            
+
             let cell = HomeCell.cell(tableView: tableView)
-            
+
             let aHomeModel = arrDataCommon[indexPath.row]
             cell.setupData(model: aHomeModel)
 

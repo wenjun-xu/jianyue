@@ -65,5 +65,20 @@ extension String {
     }
     
     
-    
+}
+
+// MARK:-  label宽度自适应
+extension String {
+    /// label宽度自适应
+    ///
+    /// - Parameters:
+    ///   - labelHeight: 最大高度
+    ///   - font: 字体，行距等
+    /// - Returns: 宽度
+    func autoLabelHeight(with labelHeight: CGFloat ,font: UIFont) -> CGFloat {
+        var size = CGRect()
+        let size2 = CGSize(width: 0, height: labelHeight)//设置label的最大宽度
+        size = self.boundingRect(with: size2, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : font] , context: nil);
+        return size.size.width
+    }
 }

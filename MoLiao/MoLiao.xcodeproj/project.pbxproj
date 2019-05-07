@@ -17,8 +17,8 @@
 		206ECFDE2267195000ABFE99 /* MLRegistSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */; };
 		206ECFE022671D9900ABFE99 /* MLRegistNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */; };
 		209BEDA222683DB700246182 /* MLRegistBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEDA122683DB700246182 /* MLRegistBaseView.swift */; };
-		209BEE632271801300246182 /* MLRegistGenderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE622271801300246182 /* MLRegistGenderTest.swift */; };
 		209BEE6522729AD000246182 /* MLHeadFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BEE6422729AD000246182 /* MLHeadFirstView.swift */; };
+		209E77D022770D270080E707 /* MLHomeNewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E77CF22770D270080E707 /* MLHomeNewDataSource.swift */; };
 		20D61D912272CA300020FB42 /* MLBastContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D902272CA300020FB42 /* MLBastContentCell.swift */; };
 		20D61D952272FF4D0020FB42 /* MLBastMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */; };
 		20D61D9B227538540020FB42 /* MLSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61D9A227538540020FB42 /* MLSubtitleView.swift */; };
@@ -28,10 +28,10 @@
 		20D61DA6227544950020FB42 /* PersonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 20D61DA3227544950020FB42 /* PersonData.json */; };
 		20D61DA7227544950020FB42 /* MLBastMatchJsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61DA4227544950020FB42 /* MLBastMatchJsonTool.swift */; };
 		20D61DA9227545170020FB42 /* MLPersonDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61DA8227545170020FB42 /* MLPersonDataCell.swift */; };
+		20DBB13F22811F0700BA2D54 /* WYLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBB13E22811F0700BA2D54 /* WYLabelCell.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
-		516512C40DB813EF92229E24 /* Pods_MoLiaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD39F73A8594B9C03F11633F /* Pods_MoLiaoUITests.framework */; };
 		827BF9BE222CC2260093EB65 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF79F222CC2250093EB65 /* BackButton.swift */; };
 		827BF9BF222CC2260093EB65 /* BaseNavgationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A0222CC2250093EB65 /* BaseNavgationController.swift */; };
 		827BF9C0222CC2260093EB65 /* BaseNavHiddenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A1222CC2250093EB65 /* BaseNavHiddenController.swift */; };
@@ -323,8 +323,6 @@
 		CC2B7FAC21D0B992009B4474 /* MoLiao.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC2B7FAA21D0B992009B4474 /* MoLiao.xcdatamodeld */; };
 		CC2B7FAE21D0B994009B4474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2B7FAD21D0B994009B4474 /* Assets.xcassets */; };
 		CC2B7FB121D0B994009B4474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2B7FAF21D0B994009B4474 /* LaunchScreen.storyboard */; };
-		CC2B7FBC21D0B994009B4474 /* MoLiaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B7FBB21D0B994009B4474 /* MoLiaoTests.swift */; };
-		CC2B7FC721D0B994009B4474 /* MoLiaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B7FC621D0B994009B4474 /* MoLiaoUITests.swift */; };
 		CC318BFD220886DB004632DD /* PickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC318BFC220886DB004632DD /* PickerModel.swift */; };
 		CC318BFF2208874B004632DD /* WJPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC318BFE2208874B004632DD /* WJPickerView.swift */; };
 		CC318C01221274E0004632DD /* City.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC318C00221274E0004632DD /* City.plist */; };
@@ -340,30 +338,10 @@
 		CCBD920121E08F8800717ED3 /* dynamic.json in Resources */ = {isa = PBXBuildFile; fileRef = CCBD920021E08F8800717ED3 /* dynamic.json */; };
 		CCDA470421F1AFE900526865 /* MyPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCDA470321F1AFE900526865 /* MyPlist.plist */; };
 		CCF769BE21DA54D7005C8D6A /* biaoqian.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF769BD21DA54D7005C8D6A /* biaoqian.json */; };
-		CEC77DE3A79F0FA37C793214 /* Pods_MoLiaoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37104A10F0E54510DE149C2E /* Pods_MoLiaoTests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CC2B7FB821D0B994009B4474 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CC2B7F9821D0B992009B4474 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CC2B7F9F21D0B992009B4474;
-			remoteInfo = MoLiao;
-		};
-		CC2B7FC321D0B994009B4474 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CC2B7F9821D0B992009B4474 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CC2B7F9F21D0B992009B4474;
-			remoteInfo = MoLiao;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0ADCBEB98C5C61CA1BC6A8EE /* Pods-MoLiao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiao/Pods-MoLiao.debug.xcconfig"; sourceTree = "<group>"; };
-		106CB8BC6E87B7B965402741 /* Pods-MoLiaoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoTests/Pods-MoLiaoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		15A7A7C707B510E01860D0A1 /* Pods-MoLiaoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		206ECFD12266F2C000ABFE99 /* MLRegistGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistGenderView.swift; sourceTree = "<group>"; };
 		206ECFD32266F7AD00ABFE99 /* MLRegistBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistBirthdayView.swift; sourceTree = "<group>"; };
 		206ECFD52266FA7F00ABFE99 /* MLRegistStatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistStatureView.swift; sourceTree = "<group>"; };
@@ -373,9 +351,8 @@
 		206ECFDD2267195000ABFE99 /* MLRegistSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistSalaryView.swift; sourceTree = "<group>"; };
 		206ECFDF22671D9900ABFE99 /* MLRegistNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistNameView.swift; sourceTree = "<group>"; };
 		209BEDA122683DB700246182 /* MLRegistBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistBaseView.swift; sourceTree = "<group>"; };
-		209BEE622271801300246182 /* MLRegistGenderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRegistGenderTest.swift; sourceTree = "<group>"; };
 		209BEE6422729AD000246182 /* MLHeadFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MLHeadFirstView.swift; path = MoLiao/Classes/Home/view/MLHeadFirstView.swift; sourceTree = SOURCE_ROOT; };
-		20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoUITests/Pods-MoLiaoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		209E77CF22770D270080E707 /* MLHomeNewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHomeNewDataSource.swift; sourceTree = "<group>"; };
 		20D61D902272CA300020FB42 /* MLBastContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastContentCell.swift; sourceTree = "<group>"; };
 		20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBastMatchModel.swift; sourceTree = "<group>"; };
 		20D61D9A227538540020FB42 /* MLSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MLSubtitleView.swift; path = MoLiao/Classes/Home/view/MLSubtitleView.swift; sourceTree = SOURCE_ROOT; };
@@ -385,10 +362,10 @@
 		20D61DA3227544950020FB42 /* PersonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PersonData.json; sourceTree = "<group>"; };
 		20D61DA4227544950020FB42 /* MLBastMatchJsonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBastMatchJsonTool.swift; sourceTree = "<group>"; };
 		20D61DA8227545170020FB42 /* MLPersonDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLPersonDataCell.swift; sourceTree = "<group>"; };
+		20DBB13E22811F0700BA2D54 /* WYLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYLabelCell.swift; sourceTree = "<group>"; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
 		20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHomePageView.swift; sourceTree = "<group>"; };
-		257D0754854145568C900FED /* Pods-MoLiaoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiaoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiaoTests/Pods-MoLiaoTests.release.xcconfig"; sourceTree = "<group>"; };
 		37104A10F0E54510DE149C2E /* Pods_MoLiaoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoLiaoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFCD51059B8CC06EBBDE257 /* Pods_MoLiao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoLiao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		827BF79F222CC2250093EB65 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -879,12 +856,6 @@
 		CC2B7FAD21D0B994009B4474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC2B7FB021D0B994009B4474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC2B7FB221D0B994009B4474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC2B7FB721D0B994009B4474 /* MoLiaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoLiaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC2B7FBB21D0B994009B4474 /* MoLiaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoLiaoTests.swift; sourceTree = "<group>"; };
-		CC2B7FBD21D0B994009B4474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC2B7FC221D0B994009B4474 /* MoLiaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoLiaoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC2B7FC621D0B994009B4474 /* MoLiaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoLiaoUITests.swift; sourceTree = "<group>"; };
-		CC2B7FC821D0B994009B4474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC2B7FF321D0B9E5009B4474 /* MoLiao-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoLiao-Bridging-Header.h"; sourceTree = "<group>"; };
 		CC318BFC220886DB004632DD /* PickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModel.swift; sourceTree = "<group>"; };
 		CC318BFE2208874B004632DD /* WJPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJPickerView.swift; sourceTree = "<group>"; };
@@ -916,22 +887,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC2B7FB421D0B994009B4474 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEC77DE3A79F0FA37C793214 /* Pods_MoLiaoTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CC2B7FBF21D0B994009B4474 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				516512C40DB813EF92229E24 /* Pods_MoLiaoUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -950,10 +905,6 @@
 			children = (
 				0ADCBEB98C5C61CA1BC6A8EE /* Pods-MoLiao.debug.xcconfig */,
 				B811B5F5CD0F3DD3D8F486EF /* Pods-MoLiao.release.xcconfig */,
-				106CB8BC6E87B7B965402741 /* Pods-MoLiaoTests.debug.xcconfig */,
-				257D0754854145568C900FED /* Pods-MoLiaoTests.release.xcconfig */,
-				15A7A7C707B510E01860D0A1 /* Pods-MoLiaoUITests.debug.xcconfig */,
-				20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1240,6 +1191,7 @@
 				827BF834222CC2250093EB65 /* OtherInfoTopCell.swift */,
 				20D61D9C22753CF70020FB42 /* MLDynamicCell.swift */,
 				20D61DA8227545170020FB42 /* MLPersonDataCell.swift */,
+				20DBB13E22811F0700BA2D54 /* WYLabelCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1281,6 +1233,7 @@
 				827BF849222CC2250093EB65 /* HomeModel.swift */,
 				20D61D942272FF4D0020FB42 /* MLBastMatchModel.swift */,
 				20D61D9F227543FE0020FB42 /* MLPersonModel.swift */,
+				209E77CF22770D270080E707 /* MLHomeNewDataSource.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2090,8 +2043,6 @@
 			isa = PBXGroup;
 			children = (
 				CC2B7FA221D0B992009B4474 /* MoLiao */,
-				CC2B7FBA21D0B994009B4474 /* MoLiaoTests */,
-				CC2B7FC521D0B994009B4474 /* MoLiaoUITests */,
 				CC2B7FA121D0B992009B4474 /* Products */,
 				5894EAD343AB42F94FF92A4A /* Pods */,
 				6858F7C4300D09089124AC06 /* Frameworks */,
@@ -2102,8 +2053,6 @@
 			isa = PBXGroup;
 			children = (
 				CC2B7FA021D0B992009B4474 /* MoLiao.app */,
-				CC2B7FB721D0B994009B4474 /* MoLiaoTests.xctest */,
-				CC2B7FC221D0B994009B4474 /* MoLiaoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2122,25 +2071,6 @@
 				CC2B7FAA21D0B992009B4474 /* MoLiao.xcdatamodeld */,
 			);
 			path = MoLiao;
-			sourceTree = "<group>";
-		};
-		CC2B7FBA21D0B994009B4474 /* MoLiaoTests */ = {
-			isa = PBXGroup;
-			children = (
-				CC2B7FBB21D0B994009B4474 /* MoLiaoTests.swift */,
-				CC2B7FBD21D0B994009B4474 /* Info.plist */,
-			);
-			path = MoLiaoTests;
-			sourceTree = "<group>";
-		};
-		CC2B7FC521D0B994009B4474 /* MoLiaoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CC2B7FC621D0B994009B4474 /* MoLiaoUITests.swift */,
-				CC2B7FC821D0B994009B4474 /* Info.plist */,
-				209BEE622271801300246182 /* MLRegistGenderTest.swift */,
-			);
-			path = MoLiaoUITests;
 			sourceTree = "<group>";
 		};
 		CC2B7FE621D0B9BD009B4474 /* Common */ = {
@@ -2225,44 +2155,6 @@
 			productReference = CC2B7FA021D0B992009B4474 /* MoLiao.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CC2B7FB621D0B994009B4474 /* MoLiaoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CC2B7FCE21D0B994009B4474 /* Build configuration list for PBXNativeTarget "MoLiaoTests" */;
-			buildPhases = (
-				BF51502FBD5ABE94A69F094D /* [CP] Check Pods Manifest.lock */,
-				CC2B7FB321D0B994009B4474 /* Sources */,
-				CC2B7FB421D0B994009B4474 /* Frameworks */,
-				CC2B7FB521D0B994009B4474 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CC2B7FB921D0B994009B4474 /* PBXTargetDependency */,
-			);
-			name = MoLiaoTests;
-			productName = MoLiaoTests;
-			productReference = CC2B7FB721D0B994009B4474 /* MoLiaoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CC2B7FC121D0B994009B4474 /* MoLiaoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CC2B7FD121D0B994009B4474 /* Build configuration list for PBXNativeTarget "MoLiaoUITests" */;
-			buildPhases = (
-				89276F2B3908D4933BA677DD /* [CP] Check Pods Manifest.lock */,
-				CC2B7FBE21D0B994009B4474 /* Sources */,
-				CC2B7FBF21D0B994009B4474 /* Frameworks */,
-				CC2B7FC021D0B994009B4474 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CC2B7FC421D0B994009B4474 /* PBXTargetDependency */,
-			);
-			name = MoLiaoUITests;
-			productName = MoLiaoUITests;
-			productReference = CC2B7FC221D0B994009B4474 /* MoLiaoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2277,14 +2169,6 @@
 					CC2B7F9F21D0B992009B4474 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
-					};
-					CC2B7FB621D0B994009B4474 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = CC2B7F9F21D0B992009B4474;
-					};
-					CC2B7FC121D0B994009B4474 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = CC2B7F9F21D0B992009B4474;
 					};
 				};
 			};
@@ -2302,8 +2186,6 @@
 			projectRoot = "";
 			targets = (
 				CC2B7F9F21D0B992009B4474 /* MoLiao */,
-				CC2B7FB621D0B994009B4474 /* MoLiaoTests */,
-				CC2B7FC121D0B994009B4474 /* MoLiaoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -2357,20 +2239,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC2B7FB521D0B994009B4474 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CC2B7FC021D0B994009B4474 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -2396,28 +2264,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89276F2B3908D4933BA677DD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MoLiaoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BBA5120CD48459EC011C8211 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2433,28 +2279,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoLiao/Pods-MoLiao-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF51502FBD5ABE94A69F094D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MoLiaoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2611,6 +2435,7 @@
 				827BFAB9222CC2260093EB65 /* EaseViewController.m in Sources */,
 				827BFAD3222CC8BC0093EB65 /* UserNameController.swift in Sources */,
 				827BFA44222CC2260093EB65 /* LookSegmentController.swift in Sources */,
+				20DBB13F22811F0700BA2D54 /* WYLabelCell.swift in Sources */,
 				827BFAC4222CC2260093EB65 /* EaseBubbleView+Video.m in Sources */,
 				827BF9DA222CC2260093EB65 /* HXDatePhotoViewController.m in Sources */,
 				827BF9D3222CC2260093EB65 /* HXCustomPreviewView.m in Sources */,
@@ -2647,6 +2472,7 @@
 				827BFA41222CC2260093EB65 /* MeDetailCell.swift in Sources */,
 				827BFA2D222CC2260093EB65 /* HomePageController.swift in Sources */,
 				827BFA7F222CC2260093EB65 /* MWPhotoBrowser.m in Sources */,
+				209E77D022770D270080E707 /* MLHomeNewDataSource.swift in Sources */,
 				827BFA0D222CC2260093EB65 /* MomentCell.swift in Sources */,
 				827BFA23222CC2260093EB65 /* HZBannerView.m in Sources */,
 				827BFAC9222CC2260093EB65 /* EaseImageView.m in Sources */,
@@ -2752,37 +2578,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC2B7FB321D0B994009B4474 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC2B7FBC21D0B994009B4474 /* MoLiaoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CC2B7FBE21D0B994009B4474 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC2B7FC721D0B994009B4474 /* MoLiaoUITests.swift in Sources */,
-				209BEE632271801300246182 /* MLRegistGenderTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CC2B7FB921D0B994009B4474 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CC2B7F9F21D0B992009B4474 /* MoLiao */;
-			targetProxy = CC2B7FB821D0B994009B4474 /* PBXContainerItemProxy */;
-		};
-		CC2B7FC421D0B994009B4474 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CC2B7F9F21D0B992009B4474 /* MoLiao */;
-			targetProxy = CC2B7FC321D0B994009B4474 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CC2B7FA721D0B992009B4474 /* Main.storyboard */ = {
@@ -2987,92 +2783,6 @@
 			};
 			name = Release;
 		};
-		CC2B7FCF21D0B994009B4474 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 106CB8BC6E87B7B965402741 /* Pods-MoLiaoTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A9NU434F6;
-				INFOPLIST_FILE = MoLiaoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xuwenjun.MoLiaoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoLiao.app/MoLiao";
-			};
-			name = Debug;
-		};
-		CC2B7FD021D0B994009B4474 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 257D0754854145568C900FED /* Pods-MoLiaoTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A9NU434F6;
-				INFOPLIST_FILE = MoLiaoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xuwenjun.MoLiaoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoLiao.app/MoLiao";
-			};
-			name = Release;
-		};
-		CC2B7FD221D0B994009B4474 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15A7A7C707B510E01860D0A1 /* Pods-MoLiaoUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = MoLiaoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xuwenjun.MoLiaoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoLiao;
-			};
-			name = Debug;
-		};
-		CC2B7FD321D0B994009B4474 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20D594FC54D12A44B40B8EC2 /* Pods-MoLiaoUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = MoLiaoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xuwenjun.MoLiaoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoLiao;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3090,24 +2800,6 @@
 			buildConfigurations = (
 				CC2B7FCC21D0B994009B4474 /* Debug */,
 				CC2B7FCD21D0B994009B4474 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CC2B7FCE21D0B994009B4474 /* Build configuration list for PBXNativeTarget "MoLiaoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CC2B7FCF21D0B994009B4474 /* Debug */,
-				CC2B7FD021D0B994009B4474 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CC2B7FD121D0B994009B4474 /* Build configuration list for PBXNativeTarget "MoLiaoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CC2B7FD221D0B994009B4474 /* Debug */,
-				CC2B7FD321D0B994009B4474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

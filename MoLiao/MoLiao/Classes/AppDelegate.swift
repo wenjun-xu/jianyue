@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
         // 登录界面
 //        let vc = HomePageController()
 //        let nvc = BaseNavgationController.init(rootViewController: vc)
-        // BaseTabBarController
+        // OtherInformationController BaseTabBarController
         self.window?.rootViewController = OtherInformationController()
         
         

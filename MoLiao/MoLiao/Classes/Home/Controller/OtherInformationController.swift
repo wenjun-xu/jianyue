@@ -27,6 +27,67 @@ class OtherInformationController: BaseTabViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        naviView.isHidden = false
+        if isNavHidden {
+            self.navigationController?.navigationBar.isHidden = true
+        }else {
+            self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        naviView.isHidden = true
+        if isNavHidden {
+            self.navigationController?.navigationBar.isHidden = false
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isNavHidden {
+        }else {
+            self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
+    }
+    
+    // 导航栏渐变
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let currentOffsetY = scrollView.contentOffset.y
+////        print("currentOffsetY==",currentOffsetY)
+//
+//        var alpha:CGFloat = 0
+//        if (-currentOffsetY <= (kStatusBarH + kNavH)) {
+//            alpha = 1
+//            tuijianlabel.isHidden = false
+//
+//        }else if (-currentOffsetY > kStatusBarH + kNavH) && (-currentOffsetY < (kInfoSDrecycleViewH + 20)){
+//            alpha = (kInfoSDrecycleViewH + currentOffsetY) / (kInfoSDrecycleViewH - kStatusBarH - kNavH)
+//            tuijianlabel.isHidden = true
+//
+//        }else {
+//            alpha = 0
+//            tuijianlabel.isHidden = true
+//        }
+//
+//        if (-currentOffsetY < (kNavH + 2 * kStatusBarH)) {
+//            tableView.showsVerticalScrollIndicator = true
+//        }else {
+//            tableView.showsVerticalScrollIndicator = false
+//        }
+//        naviView.backgroundColor = kNavColor.alpha(alpha)
+//    }
+}
+
+// MARK:- 导航栏右上角 - 弹出框View 创建
+extension OtherInformationController {
+    private func setupUIView() {
         tableView.y = -kStatusBarH
         tableView.height = kScreenHeight + kStatusBarH - 50
         tableView.showsVerticalScrollIndicator = false
@@ -67,7 +128,7 @@ class OtherInformationController: BaseTabViewController {
         let rightTapGR = UITapGestureRecognizer(target: self, action: #selector(self.rightClick))
         rightView.isUserInteractionEnabled = true
         rightView.addGestureRecognizer(rightTapGR)
-      
+        
         // MARK:- 点击手势
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.pushAdvertising))
         sousuoView.isUserInteractionEnabled = true
@@ -77,7 +138,42 @@ class OtherInformationController: BaseTabViewController {
         view.addSubview(bottomView())
     }
     
-    func bottomView() -> UIView {
+    
+}
+
+// MARK:- 导航栏右上角 - 弹出框 点击事件
+extension OtherInformationController {
+    
+    @objc func pushAdvertising() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func rightClick() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: "屏蔽此人", style: .default, handler: nil)
+        let del = UIAlertAction(title: "举报此人", style: .default, handler: nil)
+        let ok = UIAlertAction(title: "取消", style: .cancel, handler: {
+            ACTION in
+            print("你点击了OK")
+        })
+        alert.addAction(del)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    @objc func nextClick() {
+        let vc = OtherDynamicController()
+        vc.selfTitle = self.tuijianlabel.text ?? ""
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+// MARK:-  最底下 - 打招呼聊天View
+extension OtherInformationController {
+    private func bottomView() -> UIView {
         let bottomH:CGFloat = 50
         let bottomV = UIView.init(frame: CGRect(x: 0, y: kScreenHeight - 50, width: kScreenWidth, height: bottomH))
         bottomV.backgroundColor = UIColor.white
@@ -113,6 +209,11 @@ class OtherInformationController: BaseTabViewController {
         bottomV.layer.shadowRadius = 2
         return bottomV
     }
+}
+
+// MARK:- 打招呼聊天View 点击事件
+extension OtherInformationController {
+    /// 打招呼聊天View 点击事件
     @objc func click(sender:UIButton) {
         if sender.tag == 10000 {
             let vc = EaseMessageViewController.init(conversationChatter: "xuwenjun", conversationType: .init(0))
@@ -123,230 +224,7 @@ class OtherInformationController: BaseTabViewController {
             vc?.title = "与徐文俊的聊天"
             self.navigationController?.pushViewController(vc!, animated: true)
         }
-     
     }
-    
-    @objc func pushAdvertising() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func rightClick() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cancel = UIAlertAction(title: "屏蔽此人", style: .default, handler: nil)
-        let del = UIAlertAction(title: "举报此人", style: .default, handler: nil)
-        let ok = UIAlertAction(title: "取消", style: .cancel, handler: {
-            ACTION in
-            print("你点击了OK")
-        })
-        alert.addAction(del)
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        naviView.isHidden = false
-        if isNavHidden {
-            self.navigationController?.navigationBar.isHidden = true
-        }else {
-            self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        naviView.isHidden = true
-        if isNavHidden {
-            self.navigationController?.navigationBar.isHidden = false
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if isNavHidden {
-        }else {
-            self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let currentOffsetY = scrollView.contentOffset.y
-        print("currentOffsetY==",currentOffsetY)
-        var alpha:CGFloat = 0
-        if -currentOffsetY<=kStatusBarH + kNavH {
-            alpha = 1
-            tuijianlabel.isHidden = false
-        }else if (-currentOffsetY > kStatusBarH + kNavH) && (-currentOffsetY < (kInfoSDrecycleViewH + 20)){
-            alpha = (kInfoSDrecycleViewH + currentOffsetY) / (kInfoSDrecycleViewH - kStatusBarH - kNavH)
-            tuijianlabel.isHidden = true
-        }else {
-            alpha = 0
-            tuijianlabel.isHidden = true
-        }
-        if -currentOffsetY < kNavH + 2*kStatusBarH {
-            tableView.showsVerticalScrollIndicator = true
-        }else {
-            tableView.showsVerticalScrollIndicator = false
-        }
-        naviView.backgroundColor = kNavColor.alpha(alpha)
-    }    
-
-    
-   @objc func nextClick() {
-        let vc = OtherDynamicController()
-        vc.selfTitle = self.tuijianlabel.text ?? ""
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func biaozhun() -> UIView {
-        let leftSpace:CGFloat = 12
-        let topSpace:CGFloat = 12
-        let middleSpace:CGFloat = 20
-        let centerLeftSpace:CGFloat = 10
-        let centerMiddleSpace:CGFloat = 15
-        let sectionView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: sectionH))
-        
-        let leftView = UIView.init(frame: CGRect(x: leftSpace, y: topSpace + 2, width: 4, height: 15))
-        leftView.backgroundColor = UIColor.orange
-        sectionView.addSubview(leftView)
-        
-        let topLabel = UILabel.init(frame: CGRect(x: leftView.rightX + 5, y: topSpace, width: 200, height: 20))
-        topLabel.text = "择偶标准"
-        topLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
-        sectionView.addSubview(topLabel)
-        
-        let firstlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
-        firstlabel.text = "未婚"
-        customLabelLayer(label: firstlabel)
-        sectionView.addSubview(firstlabel)
-        
-        let secondlabel = UILabel.init(frame: CGRect(x: firstlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
-        secondlabel.text = "24-28岁"
-        customLabelLayer(label: secondlabel)
-        sectionView.addSubview(secondlabel)
-        
-        let threelabel = UILabel.init(frame: CGRect(x: secondlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 150, height: 24))
-        threelabel.text = "工作地区:北京东城区"
-        customLabelLayer(label: threelabel)
-        sectionView.addSubview(threelabel)
-        
-        let fourlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 90, height: 24))
-        fourlabel.text = "150-170com"
-        customLabelLayer(label: fourlabel)
-        sectionView.addSubview(fourlabel)
-        
-        let fivelabel = UILabel.init(frame: CGRect(x: fourlabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-        fivelabel.text = "47-80kg"
-        customLabelLayer(label: fivelabel)
-        sectionView.addSubview(fivelabel)
-        
-        let sixlabel = UILabel.init(frame: CGRect(x: fivelabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 140, height: 24))
-        sixlabel.text = "月收入:8000-12000"
-        customLabelLayer(label: sixlabel)
-        sectionView.addSubview(sixlabel)
-        
-        let sevenlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-        sevenlabel.text = "本科"
-        customLabelLayer(label: sevenlabel)
-        sectionView.addSubview(sevenlabel)
-        
-        return sectionView
-    }
-    
-    
-    func customLabelLayer(label:UILabel) {
-        label.layer.cornerRadius = 12
-        label.textColor = kLabelGrayColor
-        label.layer.borderColor = UIColor.gray.alpha(0.3).cgColor
-        label.layer.borderWidth = 0.35
-//        label.layer.shadowColor = UIColor.gray.alpha(0.5).cgColor
-//        label.layer.shadowRadius = 5
-//        label.layer.shadowOpacity = 0.6
-//        label.layer.shadowOffset = CGSize(width: 1, height: 2)
-        label.clipsToBounds = true
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12.0)
-    }
-//
-//    func addSectionView() -> UIView {
-//        let leftSpace:CGFloat = 12
-//        let topSpace:CGFloat = 12
-//        let middleSpace:CGFloat = 20
-//        let centerLeftSpace:CGFloat = 10
-//        let centerMiddleSpace:CGFloat = 15
-//        let sectionView = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: sectionH))
-//
-//        let firstlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
-//        firstlabel.text = "未婚"
-//        customLabelLayer(label: firstlabel)
-//        sectionView.addSubview(firstlabel)
-//
-//        let secondlabel = UILabel.init(frame: CGRect(x: firstlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 60, height: 24))
-//        secondlabel.text = "24岁"
-//        customLabelLayer(label: secondlabel)
-//        sectionView.addSubview(secondlabel)
-//
-//        let threelabel = UILabel.init(frame: CGRect(x: secondlabel.rightX + middleSpace, y: topLabel.bottomY + 30, width: 150, height: 24))
-//        threelabel.text = "工作地区:北京东城区"
-//        customLabelLayer(label: threelabel)
-//        sectionView.addSubview(threelabel)
-//
-//        let fourlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-//        fourlabel.text = "166com"
-//        customLabelLayer(label: fourlabel)
-//        sectionView.addSubview(fourlabel)
-//
-//        let fivelabel = UILabel.init(frame: CGRect(x: fourlabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 60, height: 24))
-//        fivelabel.text = "47kg"
-//        customLabelLayer(label: fivelabel)
-//        sectionView.addSubview(fivelabel)
-//
-//        let sixlabel = UILabel.init(frame: CGRect(x: fivelabel.rightX + middleSpace, y: firstlabel.bottomY + centerMiddleSpace, width: 140, height: 24))
-//        sixlabel.text = "月收入:8000-12000"
-//        customLabelLayer(label: sixlabel)
-//        sectionView.addSubview(sixlabel)
-//
-//        let sevenlabel = UILabel.init(frame: CGRect(x: topLabel.x + centerLeftSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-//        sevenlabel.text = "狮子座"
-//        customLabelLayer(label: sevenlabel)
-//        sectionView.addSubview(sevenlabel)
-//
-//        let eightlabel = UILabel.init(frame: CGRect(x: sevenlabel.rightX + middleSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-//        eightlabel.text = "销售"
-//        customLabelLayer(label: eightlabel)
-//        sectionView.addSubview(eightlabel)
-//
-//        let ninelabel = UILabel.init(frame: CGRect(x: eightlabel.rightX + middleSpace, y: fourlabel.bottomY + centerMiddleSpace, width: 70, height: 24))
-//        ninelabel.text = "本科"
-//        customLabelLayer(label: ninelabel)
-//        sectionView.addSubview(ninelabel)
-//        return sectionView
-//    }
-    
-    
-    
-    
-}
-// MARK:- <#zhushi#>
-extension OtherInformationController {
-    
-}
-
-// MARK:- <#zhushi#>
-extension OtherInformationController {
-    
-}
-
-
-// MARK:- <#zhushi#>
-extension OtherInformationController {
-    
-}
-
-// MARK:- <#zhushi#>
-extension OtherInformationController {
-    
 }
 
 // MARK:- <#zhushi#>
@@ -362,38 +240,31 @@ extension OtherInformationController {
             let cell = OtherInfoTopCell.cell(tableView: tableView)
             return cell
             
-        } else if indexPath.section == 1 {            
+        } else if indexPath.section == 1 { // 动态
             let cell = MLDynamicCell.cell(tableView: tableView)
             return cell
-        }
-        else if indexPath.section == 2 {
             
-//            let otherHomeNewsCell = "center"
-//            var cell = tableView.dequeueReusableCell(withIdentifier: otherHomeNewsCell)
-//            if cell == nil {
-//                cell = UITableViewCell(style: .default, reuseIdentifier: otherHomeNewsCell)
-//                cell?.separatorInset = UIEdgeInsets(top: 0,left: kScreenWidth, bottom: 0, right: 0)
-//                cell?.selectionStyle = .none
-//                cell?.addSubview(addSectionView())
-//
-//            }
-            
+        } else if indexPath.section == 2 { // 个人标准
+ 
             let cell = MLPersonDataCell.cell(tableView: tableView)
-            let aModel = personData[indexPath.row]
-            cell.setupData(model: aModel)
+            cell.setupData(model: personData)
+            
+            //下面这两个语句一定要添加，否则第一屏显示的collection view尺寸，以及里面的单元格位置会不正确
+            cell.frame = tableView.bounds
+            cell.layoutIfNeeded()
+            cell.backgroundColor = UIColor.lightGray
             return cell
-        }else {
-            let otherHomeNewsCell = "bottom"
-            var cell = tableView.dequeueReusableCell(withIdentifier: otherHomeNewsCell)
-            if cell == nil {
-                cell = UITableViewCell(style: .default, reuseIdentifier: otherHomeNewsCell)
-                cell?.separatorInset = UIEdgeInsets(top: 0,left: kScreenWidth, bottom: 0, right: 0)
-                cell?.selectionStyle = .none
-                cell?.addSubview(biaozhun())
-            }
-            return cell!
+            
+        } else { // 择偶标准
+            let cell = MLPersonDataCell.cell(tableView: tableView)
+            cell.setupData(model: personData)
+            
+            //下面这两个语句一定要添加，否则第一屏显示的collection view尺寸，以及里面的单元格位置会不正确
+            cell.frame = tableView.bounds
+            cell.layoutIfNeeded()
+            cell.backgroundColor = UIColor.lightGray
+            return cell
         }
-        
     }
 }
 
@@ -442,9 +313,13 @@ extension OtherInformationController {
             aView.setupContext(leftLabel: "个人资料", rightLabel: nil)
             return aView
         }
+        else if section == 3 { // 择偶标准
+            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 50))
+            aView.setupContext(leftLabel: "择偶标准", rightLabel: nil)
+            return aView
+        }
         
-        let  view = UIView()
-        view.backgroundColor = UIColor.black
+        
         return UIView()
     }
 }

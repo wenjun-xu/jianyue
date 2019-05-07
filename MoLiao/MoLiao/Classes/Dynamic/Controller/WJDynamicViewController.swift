@@ -30,6 +30,7 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
     private var fabuButton:UIButton!
     private var isReply:Bool!
     private var selectToUserName:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -364,41 +365,3 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

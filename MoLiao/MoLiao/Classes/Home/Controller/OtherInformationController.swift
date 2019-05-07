@@ -10,6 +10,8 @@ import UIKit
 import SwiftyJSON
 //import SDCycleScrollView
 import JCyclePictureView
+
+/// 首页 - 详情页面
 class OtherInformationController: BaseTabViewController {
     
     fileprivate var arrDataCommon = [HomeModel]()
@@ -28,34 +30,35 @@ class OtherInformationController: BaseTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavH - kStatusBarH), style: .grouped)
         setupUIView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        naviView.isHidden = false
-        if isNavHidden {
-            self.navigationController?.navigationBar.isHidden = true
-        }else {
-            self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        naviView.isHidden = true
-        if isNavHidden {
-            self.navigationController?.navigationBar.isHidden = false
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if isNavHidden {
-        }else {
-            self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        naviView.isHidden = false
+//        if isNavHidden {
+//            self.navigationController?.navigationBar.isHidden = true
+//        }else {
+//            self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//        }
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        naviView.isHidden = true
+//        if isNavHidden {
+//            self.navigationController?.navigationBar.isHidden = false
+//        }
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if isNavHidden {
+//        }else {
+//            self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//        }
+//    }
     
     // 导航栏渐变
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -135,10 +138,11 @@ extension OtherInformationController {
         sousuoView.addGestureRecognizer(tapGR)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         view.addSubview(naviView)
-        view.addSubview(bottomView())
+        
+        let bottomView = MLDetailBottomView(frame: CGRect(x: 0, y: kScreenHeight - 50, width: kScreenWidth, height: 50))
+        bottomView.delegate = self
+        view.addSubview(bottomView)
     }
-    
-    
 }
 
 // MARK:- 导航栏右上角 - 弹出框 点击事件
@@ -170,66 +174,19 @@ extension OtherInformationController {
     }
 }
 
-
-// MARK:-  最底下 - 打招呼聊天View
-extension OtherInformationController {
-    private func bottomView() -> UIView {
-        let bottomH:CGFloat = 50
-        let bottomV = UIView.init(frame: CGRect(x: 0, y: kScreenHeight - 50, width: kScreenWidth, height: bottomH))
-        bottomV.backgroundColor = UIColor.white
-        let leftBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth / 2.0 - 2, height: bottomH))
-        leftBtn.setTitle("聊天", for: .normal)
-        leftBtn.tag = 10000
-        leftBtn.setTitleColor(UIColor.black, for: .normal)
-        leftBtn.setImage(UIImage(named: "guanzhu"), for: .normal)
-        leftBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
-        leftBtn.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 0)
-        leftBtn.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -5, bottom: 0, right: 0)
-        leftBtn.addTarget(self, action: #selector(click(sender:)), for: .touchUpInside)
-        bottomV.addSubview(leftBtn)
-        
-        let centerLine = UIView.init(frame: CGRect(x: kScreenWidth / 2.0 - 1, y: 10, width: 2, height: bottomH - 20))
-        centerLine.backgroundColor = UIColor.gray.alpha(0.3)
-        bottomV.addSubview(centerLine)
-        
-        let rightBtn = UIButton.init(frame: CGRect(x: kScreenWidth / 2.0 + 2, y: 0, width: kScreenWidth / 2.0 - 2, height: bottomH))
-        rightBtn.tag = 10001
-        rightBtn.setTitle("打招呼", for: .normal)
-        rightBtn.setTitleColor(UIColor.black, for: .normal)
-        rightBtn.setImage(UIImage(named: "guanzhu"), for: .normal)
-        rightBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
-        rightBtn.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 0)
-        rightBtn.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -5, bottom: 0, right: 0)
-        rightBtn.addTarget(self, action: #selector(click(sender:)), for: .touchUpInside)
-        bottomV.addSubview(rightBtn)
-        
-        
-        bottomV.layer.shadowColor = UIColor.gray.alpha(0.3).cgColor
-        bottomV.layer.shadowOpacity = 1
-        bottomV.layer.shadowRadius = 2
-        return bottomV
+// MARK:- 底部view 的代理
+extension OtherInformationController: MLDetailBottomViewDelegate {
+    func nextPageSayHelloClick(view: MLDetailBottomView) {
+        let vc = EaseMessageViewController.init(conversationChatter: "xuwenjun", conversationType: .init(0))
+        vc?.title = "与徐文俊的聊天"
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
-}
-
-// MARK:- 打招呼聊天View 点击事件
-extension OtherInformationController {
-    /// 打招呼聊天View 点击事件
-    @objc func click(sender:UIButton) {
-        if sender.tag == 10000 {
-            let vc = EaseMessageViewController.init(conversationChatter: "xuwenjun", conversationType: .init(0))
-            vc?.title = "与徐文俊的聊天"
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }else {
-            let vc = EaseMessageViewController.init(conversationChatter: "xuwenjun", conversationType: .init(0))
-            vc?.title = "与徐文俊的聊天"
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }
-    }
-}
-
-// MARK:- <#zhushi#>
-extension OtherInformationController {
     
+    func nextPageChatClick(view: MLDetailBottomView) {
+        let vc = EaseMessageViewController.init(conversationChatter: "xuwenjun", conversationType: .init(0))
+        vc?.title = "与徐文俊的聊天"
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }
 
 // MARK:- tableView: cellForRowAt
@@ -299,27 +256,26 @@ extension OtherInformationController {
         if section == 0 {
             return 0
         }
-        return 50
+        return 40
     }
     
     /// 使用 viewForHeaderInSection -> UIView 必须实现 heightForHeaderInSection -> CGFloat 方法，否则没有View
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 { // 动态
-            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 50))
+            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 40))
             aView.setupContext(leftLabel: "动态", rightLabel: "查看更多")
             return aView
         } else if section == 2 { // 个人资料
-            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 50))
+            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 40))
             aView.setupContext(leftLabel: "个人资料", rightLabel: nil)
             return aView
-        }
-        else if section == 3 { // 择偶标准
-            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 50))
+        } else { // 择偶标准
+            let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 40))
             aView.setupContext(leftLabel: "择偶标准", rightLabel: nil)
             return aView
         }
         
         
-        return UIView()
+//        return UIView()
     }
 }

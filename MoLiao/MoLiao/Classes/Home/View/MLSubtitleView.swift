@@ -37,15 +37,16 @@ class MLSubtitleView: UIView {
 extension MLSubtitleView {
     /// 创建UI界面
     private func setupUIView() {
-        leftLine.frame = CGRect(x: leftSpace_20, y: (50 - 20) * 0.5, width: 5, height: 20)
+        let viewH: CGFloat = frame.size.height
+        leftLine.frame = CGRect(x: leftSpace_20, y: (viewH - 20) * 0.5, width: 5, height: 20)
         leftLine.backgroundColor = UIColor.yellow
         self.addSubview(leftLine)
         
-        leftLabel.frame = CGRect(x: leftLine.frame.maxX + 10, y: 0, width: 200, height: 50)
+        leftLabel.frame = CGRect(x: leftLine.frame.maxX + 10, y: 0, width: 200, height: viewH)
         leftLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight(rawValue: 1.2))
         self.addSubview(leftLabel)
         
-        moreBtn.frame = CGRect(x: kScreenWidth - leftSpace_20 - 60, y: leftLabel.y, width: 60, height: 50)
+        moreBtn.frame = CGRect(x: kScreenWidth - leftSpace_20 - 60, y: leftLabel.y, width: 60, height: viewH)
         moreBtn.setTitleColor(UIColor.gray, for: .normal)
         moreBtn.titleLabel?.font = UIFont.systemFont(ofSize: 13.0)
         moreBtn.titleLabel?.textAlignment = .right

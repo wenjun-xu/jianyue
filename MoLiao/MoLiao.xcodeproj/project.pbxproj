@@ -29,6 +29,7 @@
 		20D61DA7227544950020FB42 /* MLBastMatchJsonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61DA4227544950020FB42 /* MLBastMatchJsonTool.swift */; };
 		20D61DA9227545170020FB42 /* MLPersonDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D61DA8227545170020FB42 /* MLPersonDataCell.swift */; };
 		20DBB13F22811F0700BA2D54 /* WYLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBB13E22811F0700BA2D54 /* WYLabelCell.swift */; };
+		20DBB14122812F3500BA2D54 /* MLDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBB14022812F3500BA2D54 /* MLDetailBottomView.swift */; };
 		20EA57172265A43B003FE2D2 /* MLAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57162265A43B003FE2D2 /* MLAccountView.swift */; };
 		20EA57192265AB70003FE2D2 /* MLCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA57182265AB70003FE2D2 /* MLCodeView.swift */; };
 		20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */; };
@@ -363,6 +364,7 @@
 		20D61DA4227544950020FB42 /* MLBastMatchJsonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBastMatchJsonTool.swift; sourceTree = "<group>"; };
 		20D61DA8227545170020FB42 /* MLPersonDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLPersonDataCell.swift; sourceTree = "<group>"; };
 		20DBB13E22811F0700BA2D54 /* WYLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYLabelCell.swift; sourceTree = "<group>"; };
+		20DBB14022812F3500BA2D54 /* MLDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MLDetailBottomView.swift; path = MoLiao/Classes/Home/view/MLDetailBottomView.swift; sourceTree = SOURCE_ROOT; };
 		20EA57162265A43B003FE2D2 /* MLAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAccountView.swift; sourceTree = "<group>"; };
 		20EA57182265AB70003FE2D2 /* MLCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCodeView.swift; sourceTree = "<group>"; };
 		20EA571A2265B2BA003FE2D2 /* MLHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHomePageView.swift; sourceTree = "<group>"; };
@@ -1256,6 +1258,7 @@
 				827BF851222CC2250093EB65 /* WJScrollView.swift */,
 				209BEE6422729AD000246182 /* MLHeadFirstView.swift */,
 				20D61D9A227538540020FB42 /* MLSubtitleView.swift */,
+				20DBB14022812F3500BA2D54 /* MLDetailBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2335,6 +2338,7 @@
 				827BFA46222CC2260093EB65 /* MeNewController.swift in Sources */,
 				CC318BFD220886DB004632DD /* PickerModel.swift in Sources */,
 				827BFA75222CC2260093EB65 /* MJRefreshStateHeader.m in Sources */,
+				20DBB14122812F3500BA2D54 /* MLDetailBottomView.swift in Sources */,
 				CC2B7FA621D0B992009B4474 /* ViewController.swift in Sources */,
 				827BFAAE222CC2260093EB65 /* EaseMessageReadManager.m in Sources */,
 				20D61DA0227543FE0020FB42 /* MLPersonModel.swift in Sources */,

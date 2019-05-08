@@ -8,14 +8,14 @@
 
 import UIKit
 import SwiftyJSON
-class WJMessageViewController: BaseTabViewController {
+class WJMessageViewController: MyLikeController {
     fileprivate var arrDataCommon = [MessageModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.height = kScreenHeight - kNavH - kStatusBarH - kTabbarHeight
-        tableView.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
+        self.tableView!.height = kScreenHeight - kNavH - kStatusBarH - kTabbarHeight
+        tableView!.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
 
         let strDataPath = Bundle.main.path(forResource: "message", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
@@ -44,10 +44,10 @@ class WJMessageViewController: BaseTabViewController {
             model.xiaoxiNumber = item["xiaoxiNumber"].intValue
             self.arrDataCommon.append(model)
         }
-        self.tableView.reloadData()
+        self.tableView!.reloadData()
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return arrDataCommon.count
     }
     
@@ -74,11 +74,11 @@ class WJMessageViewController: BaseTabViewController {
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 10
         }

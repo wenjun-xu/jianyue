@@ -18,6 +18,11 @@ public let FRegist_titleY: CGFloat = 150
 /// 20的距离
 public let leftSpace_20: CGFloat = 20
 
+/*------------------------------- 导航栏的数据 -------------------------------------*/
+
+let navTitleFont: UIFont = UIFont.systemFont(ofSize: 15)
+let navTitleColor: UIColor = UIColor.black
+
 // MARK:- 界面用到的Frame值
 enum frameLoginView {
     /// 头像

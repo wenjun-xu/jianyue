@@ -37,7 +37,6 @@
 		827BF9BF222CC2260093EB65 /* BaseNavgationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A0222CC2250093EB65 /* BaseNavgationController.swift */; };
 		827BF9C0222CC2260093EB65 /* BaseNavHiddenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A1222CC2250093EB65 /* BaseNavHiddenController.swift */; };
 		827BF9C1222CC2260093EB65 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A2222CC2250093EB65 /* BaseTabBarController.swift */; };
-		827BF9C2222CC2260093EB65 /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A3222CC2250093EB65 /* BaseTabViewController.swift */; };
 		827BF9C3222CC2260093EB65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A4222CC2250093EB65 /* BaseViewController.swift */; };
 		827BF9C4222CC2260093EB65 /* OCWJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A6222CC2250093EB65 /* OCWJBaseViewController.m */; };
 		827BF9C5222CC2260093EB65 /* OtherDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF7A9222CC2250093EB65 /* OtherDynamicController.swift */; };
@@ -374,7 +373,6 @@
 		827BF7A0222CC2250093EB65 /* BaseNavgationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavgationController.swift; sourceTree = "<group>"; };
 		827BF7A1222CC2250093EB65 /* BaseNavHiddenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavHiddenController.swift; sourceTree = "<group>"; };
 		827BF7A2222CC2250093EB65 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		827BF7A3222CC2250093EB65 /* BaseTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
 		827BF7A4222CC2250093EB65 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		827BF7A5222CC2250093EB65 /* OCWJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCWJBaseViewController.h; sourceTree = "<group>"; };
 		827BF7A6222CC2250093EB65 /* OCWJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCWJBaseViewController.m; sourceTree = "<group>"; };
@@ -943,7 +941,6 @@
 				827BF7A0222CC2250093EB65 /* BaseNavgationController.swift */,
 				827BF7A1222CC2250093EB65 /* BaseNavHiddenController.swift */,
 				827BF7A2222CC2250093EB65 /* BaseTabBarController.swift */,
-				827BF7A3222CC2250093EB65 /* BaseTabViewController.swift */,
 				827BF7A4222CC2250093EB65 /* BaseViewController.swift */,
 				827BF7A5222CC2250093EB65 /* OCWJBaseViewController.h */,
 				827BF7A6222CC2250093EB65 /* OCWJBaseViewController.m */,
@@ -2291,7 +2288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				827BF9C2222CC2260093EB65 /* BaseTabViewController.swift in Sources */,
 				827BFA63222CC2260093EB65 /* EMVoiceConverter.mm in Sources */,
 				827BFA98222CC2260093EB65 /* SDWebImageDownloaderOperation.m in Sources */,
 				827BFA0C222CC2260093EB65 /* MMOpeateMenuView.swift in Sources */,

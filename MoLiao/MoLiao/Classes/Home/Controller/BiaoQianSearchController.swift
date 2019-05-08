@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftyJSON
-class BiaoQianSearchController: BaseTabViewController {
+class BiaoQianSearchController: BaseViewController {
     fileprivate var biaoqianModels = [BiaoQianModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,9 +19,9 @@ class BiaoQianSearchController: BaseTabViewController {
         
         let json = DataJson().data2JSON(data: data as! Data)
         buildBiaoqianByJson(json["data"])
-        tableView.register(BiaoQianCell.self, forCellReuseIdentifier: "BiaoQianCell")
-        tableView.showsVerticalScrollIndicator = true
-        tableView.showsHorizontalScrollIndicator = false
+        tableView!.register(BiaoQianCell.self, forCellReuseIdentifier: "BiaoQianCell")
+        tableView!.showsVerticalScrollIndicator = true
+        tableView!.showsHorizontalScrollIndicator = false
         NotificationCenter.default.addObserver(self, selector: #selector(biaoqianshouyRefresh), name: NSNotification.Name(rawValue: "biaoqianshouyRefresh"), object: nil)
 
     }
@@ -28,11 +29,11 @@ class BiaoQianSearchController: BaseTabViewController {
         let userInfo = notifation.userInfo
         let aa:String = userInfo!["isScrolleView"] as! String
         if aa == "scrollviewTrue" {
-            self.tableView.isScrollEnabled = true
-            self.tableView.bounces = true
+            self.tableView!.isScrollEnabled = true
+            self.tableView!.bounces = true
         }else {
-            self.tableView.isScrollEnabled = false
-            self.tableView.bounces = false
+            self.tableView!.isScrollEnabled = false
+            self.tableView!.bounces = false
         }
     }
     
@@ -59,13 +60,13 @@ class BiaoQianSearchController: BaseTabViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return biaoqianModels.count
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,39 +86,3 @@ class BiaoQianSearchController: BaseTabViewController {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

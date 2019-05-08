@@ -8,7 +8,7 @@
 
 import UIKit
 import BRPickerView
-class ConditionSearchController: BaseTabViewController {
+class ConditionSearchController: BaseViewController {
 
     private var arrTitle = ["身高","年龄","年收入","工作地区","星座","籍贯","学历","职业","住房情况","婚姻状况"]
     private var shengaoSource = ["150com-155com","155com-160com","160com-165com","165com-170com","170com-175com","175com-180com","180com-185com"]
@@ -25,9 +25,9 @@ class ConditionSearchController: BaseTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "搜索"
-        tableView.register(ConditionSearchCell.self, forCellReuseIdentifier: "ConditionSearchCell")
-        tableView.showsVerticalScrollIndicator = true
-        tableView.showsHorizontalScrollIndicator = false
+        tableView!.register(ConditionSearchCell.self, forCellReuseIdentifier: "ConditionSearchCell")
+        tableView!.showsVerticalScrollIndicator = true
+        tableView!.showsHorizontalScrollIndicator = false
         
         let btnView = UIView.init(frame: CGRect(x: 0, y: kScreenHeight - 50 - kNavH - kStatusBarH, width: kScreenWidth, height: 50))
         btnView.backgroundColor = UIColor.red
@@ -56,14 +56,15 @@ class ConditionSearchController: BaseTabViewController {
         super.viewWillAppear(animated)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrTitle.count
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     

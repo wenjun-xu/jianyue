@@ -8,14 +8,14 @@
 
 import UIKit
 import SwiftyJSON
-class MoreSelectController: BaseTabViewController {
+class MoreSelectController: BaseViewController {
     fileprivate var arrDataCommon = [HomeModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title  = "更多精选"
-        tableView.separatorStyle = .none//去除分割线
-        tableView.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
+        tableView!.separatorStyle = .none//去除分割线
+        tableView!.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
         let strDataPath = Bundle.main.path(forResource: "home", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
         let json = DataJson().data2JSON(data: data! as Data)
@@ -43,11 +43,11 @@ class MoreSelectController: BaseTabViewController {
 //            self.arrDataCommon.append(model)
 //        }
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -55,7 +55,7 @@ class MoreSelectController: BaseTabViewController {
         return arrDataCommon.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-class ShezhiViewController: BaseTabViewController {
+class ShezhiViewController: BaseViewController {
     private var topTitle = ["更换手机号","修改密码"]
     private var topImgArr = ["standard-service","iconfontdongtaidianji"]
     private var arrTitle = ["意见反馈","不良信息举报","清除缓存"]
@@ -16,8 +16,8 @@ class ShezhiViewController: BaseTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "设置"
-        tableView.height = kScreenHeight - kNavH - kStatusBarH
-        tableView.showsVerticalScrollIndicator = false
+        tableView!.height = kScreenHeight - kNavH - kStatusBarH
+        tableView!.showsVerticalScrollIndicator = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,11 +33,11 @@ class ShezhiViewController: BaseTabViewController {
     }
     
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +49,7 @@ class ShezhiViewController: BaseTabViewController {
         return 1
         
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 50
     }

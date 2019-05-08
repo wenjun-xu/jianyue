@@ -14,7 +14,7 @@ import Kingfisher
 typealias HomeNewDelegate = NewPagedFlowViewDelegate & NewPagedFlowViewDataSource
 
 /// 首页 - 推荐
-class HomeNewController: BaseTabViewController  {
+class HomeNewController: BaseViewController  {
     
     var pageFlowView:NewPagedFlowView!
     
@@ -65,11 +65,11 @@ extension HomeNewController {
 
     /// tableView 的基本数据
     private func setupBaseTableView() {
-        tableView.height = kScreenHeight - kTabbarHeight - kStatusBarH - kNavH
-        tableView.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
-        tableView.showsVerticalScrollIndicator = false
-        tableView.backgroundColor = UIColor.white
-        tableView.separatorStyle = .none//去除分割线
+        tableView!.height = kScreenHeight - kTabbarHeight - kStatusBarH - kNavH
+        tableView!.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
+        tableView!.showsVerticalScrollIndicator = false
+        tableView!.backgroundColor = UIColor.white
+        tableView!.separatorStyle = .none//去除分割线
     }
     /// 广告轮播器
     private func setupHeadView() {
@@ -84,13 +84,13 @@ extension HomeNewController {
         pageFlowView.addSubview(pageControl)
         pageFlowView.reloadData()
         
-        tableView.tableHeaderView = pageFlowView
+        tableView!.tableHeaderView = pageFlowView
     }
 }
 
 // MARK:- UITableViewDelegate || UITableViewDataSource
 extension HomeNewController: HomeNewDelegate {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
 
@@ -136,7 +136,7 @@ extension HomeNewController: HomeNewDelegate {
 
 // MARK:- UITableViewHeaderView
 extension HomeNewController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         if indexPath.section == 0 {
             return 180
@@ -144,12 +144,12 @@ extension HomeNewController {
         return 140
     }
 
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
     
     /// 使用 viewForHeaderInSection -> UIView 必须实现 heightForHeaderInSection -> CGFloat 方法，否则没有View
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 { // 最佳匹配
             let headView = MLHeadFirstView(frame: CGRect(x: leftSpace_20, y:  20, width: 200, height: 50))
             headView.setupContext(leftLabel: "最佳匹配", rightLabel: "查看更多")

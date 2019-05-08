@@ -11,7 +11,7 @@ import SwiftyJSON
 import SnapKit
 let level2:CGFloat = kNavH + kStatusBarH
 let  level3:CGFloat = kInfoSDrecycleViewH - kStatusBarH
-class UserInfoViewController: BaseViewController,UITableViewDataSource ,UITableViewDelegate {
+class UserInfoViewController: BaseViewController {
     var changeColorButtonId:NSInteger = 10000
     var down:UIPanGestureRecognizer!
     var scrContainView:UIView!
@@ -265,7 +265,7 @@ class UserInfoViewController: BaseViewController,UITableViewDataSource ,UITableV
     }
     
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == leftTableView {
             if indexPath.section == 0 {
                 var cell = tableView.dequeueReusableCell(withIdentifier: "OtherInfoTopCell")
@@ -353,7 +353,7 @@ class UserInfoViewController: BaseViewController,UITableViewDataSource ,UITableV
             return 8
         }
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     

@@ -12,7 +12,7 @@ import SwiftyJSON
 import JCyclePictureView
 
 /// 首页 - 详情页面
-class OtherInformationController: BaseTabViewController {
+class OtherInformationController: BaseViewController {
     
     fileprivate var arrDataCommon = [HomeModel]()
     private var naviView = UIView()
@@ -91,12 +91,12 @@ class OtherInformationController: BaseTabViewController {
 // MARK:- 导航栏右上角 - 弹出框View 创建
 extension OtherInformationController {
     private func setupUIView() {
-        tableView.y = -kStatusBarH
-        tableView.height = kScreenHeight + kStatusBarH - 50
-        tableView.showsVerticalScrollIndicator = false
+        tableView!.y = -kStatusBarH
+        tableView!.height = kScreenHeight + kStatusBarH - 50
+        tableView!.showsVerticalScrollIndicator = false
         
-        tableView.contentInset = UIEdgeInsets(top: kInfoSDrecycleViewH, left: 0, bottom: 0, right: 0)
-        tableView.register(OtherInfoTopCell.self, forCellReuseIdentifier: "OtherInfoTopCell")
+        tableView!.contentInset = UIEdgeInsets(top: kInfoSDrecycleViewH, left: 0, bottom: 0, right: 0)
+        tableView!.register(OtherInfoTopCell.self, forCellReuseIdentifier: "OtherInfoTopCell")
         let cyclePictureView: WJCyclePictureView = WJCyclePictureView(frame: CGRect(x: 0, y: -kInfoSDrecycleViewH, width: kScreenWidth, height: kInfoSDrecycleViewH), pictures: arrImgUrl)
         cyclePictureView.direction = .left
         cyclePictureView.autoScrollDelay = 10
@@ -105,8 +105,12 @@ extension OtherInformationController {
         cyclePictureView.didTapAtIndexHandle = { index in
             print("点击了第 (index + 1) 张图片")
         }
-        tableView.addSubview(cyclePictureView)
+        tableView!.addSubview(cyclePictureView)
         
+        setupUITwo()
+    }
+    
+    private func setupUITwo() {
         naviView.frame = CGRect(x: 0, y: 0, width:kScreenWidth, height:  kNavH + kStatusBarH)
         naviView.backgroundColor = UIColor(white: 1, alpha: 0)
         tuijianlabel = UILabel.init(frame: CGRect(x: (kScreenWidth - 100) / 2.0, y: 8 + kStatusBarH, width: 100, height: 22))
@@ -228,15 +232,17 @@ extension OtherInformationController {
 
 // MARK:- UITableViewDelegate || UITableViewDataSource
 extension OtherInformationController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 80
         }
         return sectionH
     }
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
@@ -252,7 +258,7 @@ extension OtherInformationController {
 // MARK:- UITableViewHeaderView
 extension OtherInformationController {
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0
         }
@@ -260,7 +266,7 @@ extension OtherInformationController {
     }
     
     /// 使用 viewForHeaderInSection -> UIView 必须实现 heightForHeaderInSection -> CGFloat 方法，否则没有View
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 { // 动态
             let aView = MLSubtitleView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 40))
             aView.setupContext(leftLabel: "动态", rightLabel: "查看更多")

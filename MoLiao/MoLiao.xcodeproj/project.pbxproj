@@ -144,7 +144,6 @@
 		827BFA2B222CC2260093EB65 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF854222CC2250093EB65 /* AccountViewController.swift */; };
 		827BFA2C222CC2260093EB65 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF855222CC2250093EB65 /* CodeViewController.swift */; };
 		827BFA2D222CC2260093EB65 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF856222CC2250093EB65 /* HomePageController.swift */; };
-		827BFA2E222CC2260093EB65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF857222CC2250093EB65 /* LoginViewController.swift */; };
 		827BFA2F222CC2260093EB65 /* RegistNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF858222CC2250093EB65 /* RegistNameController.swift */; };
 		827BFA30222CC2260093EB65 /* RegistEducationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF859222CC2250093EB65 /* RegistEducationController.swift */; };
 		827BFA31222CC2260093EB65 /* RegistCompanyAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */; };
@@ -309,7 +308,6 @@
 		827BFAD0222CC2260093EB65 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 827BF9BB222CC2260093EB65 /* EaseUIResource.bundle */; };
 		827BFAD1222CC2260093EB65 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BF9BD222CC2260093EB65 /* MessageModel.swift */; };
 		827BFAD3222CC8BC0093EB65 /* UserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BFAD2222CC8BC0093EB65 /* UserNameController.swift */; };
-		827BFAD5222CF9DE0093EB65 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BFAD4222CF9DE0093EB65 /* LoginView.swift */; };
 		CC09845A21D393120074E7FE /* WJConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC09845921D393120074E7FE /* WJConfigure.swift */; };
 		CC11DCED21E1093A002424C3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = CC11DCEC21E1093A002424C3 /* message.json */; };
 		CC1EAAD721E1E3DA000BACE5 /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC1EAAD221E1E3DA000BACE5 /* GuideImage.bundle */; };
@@ -531,7 +529,6 @@
 		827BF854222CC2250093EB65 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		827BF855222CC2250093EB65 /* CodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		827BF856222CC2250093EB65 /* HomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
-		827BF857222CC2250093EB65 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		827BF858222CC2250093EB65 /* RegistNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistNameController.swift; sourceTree = "<group>"; };
 		827BF859222CC2250093EB65 /* RegistEducationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistEducationController.swift; sourceTree = "<group>"; };
 		827BF85A222CC2250093EB65 /* RegistCompanyAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistCompanyAreaController.swift; sourceTree = "<group>"; };
@@ -837,7 +834,6 @@
 		827BF9BB222CC2260093EB65 /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
 		827BF9BD222CC2260093EB65 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		827BFAD2222CC8BC0093EB65 /* UserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameController.swift; sourceTree = "<group>"; };
-		827BFAD4222CF9DE0093EB65 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B811B5F5CD0F3DD3D8F486EF /* Pods-MoLiao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoLiao.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoLiao/Pods-MoLiao.release.xcconfig"; sourceTree = "<group>"; };
 		CC09845921D393120074E7FE /* WJConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJConfigure.swift; sourceTree = "<group>"; };
 		CC11DCEC21E1093A002424C3 /* message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
@@ -1272,7 +1268,6 @@
 		827BF853222CC2250093EB65 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				827BF857222CC2250093EB65 /* LoginViewController.swift */,
 				827BFAD2222CC8BC0093EB65 /* UserNameController.swift */,
 				827BF854222CC2250093EB65 /* AccountViewController.swift */,
 				827BF855222CC2250093EB65 /* CodeViewController.swift */,
@@ -1292,7 +1287,6 @@
 		827BF860222CC2250093EB65 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				827BFAD4222CF9DE0093EB65 /* LoginView.swift */,
 				827BF869222CC2250093EB65 /* UserNameLoginView.swift */,
 				827BF861222CC2250093EB65 /* BHJPickerView */,
 				827BF867222CC2250093EB65 /* DYScrollRulerView.h */,
@@ -2398,7 +2392,6 @@
 				827BFA11222CC2260093EB65 /* UIView+Geometry.m in Sources */,
 				827BFA34222CC2260093EB65 /* RegistMaritalController.swift in Sources */,
 				CC9FBC4021F711A10038AB94 /* ZUtils.swift in Sources */,
-				827BFAD5222CF9DE0093EB65 /* LoginView.swift in Sources */,
 				827BFA68222CC2260093EB65 /* MJRefreshAutoFooter.m in Sources */,
 				827BFA20222CC2260093EB65 /* UserInfoViewController.swift in Sources */,
 				827BFA62222CC2260093EB65 /* wav.mm in Sources */,
@@ -2492,7 +2485,6 @@
 				827BFA86222CC2260093EB65 /* PSTCollectionView.m in Sources */,
 				827BFA70222CC2260093EB65 /* MJRefreshBackGifFooter.m in Sources */,
 				20EA571B2265B2BA003FE2D2 /* MLHomePageView.swift in Sources */,
-				827BFA2E222CC2260093EB65 /* LoginViewController.swift in Sources */,
 				827BFAA3222CC2260093EB65 /* EaseSDKHelper.m in Sources */,
 				827BFA72222CC2260093EB65 /* MJRefreshBackStateFooter.m in Sources */,
 				827BFA71222CC2260093EB65 /* MJRefreshBackNormalFooter.m in Sources */,

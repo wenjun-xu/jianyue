@@ -12,6 +12,7 @@ let GestureEnable = true
 
 class BaseViewController: UIViewController,UIGestureRecognizerDelegate{
     var tableView: UITableView?
+    
     let itemX:CGFloat = 80
     
     /// 自定义导航条
@@ -97,7 +98,7 @@ extension BaseViewController {
             // 设置状态栏
             let vi : UIWindow = UIApplication.shared.value(forKey: "statusBarWindow") as! UIWindow
             let v : UIView = vi.value(forKey: "statusBar") as! UIView
-            v.backgroundColor = UIColor(red: 4/255.0, green: 137/255.0, blue: 185/255.0, alpha: 1)
+//            v.backgroundColor = UIColor(red: 4/255.0, green: 137/255.0, blue: 185/255.0, alpha: 1)
         }
         
         setupNavigationBar()

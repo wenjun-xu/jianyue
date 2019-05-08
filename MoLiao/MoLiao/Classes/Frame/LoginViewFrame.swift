@@ -50,7 +50,7 @@ enum frameLoginView {
         case .FNameTitleView:
             return 26
         case .FNameAndPwd:
-            return 60
+            return 38
         case .Fline:
             return 0.5
         case .FLoginBtn:

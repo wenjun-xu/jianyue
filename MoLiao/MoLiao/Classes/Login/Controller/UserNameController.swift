@@ -15,17 +15,27 @@ class UserNameController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 显示导航栏
-        self.navigationController?.navigationBar.isHidden = false
+        tableView?.isHidden = true
         
-        // 导航栏
-        setNavigation()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "login")!)
+//        // 导航栏
+//        setNavigation()
         
-        view.backgroundColor = UIColor.white
-        
-        let loginView = UserNameLoginView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - 64))
+        let loginView = UserNameLoginView(frame: CGRect(x: 0, y: 20, width: kScreenWidth, height: kScreenHeight - 64))
         loginView.delegate = self
         view.addSubview(loginView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 隐藏导航栏
+//        self.navigationBar?.navigationBar.isHidden = true
+        self.navigationBar.isHidden = true
+    }
+    
+    /// 状态栏 北京色
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
@@ -53,20 +63,12 @@ extension UserNameController {
 
 // MARK: - UserNameLoginViewDelegate
 extension UserNameController: UserNameLoginViewDelegate {
-    func loginPhotoClick(LoginView: UserNameLoginView) {
-        print("点击了 手机号验证码登录 ")
+    func loginRegistClick(LoginView: UserNameLoginView) {
+        print("点击了 注册码登录 ")
     }
     
-    func loginAreaClick(LoginView: UserNameLoginView) {
-        print("点击了 选择区号 ")
-    }
-    
-    func loginWeiXinClick(LoginView: UserNameLoginView) {
-        print("点击了 微信登录 ")
-    }
-    
-    func loginQQClick(LoginView: UserNameLoginView) {
-        print("点击了 qq登录 ")
+    func loginForgetPwdClick(LoginView: UserNameLoginView) {
+        print("点击了 忘记密码登录 ")
     }
     
     func loginButtonClick(LoginView: UserNameLoginView, userName: String, password: String) {

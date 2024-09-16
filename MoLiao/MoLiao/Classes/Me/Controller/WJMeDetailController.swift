@@ -10,7 +10,8 @@ import UIKit
 import SwiftyJSON
 import BRPickerView
 import TZImagePickerController
-class WJMeDetailController: BaseTabViewController ,TZImagePickerControllerDelegate{
+
+class WJMeDetailController: BaseViewController, TZImagePickerControllerDelegate{
     var userImg:UIImage!
     fileprivate var arrDataCommon = [MessageModel]()
     private let topScetionStyle = [FoundStyle.top,FoundStyle.normal,FoundStyle.normal,FoundStyle.normal,FoundStyle.bottom];
@@ -38,8 +39,8 @@ class WJMeDetailController: BaseTabViewController ,TZImagePickerControllerDelega
         let rightBarButtonItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: #selector(rightClick))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         
-        self.tableView.height = kScreenHeight - kNavH - kStatusBarH
-        tableView.register(MeDetailCell.self, forCellReuseIdentifier: "MeDetailCell")
+        self.tableView!.height = kScreenHeight - kNavH - kStatusBarH
+        tableView!.register(MeDetailCell.self, forCellReuseIdentifier: "MeDetailCell")
         
         let strDataPath = Bundle.main.path(forResource: "message", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
@@ -69,10 +70,10 @@ class WJMeDetailController: BaseTabViewController ,TZImagePickerControllerDelega
             model.xiaoxiNumber = item["xiaoxiNumber"].intValue
             self.arrDataCommon.append(model)
         }
-        self.tableView.reloadData()
+        self.tableView!.reloadData()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
@@ -127,7 +128,7 @@ class WJMeDetailController: BaseTabViewController ,TZImagePickerControllerDelega
         return cell!
     }
    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 return 120
@@ -139,7 +140,7 @@ class WJMeDetailController: BaseTabViewController ,TZImagePickerControllerDelega
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
     
@@ -147,7 +148,7 @@ class WJMeDetailController: BaseTabViewController ,TZImagePickerControllerDelega
         for img in photos {
             userImg = img
         }
-        self.tableView.reloadData()
+        self.tableView!.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

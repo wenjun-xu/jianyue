@@ -8,88 +8,216 @@
 
 import UIKit
 
-class BaseTabViewController: BaseViewController,UITableViewDataSource, UITableViewDelegate {
-    var tableView = UITableView()
+class BaseTabViewController: BaseViewController {
+//    var tableView = UITableView()
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.navigationController?.navigationBar.isTranslucent = false //0点在导航栏下面
+//
+//        buildBaseTableView()
+//    }
+//
+//    func buildBaseTableView() {
+////        self.navigationController?.navigationBar.isTranslucent = true //0点在导航栏
+//
+//        tableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavH - kStatusBarH), style: .plain)
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.tableFooterView = UIView()
+//        tableView.tableHeaderView = UIView()
+//        tableView.separatorStyle = .singleLine
+//        tableView.backgroundColor = kBgColor
+//        view.addSubview(tableView)
+//    }
+    
+  
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.isTranslucent = false //0点在导航栏下面
-
-        buildBaseTableView()
+extension BaseTabViewController {
+    
+    /// 导航栏左侧按钮 - 图片形式
+    public func setupLeftBarItem(leftImage: String) -> UIBarButtonItem {
+        let leftBarItem = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        leftBarItem.setImage(UIImage(named:leftImage), for: .normal)
+        //leftBarItem.
+        leftBarItem.addTarget(self, action: #selector(setupLeftBarItemClick), for: .touchUpInside)
+        return UIBarButtonItem(customView: leftBarItem)
     }
     
-    func buildBaseTableView() {
-//        self.navigationController?.navigationBar.isTranslucent = true //0点在导航栏
+    /// 导航栏右侧按钮 - 图片形式
+    public func setupRightIconBarItem(rightImage: String) -> UIBarButtonItem{
+        let rightItem = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        rightItem.setImage(UIImage(named:rightImage), for: .normal)
+        rightItem.addTarget(self, action: #selector(setupRightBarItemClick), for: .touchUpInside)
+        return UIBarButtonItem(customView: rightItem)
+    }
+    
+    /// 导航栏右侧按钮 - 有图片，有文字
+    public func setupRightTitleAndIconBarItem(rightTitle:String) -> UIBarButtonItem{
+        return setupRightTitleAndIconBarItem(rightTitle: rightTitle, rightImage: "nav_rightItem_dian")
+    }
+    
+    /// 导航栏右侧按钮 - 有图片，有文字
+    public func setupRightTitleAndIconBarItem(rightTitle:String,rightImage:String) -> UIBarButtonItem{
+        let itemW:CGFloat = 70
+        let leftBarItem = UIButton(frame: CGRect(x: 0, y: 0, width: itemW, height: 30))
+        leftBarItem.setImage(UIImage(named:rightImage), for: .normal)
+        leftBarItem.setTitle(rightTitle, for: .normal)
+        leftBarItem.titleLabel?.textAlignment = .left
+        leftBarItem.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        leftBarItem.imageEdgeInsets = UIEdgeInsets(top: 0, left: 65, bottom: 0, right: 0)
+        leftBarItem.titleEdgeInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: -5)
+        leftBarItem.addTarget(self, action: #selector(setupRightBarItemClick), for: .touchUpInside)
+        return UIBarButtonItem(customView: leftBarItem)
+    }
+    
+    /// 有图片和文字的返回按钮
+    public func setupLeftIconTitleBarItem(title: String) -> UIBarButtonItem {
+        // 背景
+        let leftItem = UIView()
+        leftItem.frame = CGRect(x: itemX, y: 0, width: 80, height: 30)
+        let topG = UITapGestureRecognizer(target: self, action: #selector(setupLeftBarItemClick))
+        leftItem.addGestureRecognizer(topG)
         
-        tableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavH - kStatusBarH), style: .plain)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        tableView.tableHeaderView = UIView()
-        tableView.separatorStyle = .singleLine
-        tableView.backgroundColor = kBgColor
-        view.addSubview(tableView)
+        // 返回图片
+        let iconView = UIImageView()
+        iconView.image = UIImage(named:"title_but_back")
+        iconView.frame = CGRect(x: 0, y: 5, width: 20, height: 20)
+        leftItem.addSubview(iconView)
+        
+        // 文字
+        let lab = UILabel(frame: CGRect(x: iconView.frame.maxX, y: 5, width: 50, height: 20))
+        lab.text = title
+        lab.textColor = UIColor.white
+        lab.textAlignment = .left
+        lab.font = UIFont.systemFont(ofSize: 14)
+        leftItem.addSubview(lab)
+        
+        return UIBarButtonItem(customView: leftItem)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+    /// ‘文字’的返回按钮
+    public func setupRightTitleBarItem(title: String) -> UIBarButtonItem {
+        // 文字
+        let btn = UIButton(frame: CGRect(x: itemX - 40, y: 5, width: 40, height: 30))
+        btn.setTitle(title, for: .normal)
+        btn.setTitleColor(navTitleColor, for: .normal)
+        btn.titleLabel?.textAlignment = .left
+        btn.titleLabel?.font = navTitleFont
+        //btn.backgroundColor = UIColor.red
+        btn.addTarget(self, action: #selector(setupRightBarItemClick), for: .touchUpInside)
+        return UIBarButtonItem(customView: btn)
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int{
-        return 0
+    
+    
+    /// 导航栏左侧按钮的点击事件
+    public override func setupLeftBarItemClick() {
+        
     }
+    
+    /// 导航栏右侧按钮的点击事件
+    public override func setupRightBarItemClick() {
+        
+    }
+}
+
+// MARK:- UI创建
+extension BaseTabViewController {
+    
+    fileprivate func setupUI() {
+        
+        view.backgroundColor = UIColor.white
+        
+        // 取消自动缩进
+        automaticallyAdjustsScrollViewInsets = false
+        
+        if #available(iOS 11.0, *) {
+            navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 64))
+            // 设置状态栏
+            let vi : UIWindow = UIApplication.shared.value(forKey: "statusBarWindow") as! UIWindow
+            let v : UIView = vi.value(forKey: "statusBar") as! UIView
+            v.backgroundColor = UIColor(red: 4/255.0, green: 137/255.0, blue: 185/255.0, alpha: 1)
+        }
+        
+        setupNavigationBar()
+        
+        setupTableView()
+    }
+    
+    /// 设置导航条
+    fileprivate func setupNavigationBar() {
+        // 添加导航条
+        view.addSubview(navigationBar)
+        // 将item 设置给bar
+        navigationBar.items = [navItem]
+        // 不透明
+        navigationBar.isTranslucent = false
+        // 设置navBar背景颜色
+        navigationBar.barTintColor = UIColor(red: 4/255.0, green: 137/255.0, blue: 185/255.0, alpha: 1)
+        // 设置navBar 字体颜色
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        // 设置系统按钮的文字渲染颜色
+        navigationBar.tintColor = UIColor.orange
+    }
+    
+    /// 设置表格视图
+    public func setupTableView() {
+        tableView = UITableView(frame:view.bounds,style:.plain)
+        view.insertSubview(tableView!, belowSubview: navigationBar)
+        
+        let tableBGV = UIImageView(image: UIImage(named: "pic_bg"))
+        tableBGV.isUserInteractionEnabled = true
+        tableView?.backgroundView = tableBGV
+        
+        // 设置数据源和代理
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        tableView?.separatorStyle = .none
+        
+        // 设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                               left: 0,
+                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                               right: 0)
+        //MARK: - 10.22
+        if #available(iOS 11.0, *) {
+            tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height-20,
+                                                   left: 0,
+                                                   bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                                   right: 0)
+        }
+        
+        tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
+    }
+    
+    public func setupLoad() {
+        print("网络请求")
+    }
+}
+
+//MARK: - UITableViewDataSource, UITableViewDelegate
+extension BaseTabViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell()
-        return cell
+        return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /// 点击其他地方，键盘取消
+        tableView.endEditing(true)
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return 0
-    }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
-        return 0
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 0
-    }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-        return UIView()
-    }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?{
-        return UIView()
-    }
-    //MARK:   -------- UITableViewDelegate  删除编辑模式  --------
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool{
-        return false
-    }
-    
-    
-    func actRefresh(){
-        
-    }
-    
-    func actLoadMore(){
-        
-    }
-    
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+extension BaseTabViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
-    */
-
 }

@@ -9,9 +9,10 @@
 
 import UIKit
 import BetterSegmentedControl
-class SeachViewController: BaseViewController,UIScrollViewDelegate {
+class SeachViewController: BaseViewController {
     var control:BetterSegmentedControl!
     var scrollView:WJScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "搜索"

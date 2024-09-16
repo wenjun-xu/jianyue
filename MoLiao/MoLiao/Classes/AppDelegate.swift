@@ -21,8 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
         
         
         // 登录界面
-        self.window?.rootViewController = BaseNavgationController(rootViewController: MLRegistGenderController()) // BaseNavgationController(rootViewController: UserNameController())
-        window?.makeKeyAndVisible()
+//        let vc = HomePageController()
+//        let nvc = BaseNavgationController.init(rootViewController: vc)
+        // OtherInformationController BaseTabBarController
+        self.window?.rootViewController = UserNameController()
+        
+        
+//        self.window?.rootViewController = BaseNavgationController(rootViewController: MLRegistGenderController()) // BaseNavgationController(rootViewController: UserNameController())
+//        window?.makeKeyAndVisible()
         
         /*
         //AppKey:注册的AppKey，详细见下面注释。
@@ -59,9 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
 
         */
         
-//        let vc = HomePageController()
-//        let nvc = BaseNavgationController.init(rootViewController: vc)
-//        self.window?.rootViewController = BaseTabBarController()
+
         
         
         
@@ -75,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,EMClientDelegate{
     //EMClientDelegate中的方法，当前登录账号在其它设备登录时会接收到此回调
     func userAccountDidLoginFromOtherDevice() {
         
-        self.window?.rootViewController = LoginViewController()
+        self.window?.rootViewController = UserNameController()
         
         let alert = UIAlertController(title: "提醒", message: "当前帐号在其它设备登录，如非本人操作，请及时修改密码", preferredStyle: .alert)
         

@@ -9,10 +9,11 @@
 import UIKit
 
 class LookSegmentController: BaseViewController {
-    var segmented:UISegmentedControl!
-    var firstController:LookMeController!
-    var secondController:MeLookController!
+    var segmented: UISegmentedControl!
+    var firstController: LookMeController!
+    var secondController: MeLookController!
     var isLookMe = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

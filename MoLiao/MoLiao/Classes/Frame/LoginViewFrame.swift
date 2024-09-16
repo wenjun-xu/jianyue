@@ -15,6 +15,13 @@ public let FRegist_leftSpace: CGFloat = (kScreenWidth - 2 * FRegist_imageWidth) 
 /// 子类中z第一个View 的 y值
 public let FRegist_titleY: CGFloat = 150
 
+/// 20的距离
+public let leftSpace_20: CGFloat = 20
+
+/*------------------------------- 导航栏的数据 -------------------------------------*/
+
+let navTitleFont: UIFont = UIFont.systemFont(ofSize: 15)
+let navTitleColor: UIColor = UIColor.black
 
 // MARK:- 界面用到的Frame值
 enum frameLoginView {
@@ -43,7 +50,7 @@ enum frameLoginView {
         case .FNameTitleView:
             return 26
         case .FNameAndPwd:
-            return 60
+            return 38
         case .Fline:
             return 0.5
         case .FLoginBtn:

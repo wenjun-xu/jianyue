@@ -9,27 +9,36 @@
 import UIKit
 //#define GestureEnable 1
 let GestureEnable = true
-class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
-    var navView:UIView!
+
+class BaseViewController: UIViewController,UIGestureRecognizerDelegate{
+    var tableView: UITableView?
+    
+    let itemX:CGFloat = 80
+    
+    /// 自定义导航条
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
+    
+    
+    /// 自定义导航条目
+    lazy var navItem = UINavigationItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.isTranslucent = false //0点在导航栏下面
-        creatNavigationBarColor(barTintColor: kNavColor, tintColor: UIColor.black.alpha(0.8), barTitleColor: UIColor.black)
         
-        // 去掉导航的阴影
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        setupUI()
+        
+        /// 取消侧滑返回
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
-   
     
-    func creatNavigationBarColor(barTintColor:UIColor,tintColor:UIColor,barTitleColor:UIColor){
-//        navigationController?.navigationBar.shadowImage = UIImage.init()
-        navigationController?.navigationBar.barTintColor = barTintColor  //navigationBar的颜色
-        navigationController?.navigationBar.tintColor = tintColor   //返回按钮的颜色
-        navigationController?.navigationBar.titleTextAttributes = {[
-            NSAttributedString.Key.foregroundColor: barTitleColor,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
-            ]}()
+    override var title: String? {
+        didSet{
+            navItem.title = title
+        }
+    }
+    
+    func hideKeyboard() {
+        
     }
 }
 
@@ -71,5 +80,104 @@ extension BaseViewController {
     /// 导航栏右侧按钮的点击事件
     @objc public func setupRightBarItemClick() {
         
+    }
+}
+
+// MARK:- UI创建
+extension BaseViewController {
+    
+    fileprivate func setupUI() {
+        
+        view.backgroundColor = UIColor.white
+        
+        // 取消自动缩进
+        automaticallyAdjustsScrollViewInsets = false
+        
+        if #available(iOS 11.0, *) {
+            navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 64))
+            // 设置状态栏
+            let vi : UIWindow = UIApplication.shared.value(forKey: "statusBarWindow") as! UIWindow
+            let v : UIView = vi.value(forKey: "statusBar") as! UIView
+//            v.backgroundColor = UIColor(red: 4/255.0, green: 137/255.0, blue: 185/255.0, alpha: 1)
+        }
+        
+        setupNavigationBar()
+        
+        setupTableView()
+    }
+    
+    /// 设置导航条
+    fileprivate func setupNavigationBar() {
+        // 添加导航条
+        view.addSubview(navigationBar)
+        // 将item 设置给bar
+        navigationBar.items = [navItem]
+        // 不透明
+        navigationBar.isTranslucent = false
+        // 设置navBar背景颜色
+        navigationBar.barTintColor = UIColor(red: 4/255.0, green: 137/255.0, blue: 185/255.0, alpha: 1)
+        // 设置navBar 字体颜色
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        // 设置系统按钮的文字渲染颜色
+        navigationBar.tintColor = UIColor.orange
+    }
+    
+    /// 设置表格视图
+    public func setupTableView() {
+        tableView = UITableView(frame:view.bounds,style:.plain)
+        view.insertSubview(tableView!, belowSubview: navigationBar)
+        
+        let tableBGV = UIImageView(image: UIImage(named: "pic_bg"))
+        tableBGV.isUserInteractionEnabled = true
+        tableView?.backgroundView = tableBGV
+        
+        // 设置数据源和代理
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        tableView?.separatorStyle = .none
+        
+        // 设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                               left: 0,
+                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                               right: 0)
+        //MARK: - 10.22
+        if #available(iOS 11.0, *) {
+            tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height-20,
+                                                   left: 0,
+                                                   bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                                   right: 0)
+        }
+        
+        tableView?.scrollIndicatorInsets = (tableView?.contentInset)!
+    }
+    
+    public func setupLoad() {
+        print("网络请求")
+    }
+}
+
+//MARK: - UITableViewDataSource, UITableViewDelegate
+extension BaseViewController: UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /// 点击其他地方，键盘取消
+        tableView.endEditing(true)
+    }
+}
+
+
+
+extension BaseViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MonologueViewController: BaseTabViewController {
+class MonologueViewController: BaseViewController {
     var textView:UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()

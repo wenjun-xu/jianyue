@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyLikeController: BaseTabViewController {
+class MyLikeController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

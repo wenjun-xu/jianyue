@@ -9,12 +9,12 @@
 import UIKit
 import SwiftyJSON
 
-class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MomentCellDelegate, UITextFieldDelegate {
+class WJDynamicViewController: BaseViewController, MomentCellDelegate, UITextFieldDelegate {
     fileprivate var commentArr:NSMutableArray!
     let cellIdentifer = "momentCell"
     
     var momentList = NSMutableArray()
-    var tableView: UITableView!
+    var aTableView: UITableView!
     var coverImageView: UIImageView!
     var headImageView: UIImageView!
     
@@ -30,6 +30,7 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
     private var fabuButton:UIButton!
     private var isReply:Bool!
     private var selectToUserName:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,17 +53,17 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
         self.isDelete = 0
         
         // 表格
-        self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: kSCREEN_WIDTH, height: kScreenHeight - kNavH - kStatusBarH ))
-        self.tableView.backgroundColor = UIColor.clear
-        self.tableView.separatorStyle = .singleLine
-        self.tableView.separatorColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-        self.tableView.separatorInset = .zero
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.tableView.estimatedRowHeight = 0
-        self.tableView.tableFooterView = UIView()
-        self.tableView.register(MomentCell.self, forCellReuseIdentifier: cellIdentifer)
-        self.view.addSubview(self.tableView)
+        self.aTableView = UITableView(frame: CGRect(x: 0, y: 0, width: kSCREEN_WIDTH, height: kScreenHeight - kNavH - kStatusBarH ))
+        self.aTableView.backgroundColor = UIColor.clear
+        self.aTableView.separatorStyle = .singleLine
+        self.aTableView.separatorColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+        self.aTableView.separatorInset = .zero
+        self.aTableView.dataSource = self
+        self.aTableView.delegate = self
+        self.aTableView.estimatedRowHeight = 0
+        self.aTableView.tableFooterView = UIView()
+        self.aTableView.register(MomentCell.self, forCellReuseIdentifier: cellIdentifer)
+        self.view.addSubview(self.aTableView)
         
         // 评论视图
         self.textField = UITextField()
@@ -125,11 +126,11 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     //MARK： Table cell delegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func aTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.momentList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer) as? MomentCell
         if (cell == nil) {
             cell = MomentCell(style: .default, reuseIdentifier: cellIdentifer)
@@ -199,7 +200,7 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
         }
         moment?.praiseNameList = tempStr as String
         self.momentList.replaceObject(at: cell.tag, with: moment as Any)
-        self.tableView.reloadData()
+        self.aTableView.reloadData()
     }
     
     
@@ -208,14 +209,14 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
         
         print("全文、收起")
         
-        let indexPath = self.tableView.indexPath(for: cell)
+        let indexPath = self.aTableView.indexPath(for: cell)
         
         let moment:Moment = (self.momentList[indexPath!.row] as? Moment)!
         moment.isFullText = !(moment.isFullText ?? false)
         
         self.momentList.replaceObject(at: (indexPath?.row)!, with: moment)
         
-        self.tableView.reloadRows(at: [indexPath!], with: .none)
+        self.aTableView.reloadRows(at: [indexPath!], with: .none)
     }
     
     // 删除
@@ -235,7 +236,7 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
             self.isDelete = 1
             // 删除
             self.momentList.remove(cell.moment)
-            self.tableView.reloadData()
+            self.aTableView.reloadData()
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -251,20 +252,20 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
         textField.placeholder = "回复："
         textField.becomeFirstResponder()
         
-        let indexPath = self.tableView.indexPath(for: cell)
+        let indexPath = self.aTableView.indexPath(for: cell)
         self.selectIndexPath = indexPath!
         
         let window = UIApplication.shared.keyWindow
         let rect = cell.superview?.convert(cell.frame, to: window)
         
         let delta = (rect?.maxY)! - (kSCREEN_HEIGHT - totalKeybordHeight)
-        var offset = self.tableView.contentOffset
+        var offset = self.aTableView.contentOffset
         offset.y += delta
         
         if offset.y < 0 {
             offset.y = 0
         }
-        self.tableView.setContentOffset(offset, animated: true)
+        self.aTableView.setContentOffset(offset, animated: true)
     }
     
     // 评论
@@ -276,20 +277,20 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
         textField.placeholder = "评论："
         textField.becomeFirstResponder()
         
-        let indexPath = self.tableView.indexPath(for: cell)
+        let indexPath = self.aTableView.indexPath(for: cell)
         self.selectIndexPath = indexPath!
         
         let window = UIApplication.shared.keyWindow
         let rect = cell.superview?.convert(cell.frame, to: window)
         
         let delta = (rect?.maxY)! - (kSCREEN_HEIGHT - totalKeybordHeight)
-        var offset = self.tableView.contentOffset
+        var offset = self.aTableView.contentOffset
         offset.y += delta
         
         if offset.y < 0 {
             offset.y = 0
         }
-        self.tableView.setContentOffset(offset, animated: true)
+        self.aTableView.setContentOffset(offset, animated: true)
     }
     
     
@@ -322,7 +323,7 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
             comment.time = "1487649503"
             moment.commentList?.add(comment)
             self.momentList.replaceObject(at: selectIndexPath.row, with: moment)
-            self.tableView.reloadRows(at: [self.selectIndexPath], with: .none)
+            self.aTableView.reloadRows(at: [self.selectIndexPath], with: .none)
             textField.text = ""
             textField.placeholder = nil
             return true
@@ -364,41 +365,3 @@ class WJDynamicViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

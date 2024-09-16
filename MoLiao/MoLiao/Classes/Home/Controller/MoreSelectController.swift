@@ -8,14 +8,14 @@
 
 import UIKit
 import SwiftyJSON
-class MoreSelectController: BaseTabViewController {
+class MoreSelectController: BaseViewController {
     fileprivate var arrDataCommon = [HomeModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title  = "更多精选"
-        tableView.separatorStyle = .none//去除分割线
-        tableView.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
+        tableView!.separatorStyle = .none//去除分割线
+        tableView!.register(HomeCell.self, forCellReuseIdentifier: "HomeCell")
         let strDataPath = Bundle.main.path(forResource: "home", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
         let json = DataJson().data2JSON(data: data! as Data)
@@ -26,28 +26,28 @@ class MoreSelectController: BaseTabViewController {
     
     func buildModelCommonByJson(_ json: JSON){
         print("json==",json)
-        self.arrDataCommon.removeAll()
-        for item in json.arrayValue {
-            let model = HomeModel()
-            model.Title = item["Title"].stringValue
-            model.Content = item["Content"].stringValue
-            model.isHuiYuan = item["isHuiYuan"].boolValue
-            model.isDuBai = item["isDuBai"].boolValue
-            model.Picture = item["Picture"].stringValue
-            model.topOneTitle = item["topOneTitle"].stringValue
-            model.topTwoTitle = item["topTwoTitle"].stringValue
-            model.topThreeTitle = item["topThreeTitle"].stringValue
-            model.centerOneTitle = item["centerOneTitle"].stringValue
-            model.centerTwoTitle = item["centerTwoTitle"].stringValue
-            model.centerThreeTitle = item["centerThreeTitle"].stringValue
-            self.arrDataCommon.append(model)
-        }
+//        self.arrDataCommon.removeAll()
+//        for item in json.arrayValue {
+//            let model = HomeCellModel()
+//            model.Title = item["Title"].stringValue
+//            model.Content = item["Content"].stringValue
+//            model.isHuiYuan = item["isHuiYuan"].boolValue
+//            model.isDuBai = item["isDuBai"].boolValue
+//            model.Picture = item["Picture"].stringValue
+//            model.topOneTitle = item["topOneTitle"].stringValue
+//            model.topTwoTitle = item["topTwoTitle"].stringValue
+//            model.topThreeTitle = item["topThreeTitle"].stringValue
+//            model.centerOneTitle = item["centerOneTitle"].stringValue
+//            model.centerTwoTitle = item["centerTwoTitle"].stringValue
+//            model.centerThreeTitle = item["centerThreeTitle"].stringValue
+//            self.arrDataCommon.append(model)
+//        }
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -55,7 +55,7 @@ class MoreSelectController: BaseTabViewController {
         return arrDataCommon.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
     
@@ -67,19 +67,19 @@ class MoreSelectController: BaseTabViewController {
         }
         cell?.selectionStyle = .none
         let model = arrDataCommon[indexPath.row]
-        cell?.model = model
-        cell?.topOneLabel.text = model.topTwoTitle
-        cell?.topTwoLabel.text = "| " + model.topThreeTitle
-        cell?.topThreeLabel.text = "| " +  model.centerTwoTitle
-        cell?.centerOneLabel.text = "| " + model.topOneTitle
-        cell?.userImg.image = UIImage(named: model.Picture)
-        cell?.img_NameLabel.text = model.Title
-        cell?.img_BottomLabel.text = model.Content
-        if model.isHuiYuan {
-            cell?.img_huiyuan.isHidden = false
-        }else {
-            cell?.img_huiyuan.isHidden = true
-        }
+//        cell?.model = model
+//        cell?.topOneLabel.text = model.topTwoTitle
+//        cell?.topTwoLabel.text = "| " + model.topThreeTitle
+//        cell?.topThreeLabel.text = "| " +  model.centerTwoTitle
+//        cell?.centerOneLabel.text = "| " + model.topOneTitle
+//        cell?.userImg.image = UIImage(named: model.Picture)
+//        cell?.img_NameLabel.text = model.Title
+//        cell?.img_BottomLabel.text = model.Content
+//        if model.isHuiYuan {
+//            cell?.img_huiyuan.isHidden = false
+//        }else {
+//            cell?.img_huiyuan.isHidden = true
+//        }
         
         return cell!
     }

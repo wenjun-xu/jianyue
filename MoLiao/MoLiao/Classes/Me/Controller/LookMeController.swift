@@ -8,12 +8,13 @@
 
 import UIKit
 import SwiftyJSON
-class LookMeController: BaseTabViewController {
+class LookMeController: BaseViewController {
     fileprivate var arrDataCommon = [WJDynamicModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.height = kScreenHeight - kNavH - kStatusBarH
-        tableView.register(LookMeCell.self, forCellReuseIdentifier: "LookMeCell")
+        self.tableView!.height = kScreenHeight - kNavH - kStatusBarH
+        tableView!.register(LookMeCell.self, forCellReuseIdentifier: "LookMeCell")
         let strDataPath = Bundle.main.path(forResource: "dynamic", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
         let json = DataJson().data2JSON(data: data as! Data)
@@ -47,7 +48,7 @@ class LookMeController: BaseTabViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -71,11 +72,11 @@ class LookMeController: BaseTabViewController {
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
     

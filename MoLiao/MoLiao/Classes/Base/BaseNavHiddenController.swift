@@ -8,8 +8,8 @@
 
 import UIKit
 
-class BaseNavHiddenController: BaseViewController,UITableViewDataSource, UITableViewDelegate {
-    var tableView = UITableView()
+class BaseNavHiddenController: BaseViewController {
+    var aTableView = UITableView()
     var naviView = UIView()
     var navTitle = ""
     fileprivate var tuijianlabel = UILabel()
@@ -41,14 +41,14 @@ class BaseNavHiddenController: BaseViewController,UITableViewDataSource, UITable
     func buildBaseTableView() {
         //        self.navigationController?.navigationBar.isTranslucent = true //0点在导航栏
         
-        tableView = UITableView(frame: CGRect.init(x: 0, y: kNavH + kStatusBarH, width: kScreenWidth, height: kScreenHeight - kNavH - kStatusBarH), style: .plain)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        tableView.tableHeaderView = UIView()
-        tableView.separatorStyle = .singleLine
-        tableView.backgroundColor = kBgColor
-        view.addSubview(tableView)
+        aTableView = UITableView(frame: CGRect.init(x: 0, y: kNavH + kStatusBarH, width: kScreenWidth, height: kScreenHeight - kNavH - kStatusBarH), style: .plain)
+        aTableView.dataSource = self
+        aTableView.delegate = self
+        aTableView.tableFooterView = UIView()
+        aTableView.tableHeaderView = UIView()
+        aTableView.separatorStyle = .singleLine
+        aTableView.backgroundColor = kBgColor
+        view.addSubview(aTableView)
     }
     
     
@@ -65,16 +65,16 @@ class BaseNavHiddenController: BaseViewController,UITableViewDataSource, UITable
         return 0
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell()
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
     }
     

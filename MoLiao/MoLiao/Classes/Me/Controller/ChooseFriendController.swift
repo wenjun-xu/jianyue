@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 import BRPickerView
-class ChooseFriendController: BaseTabViewController {
+class ChooseFriendController: BaseViewController {
     var userImg:UIImage!
     fileprivate var arrDataCommon = [MessageModel]()
     private let bottomScetionStyle = [FoundStyle.top,FoundStyle.normal,FoundStyle.normal,FoundStyle.normal,FoundStyle.normal,FoundStyle.normal,FoundStyle.normal,FoundStyle.normal,FoundStyle.normal,FoundStyle.bottom];
@@ -25,8 +25,8 @@ class ChooseFriendController: BaseTabViewController {
         let rightBarButtonItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: #selector(rightClick))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         
-        self.tableView.height = kScreenHeight - kNavH - kStatusBarH
-        tableView.register(MeDetailCell.self, forCellReuseIdentifier: "MeDetailCell")
+        self.tableView!.height = kScreenHeight - kNavH - kStatusBarH
+        tableView!.register(MeDetailCell.self, forCellReuseIdentifier: "MeDetailCell")
         
         let strDataPath = Bundle.main.path(forResource: "message", ofType: "json")
         let data = NSData(contentsOfFile: strDataPath!)
@@ -57,10 +57,10 @@ class ChooseFriendController: BaseTabViewController {
             model.xiaoxiNumber = item["xiaoxiNumber"].intValue
             self.arrDataCommon.append(model)
         }
-        self.tableView.reloadData()
+        self.tableView!.reloadData()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -83,11 +83,11 @@ class ChooseFriendController: BaseTabViewController {
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
     

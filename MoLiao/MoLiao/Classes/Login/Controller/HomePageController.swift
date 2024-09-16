@@ -43,7 +43,7 @@ class HomePageController: UIViewController {
 
 extension HomePageController: MLHomePageViewDelegate {
     func loginClick(pageView: MLHomePageView) {
-        let vc = LoginViewController()
+        let vc = UserNameController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

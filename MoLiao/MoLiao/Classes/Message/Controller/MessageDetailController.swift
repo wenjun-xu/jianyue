@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class MessageDetailController: BaseTabViewController {
+class MessageDetailController: MyLikeController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,7 +9,7 @@
 
 import UIKit
 
-class MyPhotosController: BaseTabViewController {
+class MyPhotosController: MyLikeController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
